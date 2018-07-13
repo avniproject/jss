@@ -1,0 +1,108 @@
+{
+  "organisation": "JSS",
+  "catchments": [
+    {
+      "name": "Main",
+      "uuid": "bd68e4e5-b590-407b-81b1-69f99d741295",
+      "type": "Village",
+      "addressLevels": [
+        {
+          "uuid": "b6eabe76-5587-40d9-a39c-4f2fae1c43b8",
+          "name": "Jithari",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "53afbfae-06f1-445e-9789-2e07f73357b1",
+          "name": "Tethi",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "50426354-f4c4-4b89-86e1-a6bcc69a98e1",
+          "name": "Trera",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "e5781368-9ad0-4b6c-8843-6258fc823200",
+          "name": "Shital Pani",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "6ecfd742-d4e8-4da1-8366-447d24337bdf",
+          "name": "Sarfa",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "c6a3515b-e8a0-4868-9042-acb347318759",
+          "name": "Dadra Silvari",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "4190b123-0702-4030-ba0f-ce329224379a",
+          "name": "Shilavari Neeche",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "5939c21c-372f-455a-9869-56d6c4d4fe67",
+          "name": "Kodar",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "ca003a5c-048d-4325-a11a-b1f2cfffa7d3",
+          "name": "Piparaha",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "2cfb9e6d-621c-4307-b7bf-81e3f84732a7",
+          "name": "Dona",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "cdb0ab1b-d610-4d16-8fdf-d33a1aef339f",
+          "name": "Mitthu Mahuwa",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "7d6bfdb4-75d6-481f-a398-b87182df2694",
+          "name": "Kumhani",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "ce9a0985-40b8-4ef5-a018-b2c8500fadb2",
+          "name": "Bulahu Pani",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "7e4497d4-9935-4a50-84e0-d4fef9ba768e",
+          "name": "Ahirgawan",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "f7841052-6acc-45f9-8881-254d1d5e16a6",
+          "name": "Daldali",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "28bd653f-628e-48fe-afe3-7a9a1d0c8aa1",
+          "name": "Khirani",
+          "level": 1,
+          "type": "Village"
+        }
+      ]
+    }
+  ]
+}

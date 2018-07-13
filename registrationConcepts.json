@@ -1,0 +1,205 @@
+[
+  {
+    "name": "Birth Order",
+    "uuid": "c218b516-a47f-411a-ad82-c3f1f446d9b0",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Gond",
+    "uuid": "b97b3df6-50ed-4464-b40d-1101f0afa722",
+    "dataType": "NA"
+  },
+  {
+    "name": "Baiga",
+    "uuid": "2265b559-682f-427b-9b32-7039995f3b4e",
+    "dataType": "NA"
+  },
+  {
+    "name": "Panika",
+    "uuid": "301e4561-261a-4b55-bc2e-3a969bf5d0a5",
+    "dataType": "NA"
+  },
+  {
+    "name": "Yadav",
+    "uuid": "7d571208-03b8-4eac-9ff8-cd9b3db2070a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Sub Caste",
+    "uuid": "00c7aa50-aabb-465f-be09-408c94734004",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Gond",
+        "uuid": "b97b3df6-50ed-4464-b40d-1101f0afa722"
+      },
+      {
+        "name": "Baiga",
+        "uuid": "2265b559-682f-427b-9b32-7039995f3b4e"
+      },
+      {
+        "name": "Panika",
+        "uuid": "301e4561-261a-4b55-bc2e-3a969bf5d0a5"
+      },
+      {
+        "name": "Yadav",
+        "uuid": "7d571208-03b8-4eac-9ff8-cd9b3db2070a"
+      },
+      {
+        "name": "Other",
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
+      }
+    ]
+  },
+  {
+    "name": "Other sub caste",
+    "uuid": "1f605949-1359-49aa-8d04-ac5f653864c7",
+    "dataType": "Text"
+  },
+  {
+    "name": "Sub Caste",
+    "uuid": "00c7aa50-aabb-465f-be09-408c94734004",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Gond",
+        "uuid": "b97b3df6-50ed-4464-b40d-1101f0afa722"
+      },
+      {
+        "name": "Baiga",
+        "uuid": "2265b559-682f-427b-9b32-7039995f3b4e"
+      },
+      {
+        "name": "Panika",
+        "uuid": "301e4561-261a-4b55-bc2e-3a969bf5d0a5"
+      },
+      {
+        "name": "Yadav",
+        "uuid": "7d571208-03b8-4eac-9ff8-cd9b3db2070a"
+      },
+      {
+        "name": "Other",
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
+      }
+    ]
+  },
+  {
+    "name": "Land owner's name",
+    "dataType": "Text",
+    "uuid": "1387d386-f489-4f28-9115-795c314afcaf"
+  },
+  {
+    "name": "Land owner's gender",
+    "dataType": "Coded",
+    "uuid": "4dcb3baf-748b-478e-83d3-9ba64124fd79",
+    "answers": [
+      {
+        "name": "Male",
+        "uuid": "7038d549-4a3b-4600-b856-f6f3d123fbd8"
+      },
+      {
+        "name": "Female",
+        "uuid": "09e1b06f-26be-4f7a-8121-5dba3a11b684"
+      },
+      {
+        "name": "Other Gender",
+        "uuid": "d56700ea-fac8-4255-8403-7f8f3b755335"
+      }
+    ]
+  },
+  {
+    "name": "Kaccha",
+    "uuid": "a7466416-d7e5-491a-b980-2526e09dac17",
+    "dataType": "NA"
+  },
+  {
+    "name": "Pakka",
+    "uuid": "b808c44a-a417-4816-ad0b-cde680f2124a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Aadha kacha pakka",
+    "uuid": "8e7eee58-19a7-4189-a29b-a90c801765ba",
+    "dataType": "NA"
+  },
+  {
+    "uuid": "f1aec43b-c985-442a-97dd-70cbe00e3643",
+    "name": "Type of residence",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Kaccha",
+        "uuid": "a7466416-d7e5-491a-b980-2526e09dac17"
+      },
+      {
+        "name": "Pakka",
+        "uuid": "b808c44a-a417-4816-ad0b-cde680f2124a"
+      },
+      {
+        "name": "Aadha kacha pakka",
+        "uuid": "8e7eee58-19a7-4189-a29b-a90c801765ba"
+      }
+    ]
+  },
+  {
+    "name": "Land Area",
+    "uuid": "6a6b6d30-45f3-4076-a108-0514aabe3886",
+    "dataType": "Numeric",
+    "unit": "Acre(s)"
+  },
+  {
+    "name": "Tractor",
+    "uuid": "f9648a00-6ba1-4b87-b08f-f527ddd8d1cb"
+  },
+  {
+    "name": "4 Wheeler",
+    "uuid": "58cc3e54-5a82-48e1-91bf-c1c0dd26a2e0"
+  },
+  {
+    "name": "2 Wheeler",
+    "uuid": "3769e0c6-ea4f-4836-b6c4-6603b27b5f91"
+  },
+  {
+    "name": "Fridge",
+    "uuid": "705f8530-6d93-4460-ac6b-36e5647efc31"
+  },
+  {
+    "name": "Cycle",
+    "uuid": "2ecc9fee-493c-4ce5-bd5d-c3139a2fa48f"
+  },
+  {
+    "name": "Generator",
+    "uuid": "c89c34a0-41f4-4dfc-9d5f-872a1812aa31"
+  },
+  {
+    "uuid": "beef9533-cfa1-4efa-bed3-d14169468c1c",
+    "name": "Other wealth",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Tractor",
+        "uuid": "f9648a00-6ba1-4b87-b08f-f527ddd8d1cb"
+      },
+      {
+        "name": "4 Wheeler",
+        "uuid": "58cc3e54-5a82-48e1-91bf-c1c0dd26a2e0"
+      },
+      {
+        "name": "2 Wheeler",
+        "uuid": "3769e0c6-ea4f-4836-b6c4-6603b27b5f91"
+      },
+      {
+        "name": "Fridge",
+        "uuid": "705f8530-6d93-4460-ac6b-36e5647efc31"
+      },
+      {
+        "name": "Cycle",
+        "uuid": "2ecc9fee-493c-4ce5-bd5d-c3139a2fa48f"
+      },
+      {
+        "name": "Generator",
+        "uuid": "c89c34a0-41f4-4dfc-9d5f-872a1812aa31"
+      }
+    ]
+  }
+]

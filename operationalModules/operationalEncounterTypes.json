@@ -1,0 +1,12 @@
+{
+  "organisationName": "JSS",
+  "operationalEncounterTypes": [
+    {
+      "uuid": "5246fe29-bb51-4ae2-afab-9247a6595b9f",
+      "name": "Growth Monitoring",
+      "encounterType": {
+        "uuid": "02c72b2b-19f0-4f75-b734-dcad5601881b"
+      }
+    }
+  ]
+}

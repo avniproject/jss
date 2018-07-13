@@ -1,0 +1,17 @@
+{
+  "name": "phulwari-config",
+  "version": "0.0.1",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenCHS/jss.git"
+  },
+  "license": "AGPL-3.0",
+  "scripts": {},
+  "dependencies": {
+    "webpack": "^4.12.0"
+  },
+  "devDependencies": {
+    "rules-config": "github:openchs/rules-config#2697d74a14ab844be1e4742f6be36e69f34e0193"
+  }
+}

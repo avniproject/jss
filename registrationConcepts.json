@@ -199,6 +199,10 @@
       {
         "name": "Generator",
         "uuid": "c89c34a0-41f4-4dfc-9d5f-872a1812aa31"
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
       }
     ]
   }

@@ -140,6 +140,7 @@
           "displayOrder": 4
         },
         {
+          "voided": true,
           "name": "Religion",
           "uuid": "8b119d96-5978-4e0c-98bd-cc1ca7696357",
           "type": "SingleSelect",

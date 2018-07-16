@@ -19,6 +19,7 @@
           "mandatory": true
         },
         {
+          "voided": true,
           "name": "Weight",
           "uuid": "b24b6e6c-6f3f-4587-b92a-5f707c4b53f7",
           "keyValues": [],

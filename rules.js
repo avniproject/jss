@@ -1,10 +1,41 @@
 const moment = require("moment");
 const _ = require("lodash");
-import {RuleFactory, FormElementsStatusHelper, FormElementStatusBuilder, FormElementStatus} from 'rules-config/rules';
+import {
+    RuleFactory,
+    FormElementsStatusHelper,
+    FormElementStatusBuilder,
+    FormElementStatus,
+    VisitScheduleBuilder
+} from 'rules-config/rules';
 
 const RegistrationViewFilter = RuleFactory("e0b78ca2-1205-4e84-9f9b-d97c9b78a917", "ViewFilter");
 const EnrolmentViewFilter = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "ViewFilter");
+const EnrolmentVisitSchedule = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "VisitSchedule");
 const AnthropometryViewFilter = RuleFactory("d062907a-690c-44ca-b699-f8b2f688b075", "ViewFilter");
+
+
+const gmpVisit = (programEnrolment, visitSchedule, currentDateTime = new Date()) => {
+    const scheduleBuilder = new VisitScheduleBuilder({
+        programEnrolment: programEnrolment
+    });
+    const encounterDateTime = currentDateTime;
+    visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
+    scheduleBuilder.add({
+            name: "Growth Monitoring Visit",
+            encounterType: "Anthropometry Assessment",
+            earliestDate: encounterDateTime,
+            maxDate: encounterDateTime
+        }
+    );
+    return scheduleBuilder.getAllUnique("encounterType");
+};
+
+@EnrolmentVisitSchedule("4603fabd-b1f0-4106-9673-2ce397cbdf2c", "JSS Growth Monitoring Visit Schedule", 100.0)
+class EnrolmentVisitScheduleJSS {
+    static exec(programEnrolment, visitSchedule = [], scheduleConfig) {
+        return gmpVisit(programEnrolment, visitSchedule, programEnrolment.enrolmentDateTime);
+    }
+}
 
 @RegistrationViewFilter("c2e89483-4bdd-4d39-adf3-88a69579d07d", "JSS Registration View Filter", 1.0, {})
 class RegistrationHandlerJSS {
@@ -68,4 +99,5 @@ class AnthropometryHandlerJSS {
     }
 }
 
-module.exports = {RegistrationHandlerJSS, ChildEnrolmentHandlerJSS, AnthropometryHandlerJSS};
+module.exports =
+    {RegistrationHandlerJSS, ChildEnrolmentHandlerJSS, AnthropometryHandlerJSS, EnrolmentVisitScheduleJSS};

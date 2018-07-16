@@ -4,7 +4,7 @@
   "formType": "IndividualProfile",
   "formElementGroups": [
     {
-      "uuid": "07ab55d5-2d35-40b3-b14a-870aa444c14f",
+      "uuid": "a3a20e49-ef6c-4748-9cf3-c01ed9c8bdd8",
       "name": "Personal Details",
       "displayOrder": 1,
       "display": "Personal Details",
@@ -68,6 +68,26 @@
             "comment": "Mother's Education"
           },
           "displayOrder": 6
+        },
+        {
+          "name": "Caste",
+          "uuid": "3d02f8f9-fae1-4d80-8f48-1d8bf3c5ab3e",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "61ab6413-5c6a-4512-ab6e-7d5cd1439569",
+            "comment": "Caste"
+          },
+          "displayOrder": 7
+        },
+        {
+          "name": "Sub caste",
+          "uuid": "6a13af65-96c1-4387-9872-1f80cead9ddb",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "00c7aa50-aabb-465f-be09-408c94734004",
+            "comment": "Sub Caste"
+          },
+          "displayOrder": 8
         }
       ]
     },

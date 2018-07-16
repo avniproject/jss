@@ -13,6 +13,9 @@ help:
 	done
 # </makefile>
 
+#server:=https://staging.openchs.org
+#port:=443
+token:=somethinghere
 port:= $(if $(port),$(port),8021)
 server:= $(if $(server),$(server),http://localhost)
 server_url:=$(server):$(port)
@@ -39,8 +42,10 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@registrationConcepts.json)
 	$(call _curl,POST,concepts,@child/enrolmentConcepts.json)
 
-deploy_refdata: deploy_concepts
+deploy_catchments:
 	$(call _curl,POST,catchments,@catchments.json)
+
+deploy_refdata: deploy_concepts deploy_catchments
 	$(call _curl,POST,forms,@registrationForm.json)
 	$(call _curl,PATCH,forms,@child/enrolmentAdditions.json)
 	$(call _curl,POST,operationalEncounterTypes,@operationalModules/operationalEncounterTypes.json)

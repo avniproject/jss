@@ -60,7 +60,7 @@ class RegistrationHandlerJSS {
 class ChildEnrolmentHandlerJSS {
     static exec(programEnrolment, formElementGroup) {
         return FormElementsStatusHelper
-            .getFormElementsStatuses(new ChildEnrolmentHandlerJSS(), programEnrolment, formElementGroup);
+            .getFormElementsStatusesWithoutDefaults(new ChildEnrolmentHandlerJSS(), programEnrolment, formElementGroup);
     }
 
     pleaseSelectTheDisabilities(programEnrolment, formElement) {

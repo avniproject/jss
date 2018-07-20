@@ -119,6 +119,7 @@
             "uuid": "4dcb3baf-748b-478e-83d3-9ba64124fd79",
             "comment": "Relation with land owner"
           },
+          "mandatory": true,
           "displayOrder": 1
         },
         {

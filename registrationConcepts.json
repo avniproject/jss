@@ -25,6 +25,21 @@
     "dataType": "NA"
   },
   {
+    "name": "Nayak",
+    "uuid": "9dd331a7-568f-43f4-9884-0258ed94c346",
+    "dataType": "NA"
+  },
+  {
+    "name": "Vishwakarma",
+    "uuid": "5d3c258a-05a5-4fff-b87a-081591012375",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ahirwar",
+    "uuid": "2e889b9c-c0ff-4076-a74a-4d84fa20fbdb",
+    "dataType": "NA"
+  },
+  {
     "name": "Sub Caste",
     "uuid": "00c7aa50-aabb-465f-be09-408c94734004",
     "dataType": "Coded",
@@ -44,6 +59,18 @@
       {
         "name": "Yadav",
         "uuid": "7d571208-03b8-4eac-9ff8-cd9b3db2070a"
+      },
+      {
+        "name": "Nayak",
+        "uuid": "9dd331a7-568f-43f4-9884-0258ed94c346"
+      },
+      {
+        "name": "Vishwakarma",
+        "uuid": "5d3c258a-05a5-4fff-b87a-081591012375"
+      },
+      {
+        "name": "Ahirwar",
+        "uuid": "2e889b9c-c0ff-4076-a74a-4d84fa20fbdb"
       },
       {
         "name": "Other",
@@ -57,53 +84,49 @@
     "dataType": "Text"
   },
   {
-    "name": "Sub Caste",
-    "uuid": "00c7aa50-aabb-465f-be09-408c94734004",
-    "dataType": "Coded",
-    "answers": [
-      {
-        "name": "Gond",
-        "uuid": "b97b3df6-50ed-4464-b40d-1101f0afa722"
-      },
-      {
-        "name": "Baiga",
-        "uuid": "2265b559-682f-427b-9b32-7039995f3b4e"
-      },
-      {
-        "name": "Panika",
-        "uuid": "301e4561-261a-4b55-bc2e-3a969bf5d0a5"
-      },
-      {
-        "name": "Yadav",
-        "uuid": "7d571208-03b8-4eac-9ff8-cd9b3db2070a"
-      },
-      {
-        "name": "Other",
-        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
-      }
-    ]
-  },
-  {
     "name": "Land owner's name",
     "dataType": "Text",
     "uuid": "1387d386-f489-4f28-9115-795c314afcaf"
   },
   {
-    "name": "Land owner's gender",
+    "name": "Relation with land owner",
     "dataType": "Coded",
     "uuid": "4dcb3baf-748b-478e-83d3-9ba64124fd79",
     "answers": [
       {
         "name": "Male",
-        "uuid": "7038d549-4a3b-4600-b856-f6f3d123fbd8"
+        "uuid": "7038d549-4a3b-4600-b856-f6f3d123fbd8",
+        "voided":true
       },
       {
         "name": "Female",
-        "uuid": "09e1b06f-26be-4f7a-8121-5dba3a11b684"
+        "uuid": "09e1b06f-26be-4f7a-8121-5dba3a11b684",
+        "voided":true
       },
       {
         "name": "Other Gender",
-        "uuid": "d56700ea-fac8-4255-8403-7f8f3b755335"
+        "uuid": "d56700ea-fac8-4255-8403-7f8f3b755335",
+        "voided":true
+      },
+      {
+        "name": "mother",
+        "uuid": "2d46ae95-1920-4f74-b8e4-86a68183f6fc"
+      },
+      {
+        "name": "father",
+        "uuid": "95f7b3ad-9a0e-4202-ac44-19e78672b7dc"
+      },
+      {
+        "name": "grandfather",
+        "uuid": "cdad78c8-af9b-4e6c-b5d4-d54c2cc1b33e"
+      },
+      {
+        "name": "grandmother",
+        "uuid": "afdd2740-c46a-4414-8e17-31414b40128a"
+      },
+      {
+        "name": "Other",
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
       }
     ]
   },
@@ -173,7 +196,7 @@
   },
   {
     "uuid": "beef9533-cfa1-4efa-bed3-d14169468c1c",
-    "name": "Other wealth",
+    "name": "Property",
     "dataType": "Coded",
     "answers": [
       {
@@ -201,9 +224,19 @@
         "uuid": "c89c34a0-41f4-4dfc-9d5f-872a1812aa31"
       },
       {
+        "name": "Other",
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
+      },
+      {
         "name": "None",
-        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "unique": true
       }
     ]
+  },
+  {
+    "uuid": "84d72d0d-20d6-471b-9d76-c139f9eccc55",
+    "name": "Other property",
+    "dataType": "Text"
   }
 ]

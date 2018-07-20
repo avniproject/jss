@@ -48,6 +48,7 @@ deploy_catchments:
 deploy_refdata: deploy_concepts deploy_catchments
 	$(call _curl,POST,forms,@registrationForm.json)
 	$(call _curl,PATCH,forms,@child/enrolmentAdditions.json)
+	$(call _curl,DELETE,forms,@child/enrolmentDeletions.json)
 	$(call _curl,POST,operationalEncounterTypes,@operationalModules/operationalEncounterTypes.json)
 	$(call _curl,POST,operationalPrograms,@operationalModules/operationalPrograms.json)
 

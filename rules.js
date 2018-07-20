@@ -44,9 +44,15 @@ class RegistrationHandlerJSS {
             .getFormElementsStatuses(new RegistrationHandlerJSS(), individual, formElementGroup);
     }
 
-    economicStatus(individual, formElement) {
+    otherSubCastePleaseSpecify(individual, formElement) {
         const statusBuilder = this._getStatusBuilder(individual, formElement);
-        statusBuilder.skipAnswers("Antyodaya").whenItem(true).is.truthy;
+        statusBuilder.show().when.valueInRegistration("Sub Caste").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    otherPropertyPleaseSpecify(individual, formElement) {
+        const statusBuilder = this._getStatusBuilder(individual, formElement);
+        statusBuilder.show().when.valueInRegistration("Property").containsAnswerConceptName("Other");
         return statusBuilder.build();
     }
 
@@ -65,15 +71,13 @@ class ChildEnrolmentHandlerJSS {
 
     pleaseSelectTheDisabilities(programEnrolment, formElement) {
         const statusBuilder = this._getStatusBuilder(programEnrolment, formElement);
-        statusBuilder.show().when.valueInEntireEnrolment("Is there any developmental delay or disability seen?")
-            .containsAnswerConceptName("Yes");
+        statusBuilder.show().when.valueInEnrolment("Is there any developmental delay or disability seen?").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
 
     chronicIllness(programEnrolment, formElement) {
         const statusBuilder = this._getStatusBuilder(programEnrolment, formElement);
-        statusBuilder.show().when.valueInEntireEnrolment("Chronic Illness")
-            .containsAnswerConceptName("Yes");
+        statusBuilder.show().when.valueInEnrolment("Chronic Illness").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
 

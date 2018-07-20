@@ -31,6 +31,7 @@
           "mandatory": false
         },
         {
+          "voided": true,
           "name": "Bicep circumference",
           "uuid": "3ebfad59-148a-4339-9f5d-addfe9180bd2",
           "keyValues": [],

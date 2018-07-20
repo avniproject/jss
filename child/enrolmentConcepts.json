@@ -183,5 +183,13 @@
     "uuid": "989a09cf-a570-4ea9-ac67-422da92afce1",
     "name": "Other Chronic Illness",
     "dataType": "Text"
+  },
+  {
+    "name": "Day of month for growth monitoring visit",
+    "uuid": "8c607c63-25fb-4af1-984e-37dd1bae653d",
+    "dataType": "Numeric",
+    "lowAbsolute": 15,
+    "highAbsolute": 30
   }
+
 ]

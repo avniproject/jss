@@ -11,29 +11,51 @@ import {
 const RegistrationViewFilter = RuleFactory("e0b78ca2-1205-4e84-9f9b-d97c9b78a917", "ViewFilter");
 const EnrolmentViewFilter = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "ViewFilter");
 const EnrolmentVisitSchedule = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "VisitSchedule");
+const GMVisitSchedule = RuleFactory("d062907a-690c-44ca-b699-f8b2f688b075", "VisitSchedule");
 const AnthropometryViewFilter = RuleFactory("d062907a-690c-44ca-b699-f8b2f688b075", "ViewFilter");
 
 
-const gmpVisit = (programEnrolment, visitSchedule, currentDateTime = new Date()) => {
-    const scheduleBuilder = new VisitScheduleBuilder({
-        programEnrolment: programEnrolment
-    });
-    const encounterDateTime = currentDateTime;
-    visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
-    scheduleBuilder.add({
-            name: "Growth Monitoring Visit",
-            encounterType: "Anthropometry Assessment",
-            earliestDate: encounterDateTime,
-            maxDate: encounterDateTime
-        }
-    );
-    return scheduleBuilder.getAllUnique("encounterType");
-};
-
-@EnrolmentVisitSchedule("4603fabd-b1f0-4106-9673-2ce397cbdf2c", "JSS Growth Monitoring Visit Schedule", 100.0)
+@EnrolmentVisitSchedule("4603fabd-b1f0-4106-9673-2ce397cbdf2c", "JSS Growth Monitoring First Visit", 100.0)
 class EnrolmentVisitScheduleJSS {
     static exec(programEnrolment, visitSchedule = [], scheduleConfig) {
-        return gmpVisit(programEnrolment, visitSchedule, programEnrolment.enrolmentDateTime);
+        const scheduleBuilder = new VisitScheduleBuilder({
+            programEnrolment: programEnrolment
+        });
+        const earliestDate = programEnrolment.enrolmentDateTime;
+        const maxDate = programEnrolment.enrolmentDateTime;
+        visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
+        scheduleBuilder.add({
+                name: "Growth Monitoring Visit",
+                encounterType: "Anthropometry Assessment",
+                earliestDate: earliestDate,
+                maxDate: maxDate
+            }
+        );
+        return scheduleBuilder.getAllUnique("encounterType");
+    }
+}
+
+@GMVisitSchedule("44160e78-23fc-46c1-8764-4c84a5847522", "JSS Growth Monitoring Recurring Visit", 100.0)
+class GMVisitScheduleJSS {
+    static exec({programEnrolment, encounterDateTime}, visitSchedule = [], scheduleConfig) {
+        const scheduleBuilder = new VisitScheduleBuilder({
+            programEnrolment: programEnrolment
+        });
+        const currentDate = moment(encounterDateTime).date();
+        const dayOfMonth = programEnrolment.findObservation("Day of month for growth monitoring visit").getValue();
+        const month = currentDate >= dayOfMonth ? moment(encounterDateTime).month() + 1 : moment(encounterDateTime).month();
+        const earliestDate = moment(encounterDateTime).month(month).date(dayOfMonth).toDate();
+        const maxDate = moment(encounterDateTime).month(month).date(dayOfMonth).add(3, 'days').toDate();
+        visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
+        scheduleBuilder.add({
+                name: "Growth Monitoring Visit",
+                encounterType: "Anthropometry Assessment",
+                earliestDate: earliestDate,
+                maxDate: maxDate
+            }
+        );
+        return scheduleBuilder.getAllUnique("encounterType");
+
     }
 }
 
@@ -104,4 +126,4 @@ class AnthropometryHandlerJSS {
 }
 
 module.exports =
-    {RegistrationHandlerJSS, ChildEnrolmentHandlerJSS, AnthropometryHandlerJSS, EnrolmentVisitScheduleJSS};
+    {RegistrationHandlerJSS, ChildEnrolmentHandlerJSS, AnthropometryHandlerJSS, EnrolmentVisitScheduleJSS, GMVisitScheduleJSS};

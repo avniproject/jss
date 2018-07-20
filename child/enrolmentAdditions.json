@@ -100,6 +100,17 @@
           },
           "displayOrder": 18,
           "mandatory": true
+        },
+        {
+          "name": "Day of the month to visit this Phulwari",
+          "uuid": "6f8de0cc-2cf5-4873-8f41-96cf6b8f0445",
+          "keyValues": [],
+          "concept": {
+            "uuid": "8c607c63-25fb-4af1-984e-37dd1bae653d",
+            "comment": "Day of month for growth monitoring visit"
+          },
+          "displayOrder": 19,
+          "mandatory": true
         }
       ]
     }

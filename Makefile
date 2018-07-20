@@ -39,6 +39,7 @@ create_org: ## Create JSS org and user+privileges
 
 # <refdata>
 deploy_concepts:
+	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@registrationConcepts.json)
 	$(call _curl,POST,concepts,@child/enrolmentConcepts.json)
 
@@ -51,6 +52,7 @@ deploy_refdata: deploy_concepts deploy_catchments
 	$(call _curl,DELETE,forms,@child/enrolmentDeletions.json)
 	$(call _curl,POST,operationalEncounterTypes,@operationalModules/operationalEncounterTypes.json)
 	$(call _curl,POST,operationalPrograms,@operationalModules/operationalPrograms.json)
+	$(call _curl,POST,formMappings,@formMappings.json)
 
 # </refdata>
 

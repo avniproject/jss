@@ -98,6 +98,12 @@ class RegistrationHandlerJSS {
         return statusBuilder.build();
     }
 
+    landArea(individual, formElement) {
+        const statusBuilder = this._getStatusBuilder(individual, formElement);
+        statusBuilder.show().when.valueInRegistration("Land possession").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+
     otherPropertyPleaseSpecify(individual, formElement) {
         const statusBuilder = this._getStatusBuilder(individual, formElement);
         statusBuilder.show().when.valueInRegistration("Property").containsAnswerConceptName("Other");

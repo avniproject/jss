@@ -84,53 +84,6 @@
     "dataType": "Text"
   },
   {
-    "name": "Land owner's name",
-    "dataType": "Text",
-    "uuid": "1387d386-f489-4f28-9115-795c314afcaf"
-  },
-  {
-    "name": "Relation with land owner",
-    "dataType": "Coded",
-    "uuid": "4dcb3baf-748b-478e-83d3-9ba64124fd79",
-    "answers": [
-      {
-        "name": "Male",
-        "uuid": "7038d549-4a3b-4600-b856-f6f3d123fbd8",
-        "voided":true
-      },
-      {
-        "name": "Female",
-        "uuid": "09e1b06f-26be-4f7a-8121-5dba3a11b684",
-        "voided":true
-      },
-      {
-        "name": "Other Gender",
-        "uuid": "d56700ea-fac8-4255-8403-7f8f3b755335",
-        "voided":true
-      },
-      {
-        "name": "mother",
-        "uuid": "2d46ae95-1920-4f74-b8e4-86a68183f6fc"
-      },
-      {
-        "name": "father",
-        "uuid": "95f7b3ad-9a0e-4202-ac44-19e78672b7dc"
-      },
-      {
-        "name": "grandfather",
-        "uuid": "cdad78c8-af9b-4e6c-b5d4-d54c2cc1b33e"
-      },
-      {
-        "name": "grandmother",
-        "uuid": "afdd2740-c46a-4414-8e17-31414b40128a"
-      },
-      {
-        "name": "Other",
-        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
-      }
-    ]
-  },
-  {
     "name": "Kaccha",
     "uuid": "a7466416-d7e5-491a-b980-2526e09dac17",
     "dataType": "NA"
@@ -169,6 +122,21 @@
     "uuid": "6a6b6d30-45f3-4076-a108-0514aabe3886",
     "dataType": "Numeric",
     "unit": "Acre(s)"
+  },
+  {
+    "name": "Land possession",
+    "uuid": "6a0d80bf-e271-4012-a8e1-9d9c91b18a14",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
   },
   {
     "name": "Tractor",

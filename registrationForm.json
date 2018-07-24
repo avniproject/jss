@@ -111,6 +111,7 @@
       "display": "Socio-Economic Details",
       "formElements": [
         {
+          "voided": true,
           "name": "Relation with land owner",
           "uuid": "cdd94ec6-21fd-48a7-ade6-d33f50f7cff0",
           "keyValues": [],
@@ -123,13 +124,14 @@
           "displayOrder": 1
         },
         {
-          "name": "Land owner's name",
+          "name": "Any owned land?",
           "uuid": "6d8cfcad-2bd6-45c8-9950-8ff039567e2d",
           "keyValues": [],
           "concept": {
-            "uuid": "1387d386-f489-4f28-9115-795c314afcaf",
-            "comment": "Land owner's name"
+            "uuid": "6a0d80bf-e271-4012-a8e1-9d9c91b18a14",
+            "comment": "Land possession"
           },
+          "mandatory": true,
           "displayOrder": 2
         },
         {

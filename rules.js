@@ -12,12 +12,14 @@ const RegistrationViewFilter = RuleFactory("e0b78ca2-1205-4e84-9f9b-d97c9b78a917
 const EnrolmentViewFilter = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "ViewFilter");
 const EnrolmentVisitSchedule = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "VisitSchedule");
 const GMVisitSchedule = RuleFactory("d062907a-690c-44ca-b699-f8b2f688b075", "VisitSchedule");
+const GMCancelVisitSchedule = RuleFactory("aac5c57a-aa01-49bb-ad20-70536dd2907f", "VisitSchedule");
 const AnthropometryViewFilter = RuleFactory("d062907a-690c-44ca-b699-f8b2f688b075", "ViewFilter");
 
 
 @EnrolmentVisitSchedule("4603fabd-b1f0-4106-9673-2ce397cbdf2c", "JSS Growth Monitoring First Visit", 100.0)
 class EnrolmentVisitScheduleJSS {
     static exec(programEnrolment, visitSchedule = [], scheduleConfig) {
+        console.log('came to EnrolmentVisitSchedule');
         const scheduleBuilder = new VisitScheduleBuilder({
             programEnrolment: programEnrolment
         });
@@ -39,7 +41,7 @@ class EnrolmentVisitScheduleJSS {
 class GMVisitScheduleJSS {
     static exec({programEnrolment, encounterDateTime}, visitSchedule = [], scheduleConfig) {
         const scheduleBuilder = new VisitScheduleBuilder({
-            programEnrolment: programEnrolment
+            programEnrolment: programEncounter.programEnrolment
         });
         const currentDate = moment(encounterDateTime).date();
         const dayOfMonth = programEnrolment.findObservation("Day of month for growth monitoring visit").getValue();
@@ -56,6 +58,30 @@ class GMVisitScheduleJSS {
         );
         return scheduleBuilder.getAllUnique("encounterType");
 
+    }
+}
+
+@GMCancelVisitSchedule("f58963fe-87d5-4344-ad5e-9770f89d60cf", "JSS Growth Monitoring Next Visit", 100.0)
+class GMCancelVisitScheduleJSS {
+    static exec(programEncounter, visitSchedule = [], scheduleConfig) {
+        const scheduleBuilder = new VisitScheduleBuilder({
+            programEnrolment: programEncounter.programEnrolment
+        });
+        const scheduledDateTime = programEncounter.earliestVisitDateTime;
+        const scheduledDate = moment(scheduledDateTime).date();
+        const dayOfMonth = programEncounter.programEnrolment.findObservation("Day of month for growth monitoring visit").getValue();
+        const month = scheduledDate >= dayOfMonth ? moment(scheduledDateTime).month() + 1 : moment(scheduledDateTime).month();
+        const earliestDate = moment(scheduledDateTime).month(month).date(dayOfMonth).toDate();
+        const maxDate = moment(scheduledDateTime).month(month).date(dayOfMonth).add(3, 'days').toDate();
+        visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
+        scheduleBuilder.add({
+                name: "Growth Monitoring Visit",
+                encounterType: "Anthropometry Assessment",
+                earliestDate: earliestDate,
+                maxDate: maxDate
+            }
+        );
+        return scheduleBuilder.getAllUnique("encounterType");
     }
 }
 
@@ -126,4 +152,4 @@ class AnthropometryHandlerJSS {
 }
 
 module.exports =
-    {RegistrationHandlerJSS, ChildEnrolmentHandlerJSS, AnthropometryHandlerJSS, EnrolmentVisitScheduleJSS, GMVisitScheduleJSS};
+    {RegistrationHandlerJSS, ChildEnrolmentHandlerJSS, AnthropometryHandlerJSS, EnrolmentVisitScheduleJSS, GMVisitScheduleJSS, GMCancelVisitScheduleJSS};

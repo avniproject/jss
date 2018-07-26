@@ -41,7 +41,7 @@ class EnrolmentVisitScheduleJSS {
 class GMVisitScheduleJSS {
     static exec({programEnrolment, encounterDateTime}, visitSchedule = [], scheduleConfig) {
         const scheduleBuilder = new VisitScheduleBuilder({
-            programEnrolment: programEncounter.programEnrolment
+            programEnrolment: programEnrolment
         });
         const currentDate = moment(encounterDateTime).date();
         const dayOfMonth = programEnrolment.findObservation("Day of month for growth monitoring visit").getValue();

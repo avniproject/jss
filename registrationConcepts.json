@@ -698,7 +698,7 @@
     "dataType": "NA"
   },
   {
-    "name": "Ahirgavan",
+    "name": "Ahirgawan",
     "uuid": "c6e3c748-a2c2-4663-af41-48bdb9e7fa12",
     "dataType": "NA"
   },
@@ -733,13 +733,151 @@
     "dataType": "NA"
   },
   {
+    "name": "Karpa",
+    "uuid": "073ff2ed-1474-462d-a9c3-0d2a6581f441",
+    "dataType": "NA"
+  },
+  {
+    "name": "Badi Tumi",
+    "uuid": "d487c162-d25e-4c8b-a047-eab51629d06c",
+    "dataType": "NA"
+  },
+  {
+    "name": "Kharsol",
+    "uuid": "1d94d868-4093-489f-889b-a9b6c8f51cd4",
+    "dataType": "NA"
+  },
+  {
+    "name": "Duradhar",
+    "uuid": "01c7a2b5-2325-476b-a161-11c9832b48a6",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ufrikala",
+    "uuid": "98a3d527-7d39-45a8-b81d-a080f93e23e9",
+    "dataType": "NA"
+  },
+  {
+    "name": "Dudhmania",
+    "uuid": "b2a0f857-82f0-4e1f-b0f0-08917107aca8",
+    "dataType": "NA"
+  },
+  {
+    "name": "Nagula",
+    "uuid": "63879021-7aad-45b7-83fe-7c4b89acb617",
+    "dataType": "NA"
+  },
+  {
+    "name": "Nogawan",
+    "uuid": "47016656-fde5-4910-b9e5-0f51d82d69c3",
+    "dataType": "NA"
+  },
+  {
+    "name": "Padmania",
+    "uuid": "624666b1-9b1d-4512-9930-e5cbc9f38ded",
+    "dataType": "NA"
+  },
+  {
+    "name": "Chandania",
+    "uuid": "72754013-a45d-496c-bd55-07d8f110b779",
+    "dataType": "NA"
+  },
+  {
+    "name": "Chiliamar",
+    "uuid": "50b881db-ba95-463d-b80f-0556387fa227",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ahlwar",
+    "uuid": "026756a0-87b1-4aff-b10d-48ecf5144613",
+    "dataType": "NA"
+  },
+  {
+    "name": "Padri",
+    "uuid": "55d10b93-0d65-4fc9-b127-a82223fb20e1",
+    "dataType": "NA"
+  },
+  {
+    "name": "Bijouri",
+    "uuid": "0237e91a-d8ee-4ed4-9459-f29aa5b197df",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ledra",
+    "uuid": "efa85385-38a5-4ee8-8d71-7445513abbe3",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ataria",
+    "uuid": "d88638b9-2048-4b68-8998-17a5330a1457",
+    "dataType": "NA"
+  },
+  {
+    "name": "Gonda",
+    "uuid": "7c6c2d06-e426-403d-a590-7988f59cc997",
+    "dataType": "NA"
+  },
+  {
+    "name": "Dhanpuri",
+    "uuid": "43e95843-d1b7-42cf-bc04-be0f68cd2d01",
+    "dataType": "NA"
+  },
+  {
     "uuid": "d6bb1543-0c1c-4c01-bd47-3883701d945b",
     "name": "Gram panchayat",
     "dataType": "Coded",
     "answers": [
       {
-        "name": "Ahirgavan",
+        "name": "Ahirgawan",
         "uuid": "c6e3c748-a2c2-4663-af41-48bdb9e7fa12"
+      },
+      {
+        "name": "Ahlwar",
+        "uuid": "026756a0-87b1-4aff-b10d-48ecf5144613"
+      },
+      {
+        "name": "Ataria",
+        "uuid": "d88638b9-2048-4b68-8998-17a5330a1457"
+      },
+      {
+        "name": "Badi Tumi",
+        "uuid": "d487c162-d25e-4c8b-a047-eab51629d06c"
+      },
+      {
+        "name": "Bijouri",
+        "uuid": "0237e91a-d8ee-4ed4-9459-f29aa5b197df"
+      },
+      {
+        "name": "Chandania",
+        "uuid": "72754013-a45d-496c-bd55-07d8f110b779"
+      },
+      {
+        "name": "Chiliamar",
+        "uuid": "50b881db-ba95-463d-b80f-0556387fa227"
+      },
+      {
+        "name": "Duradhar",
+        "uuid": "01c7a2b5-2325-476b-a161-11c9832b48a6"
+      },
+      {
+        "name": "Dhanpuri",
+        "uuid": "43e95843-d1b7-42cf-bc04-be0f68cd2d01"
+      },
+      {
+        "name": "Dudhmania",
+        "uuid": "b2a0f857-82f0-4e1f-b0f0-08917107aca8"
+      },
+      {
+        "name": "Gonda",
+        "uuid": "7c6c2d06-e426-403d-a590-7988f59cc997"
+      },
+      {
+        "name": "Karpa",
+        "uuid": "073ff2ed-1474-462d-a9c3-0d2a6581f441"
+      },
+      {
+        "name": "Kharsol",
+        "uuid": "1d94d868-4093-489f-889b-a9b6c8f51cd4"
       },
       {
         "name": "Khamroud",
@@ -754,8 +892,28 @@
         "uuid": "5ab7807d-f295-41e3-8b5a-094006b5b103"
       },
       {
+        "name": "Ledra",
+        "uuid": "efa85385-38a5-4ee8-8d71-7445513abbe3"
+      },
+      {
         "name": "Mitthumahua",
         "uuid": "dc42945d-90f4-4160-9f28-c99399481c84"
+      },
+      {
+        "name": "Nagula",
+        "uuid": "63879021-7aad-45b7-83fe-7c4b89acb617"
+      },
+      {
+        "name": "Nogawan",
+        "uuid": "47016656-fde5-4910-b9e5-0f51d82d69c3"
+      },
+      {
+        "name": "Padmania",
+        "uuid": "624666b1-9b1d-4512-9930-e5cbc9f38ded"
+      },
+      {
+        "name": "Padri",
+        "uuid": "55d10b93-0d65-4fc9-b127-a82223fb20e1"
       },
       {
         "name": "Sarai",
@@ -768,6 +926,10 @@
       {
         "name": "Tarang",
         "uuid": "86652a24-9064-40ae-9a3b-890ad8af13bd"
+      },
+      {
+        "name": "Ufrikala",
+        "uuid": "98a3d527-7d39-45a8-b81d-a080f93e23e9"
       },
       {
         "name": "Other",

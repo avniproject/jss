@@ -268,7 +268,7 @@
     "dataType": "NA"
   },
   {
-    "name": "khalebhamar mohalla",
+    "name": "khalebhanvar",
     "uuid": "706c03d6-51dc-43d7-85fd-48957ac6aef3",
     "dataType": "NA"
   },
@@ -393,7 +393,7 @@
     "dataType": "NA"
   },
   {
-    "name": "jarrakhodra",
+    "name": "jarratola",
     "uuid": "5b3abde2-70bf-4b5d-a306-e16ac3ad4d5e",
     "dataType": "NA"
   },
@@ -463,6 +463,12 @@
     "dataType": "NA"
   },
   {
+    "name": "chhatenitola",
+    "uuid": "12485669-c8a7-407d-a934-8a046db71050",
+    "dataType": "NA"
+  },
+
+  {
     "uuid": "14d5416b-eb30-4261-97db-f8e4935ad168",
     "name": "Other mohalla",
     "dataType": "Text"
@@ -521,7 +527,7 @@
         "uuid": "aaa435a0-838b-40aa-900d-544a58e9bc1e"
       },
       {
-        "name": "khalebhamar mohalla",
+        "name": "khalebhanvar",
         "uuid": "706c03d6-51dc-43d7-85fd-48957ac6aef3"
       },
       {
@@ -621,7 +627,7 @@
         "uuid": "0f72b276-f939-49ec-95c7-780a24b61d76"
       },
       {
-        "name": "jarrakhodra",
+        "name": "jarratola",
         "uuid": "5b3abde2-70bf-4b5d-a306-e16ac3ad4d5e"
       },
       {
@@ -675,6 +681,10 @@
       {
         "name": "bandha",
         "uuid": "bd29254c-9ef3-4637-a1d5-3bb072195d67"
+      },
+      {
+        "name": "chhatenitola",
+        "uuid": "12485669-c8a7-407d-a934-8a046db71050"
       },
       {
         "name": "Other",

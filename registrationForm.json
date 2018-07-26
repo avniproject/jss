@@ -4,9 +4,64 @@
   "formType": "IndividualProfile",
   "formElementGroups": [
     {
+      "uuid": "81c6d146-9904-42e5-bf35-d6ec9614b2c0",
+      "name": "Address Details",
+      "displayOrder": 1,
+      "display": "Address Details",
+      "formElements": [
+        {
+          "name": "Mohalla",
+          "uuid": "1b2af780-1b37-4d92-9851-735a7a038204",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "3d95a3b6-b6a2-4335-a680-e14095cd9dfb",
+            "comment": "Mohalla"
+          },
+          "mandatory": true,
+          "displayOrder": 1
+        },
+        {
+          "name": "Other mohalla (Please specify)",
+          "uuid": "02f55d49-cb18-4247-a26e-63f9b9d9ff47",
+          "keyValues": [],
+          "concept": {
+            "uuid": "14d5416b-eb30-4261-97db-f8e4935ad168",
+            "comment": "Mohalla"
+          },
+          "mandatory": true,
+          "displayOrder": 1.1
+        },
+        {
+          "name": "Gram Panchayat",
+          "uuid": "d95addb4-137d-4181-8b49-a5fb46f8a66f",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "d6bb1543-0c1c-4c01-bd47-3883701d945b",
+            "comment": "Gram Panchayat"
+          },
+          "mandatory": true,
+          "displayOrder": 2
+        },
+        {
+          "name": "Other Gram panchayat (Please specify)",
+          "uuid": "4bca7345-4676-402b-91e4-0cd9e483050c",
+          "keyValues": [],
+          "concept": {
+            "uuid": "d7e88b8c-77c0-4643-a852-4398d681d37f",
+            "comment": "Other Gram panchayat"
+          },
+          "mandatory": true,
+          "displayOrder": 2.1
+        }
+
+      ]
+    },
+    {
       "uuid": "a3a20e49-ef6c-4748-9cf3-c01ed9c8bdd8",
       "name": "Personal Details",
-      "displayOrder": 1,
+      "displayOrder": 2,
       "display": "Personal Details",
       "formElements": [
         {
@@ -107,7 +162,7 @@
     {
       "uuid": "600d3e05-756b-4bf4-803c-004fac749531",
       "name": "Socio-Economic Details",
-      "displayOrder": 2,
+      "displayOrder": 3,
       "display": "Socio-Economic Details",
       "formElements": [
         {

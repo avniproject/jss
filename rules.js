@@ -92,6 +92,18 @@ class RegistrationHandlerJSS {
             .getFormElementsStatuses(new RegistrationHandlerJSS(), individual, formElementGroup);
     }
 
+    otherMohallaPleaseSpecify(individual, formElement) {
+        const statusBuilder = this._getStatusBuilder(individual, formElement);
+        statusBuilder.show().when.valueInRegistration("Mohalla").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    otherGramPanchayatPleaseSpecify(individual, formElement) {
+        const statusBuilder = this._getStatusBuilder(individual, formElement);
+        statusBuilder.show().when.valueInRegistration("Gram panchayat").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
     otherSubCastePleaseSpecify(individual, formElement) {
         const statusBuilder = this._getStatusBuilder(individual, formElement);
         statusBuilder.show().when.valueInRegistration("Sub Caste").containsAnswerConceptName("Other");

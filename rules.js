@@ -64,6 +64,9 @@ class GMVisitScheduleJSS {
 @GMCancelVisitSchedule("f58963fe-87d5-4344-ad5e-9770f89d60cf", "JSS Growth Monitoring Next Visit", 100.0)
 class GMCancelVisitScheduleJSS {
     static exec(programEncounter, visitSchedule = [], scheduleConfig) {
+        if(!programEncounter.programEnrolment.isActive){
+            return [];
+        }
         const scheduleBuilder = new VisitScheduleBuilder({
             programEnrolment: programEncounter.programEnrolment
         });

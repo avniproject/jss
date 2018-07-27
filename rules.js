@@ -19,7 +19,6 @@ const AnthropometryViewFilter = RuleFactory("d062907a-690c-44ca-b699-f8b2f688b07
 @EnrolmentVisitSchedule("4603fabd-b1f0-4106-9673-2ce397cbdf2c", "JSS Growth Monitoring First Visit", 100.0)
 class EnrolmentVisitScheduleJSS {
     static exec(programEnrolment, visitSchedule = [], scheduleConfig) {
-        console.log('came to EnrolmentVisitSchedule');
         const scheduleBuilder = new VisitScheduleBuilder({
             programEnrolment: programEnrolment
         });
@@ -154,10 +153,11 @@ class ChildEnrolmentHandlerJSS {
 class AnthropometryHandlerJSS {
     height(programEncounter, formElement) {
         const lastEncounterWithHeight = programEncounter.programEnrolment.findLatestPreviousEncounterWithObservationForConcept(programEncounter, "Height");
-        const lastCapturedHeightDate = _.get(lastEncounterWithHeight, "encounterDateTime", moment(new Date()).subtract(7, 'months').toDate());
-        const diff = moment(_.defaults(programEncounter.encounterDateTime, new Date()))
-            .diff(moment(lastCapturedHeightDate), 'months', true);
-        return new FormElementStatus(formElement.uuid, diff > 5);
+        const heightNeverCapturedBefore = _.isNil(lastEncounterWithHeight);
+        const ageInMonths = programEncounter.programEnrolment.individual.getAgeInMonths(programEncounter.encounterDateTime, false);
+        const ageInMonthMultipleOf6 = ((ageInMonths % 6) === 0);
+        var heightToBeCapturedThisTime = (heightNeverCapturedBefore || ageInMonthMultipleOf6);
+        return new FormElementStatus(formElement.uuid, heightToBeCapturedThisTime);
     }
 
     static exec(programEncounter, formElementGroup) {

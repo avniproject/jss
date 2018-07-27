@@ -22,17 +22,6 @@
           "displayOrder": 1
         },
         {
-          "name": "Other mohalla (Please specify)",
-          "uuid": "02f55d49-cb18-4247-a26e-63f9b9d9ff47",
-          "keyValues": [],
-          "concept": {
-            "uuid": "14d5416b-eb30-4261-97db-f8e4935ad168",
-            "comment": "Mohalla"
-          },
-          "mandatory": true,
-          "displayOrder": 1.1
-        },
-        {
           "name": "Gram Panchayat",
           "uuid": "d95addb4-137d-4181-8b49-a5fb46f8a66f",
           "keyValues": [],

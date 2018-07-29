@@ -204,8 +204,8 @@
           "type": "SingleSelect",
           "keyValues": [],
           "concept": {
-            "uuid": "add96a34-28b6-41ec-8d1b-d3b7e4eb9810",
-            "comment": "Economic Status"
+            "uuid": "476a0b71-485b-4a0a-ba6f-4f3cf13568ca",
+            "comment": "Ration Card"
           },
           "displayOrder": 6
         },

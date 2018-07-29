@@ -13,6 +13,12 @@
           "type": "Village"
         },
         {
+          "uuid": "33490f6b-21b7-462f-a356-daea14f4893e",
+          "name": "Sarai",
+          "level": 1,
+          "type": "Village"
+        },
+        {
           "uuid": "53afbfae-06f1-445e-9789-2e07f73357b1",
           "name": "Tarang",
           "level": 1,
@@ -232,12 +238,6 @@
       "type": "Village",
       "addressLevels": [
         {
-          "uuid": "33490f6b-21b7-462f-a356-daea14f4893e",
-          "name": "Sarai",
-          "level": 1,
-          "type": "Village"
-        },
-        {
           "uuid": "fcb313d4-b776-467e-8378-b412fceaae25",
           "name": "Khosurgod",
           "level": 1,
@@ -290,7 +290,14 @@
           "name": "Jairhi",
           "level": 1,
           "type": "Village"
+        },
+        {
+          "uuid": "714a19fd-2370-4e2b-82e0-44b847f6cc11",
+          "name": "Karoundi",
+          "level": 1,
+          "type": "Village"
         }
+
       ]
     }
   ]

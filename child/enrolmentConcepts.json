@@ -56,6 +56,26 @@
     "uuid": "7a72371a-7a29-4c2e-a909-53abc8552ba7"
   },
   {
+    "name": "Payari",
+    "uuid": "e94e33c6-776a-484c-9a99-78eba5b15b52"
+  },
+  {
+    "name": "Katurdona",
+    "uuid": "5bcb0fd9-4d77-4783-97b3-59809ad52ada"
+  },
+  {
+    "name": "Khalebhanvar",
+    "uuid": "dfb30c2b-7875-459d-9ebd-6b8eed70e9fc"
+  },
+  {
+    "name": "Samudayik Bhavan",
+    "uuid": "d0da4dc0-b5fc-4c09-bcf0-ea9619af51a1"
+  },
+  {
+    "name": "Chatua",
+    "uuid": "ab88a8fa-8e83-463e-ac58-602cf9775341"
+  },
+  {
     "name": "Phulwari",
     "uuid": "6129d59e-17ee-4e0d-a48d-df00b0df326b",
     "dataType": "Coded",
@@ -119,6 +139,26 @@
       {
         "name": "Upartola",
         "uuid": "7a72371a-7a29-4c2e-a909-53abc8552ba7"
+      },
+      {
+        "name": "Payari",
+        "uuid": "e94e33c6-776a-484c-9a99-78eba5b15b52"
+      },
+      {
+        "name": "Katurdona",
+        "uuid": "5bcb0fd9-4d77-4783-97b3-59809ad52ada"
+      },
+      {
+        "name": "Khalebhanvar",
+        "uuid": "dfb30c2b-7875-459d-9ebd-6b8eed70e9fc"
+      },
+      {
+        "name": "Samudayik Bhavan",
+        "uuid": "d0da4dc0-b5fc-4c09-bcf0-ea9619af51a1"
+      },
+      {
+        "name": "Chatua",
+        "uuid": "ab88a8fa-8e83-463e-ac58-602cf9775341"
       }
     ]
   },

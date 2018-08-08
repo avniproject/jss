@@ -44,7 +44,7 @@ class GMVisitScheduleJSS {
         });
         const currentDate = moment(encounterDateTime).date();
         const dayOfMonth = programEnrolment.findObservation("Day of month for growth monitoring visit").getValue();
-        const month = currentDate >= dayOfMonth ? moment(encounterDateTime).month() + 1 : moment(encounterDateTime).month();
+        const month =  moment(encounterDateTime).month() + 1 ;
         const earliestDate = moment(encounterDateTime).month(month).date(dayOfMonth).toDate();
         const maxDate = moment(encounterDateTime).month(month).date(dayOfMonth).add(3, 'days').toDate();
         visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
@@ -72,7 +72,7 @@ class GMCancelVisitScheduleJSS {
         const scheduledDateTime = programEncounter.earliestVisitDateTime;
         const scheduledDate = moment(scheduledDateTime).date();
         const dayOfMonth = programEncounter.programEnrolment.findObservation("Day of month for growth monitoring visit").getValue();
-        const month = scheduledDate >= dayOfMonth ? moment(scheduledDateTime).month() + 1 : moment(scheduledDateTime).month();
+        const month = moment(scheduledDateTime).month() + 1 ;
         const earliestDate = moment(scheduledDateTime).month(month).date(dayOfMonth).toDate();
         const maxDate = moment(scheduledDateTime).month(month).date(dayOfMonth).add(3, 'days').toDate();
         visitSchedule.forEach((vs) => scheduleBuilder.add(vs));

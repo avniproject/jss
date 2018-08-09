@@ -73,14 +73,14 @@
           "type": "Village"
         },
         {
-          "uuid": "cdb0ab1b-d610-4d16-8fdf-d33a1aef339f",
-          "name": "Tithi",
+          "uuid": "37f22efe-233b-4242-9fd6-93d6a8cacb5a",
+          "name": "Ramtola",
           "level": 1,
           "type": "Village"
         },
         {
-          "uuid": "7d6bfdb4-75d6-481f-a398-b87182df2694",
-          "name": "Jaithari",
+          "uuid": "b0b45b4d-740e-4d7d-b6ac-686d31aba162",
+          "name": "Goratola",
           "level": 1,
           "type": "Village"
         }
@@ -146,14 +146,14 @@
           "type": "Village"
         },
         {
-          "uuid": "ef893d61-1c32-4706-bc6c-9fc46cb1a272",
-          "name": "Thunguni",
+          "uuid": "cdb0ab1b-d610-4d16-8fdf-d33a1aef339f",
+          "name": "Tithi",
           "level": 1,
           "type": "Village"
         },
         {
-          "uuid": "a2079e78-2df0-4541-b1b4-0d6c15c09878",
-          "name": "Duradhar",
+          "uuid": "7d6bfdb4-75d6-481f-a398-b87182df2694",
+          "name": "Jaithari",
           "level": 1,
           "type": "Village"
         }
@@ -229,7 +229,20 @@
           "name": "Bijora",
           "level": 1,
           "type": "Village"
+        },
+        {
+          "uuid": "ef893d61-1c32-4706-bc6c-9fc46cb1a272",
+          "name": "Thunguni",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "a2079e78-2df0-4541-b1b4-0d6c15c09878",
+          "name": "Duradhar",
+          "level": 1,
+          "type": "Village"
         }
+
       ]
     },
     {

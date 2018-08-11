@@ -32,7 +32,7 @@
         },
         {
           "uuid": "e5781368-9ad0-4b6c-8843-6258fc823200",
-          "name": "Khalebhamar",
+          "name": "Khalebhanvar",
           "level": 1,
           "type": "Village"
         },
@@ -56,7 +56,7 @@
         },
         {
           "uuid": "5939c21c-372f-455a-9869-56d6c4d4fe67",
-          "name": "Piprah",
+          "name": "Piparha",
           "level": 1,
           "type": "Village"
         },
@@ -69,18 +69,6 @@
         {
           "uuid": "2cfb9e6d-621c-4307-b7bf-81e3f84732a7",
           "name": "Sital pani",
-          "level": 1,
-          "type": "Village"
-        },
-        {
-          "uuid": "37f22efe-233b-4242-9fd6-93d6a8cacb5a",
-          "name": "Ramtola",
-          "level": 1,
-          "type": "Village"
-        },
-        {
-          "uuid": "b0b45b4d-740e-4d7d-b6ac-686d31aba162",
-          "name": "Goratola",
           "level": 1,
           "type": "Village"
         }
@@ -154,6 +142,18 @@
         {
           "uuid": "7d6bfdb4-75d6-481f-a398-b87182df2694",
           "name": "Jaithari",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "ec06d15b-aa33-4ad8-9235-15fc92736d9f",
+          "name": "Sarfa",
+          "level": 1,
+          "type": "Village"
+        },
+        {
+          "uuid": "61cf9090-0f3c-4026-907d-295f452d98ae",
+          "name": "Ahirgawan",
           "level": 1,
           "type": "Village"
         }

@@ -1,18 +1,18 @@
 [
   {
-    "name": "Dongri tola",
+    "name": "Dongritola",
     "uuid": "3bb72aab-eca5-494a-b5da-bf04f784adf1"
   },
   {
-    "name": "Talva tola",
+    "name": "Talvatola",
     "uuid": "4e0055f8-f4c9-44b2-95c3-6d0293db52c2"
   },
   {
-    "name": "Chhateni tola",
+    "name": "Chhatenitola",
     "uuid": "1f51ed3b-cd8c-4054-aa0d-7a12499707ed"
   },
   {
-    "name": "Khodra tola",
+    "name": "Khodratola",
     "uuid": "3f6763eb-0082-44bd-8ceb-2ad991dff4a3"
   },
   {
@@ -20,23 +20,23 @@
     "uuid": "842c435e-d3e1-4ab2-b7e4-aa286f7ae76c"
   },
   {
-    "name": "Dadra silvari",
+    "name": "Dadra Silvari",
     "uuid": "e1947382-e6a2-4e30-8eee-a1f176cb49ef"
   },
   {
-    "name": "Tikra tola",
+    "name": "Tikratola",
     "uuid": "92dde0ce-5c31-4812-9bc3-477361001359"
   },
   {
-    "name": "Piparha tola",
+    "name": "Piparhatola",
     "uuid": "cb7fe53c-1ef9-419b-ac29-e1a06f3020ad"
   },
   {
-    "name": "Karhai tola",
+    "name": "Karhaitola",
     "uuid": "94c30041-4cc9-46f8-9997-e71f7e4e0c04"
   },
   {
-    "name": "Jarra tola",
+    "name": "Jarratola",
     "uuid": "5af5ed69-44e9-4d65-b73f-7425507b462e"
   },
   {
@@ -44,11 +44,11 @@
     "uuid": "5ef20a99-7cf2-4ca7-b65c-3d92be1a1a30"
   },
   {
-    "name": "Tagri tola",
+    "name": "Tagritola",
     "uuid": "f2f3c0e6-2f71-46c9-bd4d-3364d66d34e4"
   },
   {
-    "name": "School tola",
+    "name": "Schooltola",
     "uuid": "6088b28d-1218-4e52-8243-e9e28b1be59c"
   },
   {
@@ -76,24 +76,77 @@
     "uuid": "ab88a8fa-8e83-463e-ac58-602cf9775341"
   },
   {
+    "name": "Chatua 2",
+    "uuid": "1eb48800-2315-45df-97fd-5eb5d44746f7"
+  },
+  {
+    "name": "Ramtola",
+    "uuid": "4a31cd46-3374-433a-97c4-e4ab3f1110cf"
+  },
+  {
+    "name": "Goratola",
+    "uuid": "3d46d442-4568-4127-8c64-59dd2c4bfe99"
+  },
+  {
+    "name": "Peepaltola",
+    "uuid": "e48d6a13-c467-4095-b057-8a14357a6442"
+  },
+  {
+    "name": "Baigantola",
+    "uuid": "3c37178b-bfe5-426d-9a90-9ced65946fec"
+  },
+  {
+    "name": "Panchayat Bhavan",
+    "uuid": "5c63b245-c2e9-4b36-9d7c-04f8843ea75e"
+  },
+  {
+    "name": "Mahuatola",
+    "uuid": "7a6a9650-2291-44be-8326-3449b94349b1"
+  },
+  {
+    "name": "Bhumiyatola",
+    "uuid": "3fa4c8e5-72ab-4395-a564-46bfe0ff134e"
+  },
+  {
+    "name": "Kharsolihantola",
+    "uuid": "f65ff638-9ab6-418b-8615-6b672e64b63c"
+  },
+  {
+    "name": "Majhuatola",
+    "uuid": "26f411f9-5f2c-45d6-9a12-e17855a59270"
+  },
+  {
+    "name": "Pateratola",
+    "uuid": "ff7909f8-733d-4578-acfb-edfa02fb4042"
+  },
+  {
+    "name": "Saraihatola",
+    "uuid": "8ccf6514-6e9f-4ca8-a01b-d3f0fad445da"
+  },
+  {
+    "name": "Batiya",
+    "uuid": "d9cd5cb5-5d14-4d00-90aa-17f31d91c98e"
+  },
+
+  {
     "name": "Phulwari",
     "uuid": "6129d59e-17ee-4e0d-a48d-df00b0df326b",
     "dataType": "Coded",
     "answers": [
       {
-        "name": "Dongri tola",
+        "name": "Dongritola",
         "uuid": "3bb72aab-eca5-494a-b5da-bf04f784adf1"
       },
       {
-        "name": "Talva tola",
+        "name": "Talvatola",
         "uuid": "4e0055f8-f4c9-44b2-95c3-6d0293db52c2"
       },
       {
-        "name": "Chhateni tola",
+        "name": "Chhatenitola",
         "uuid": "1f51ed3b-cd8c-4054-aa0d-7a12499707ed"
       },
       {
-        "name": "Khodra tola",
+        "name": "Khodratola",
         "uuid": "3f6763eb-0082-44bd-8ceb-2ad991dff4a3"
       },
       {
@@ -101,23 +154,23 @@
         "uuid": "842c435e-d3e1-4ab2-b7e4-aa286f7ae76c"
       },
       {
-        "name": "Dadra silvari",
+        "name": "Dadra Silvari",
         "uuid": "e1947382-e6a2-4e30-8eee-a1f176cb49ef"
       },
       {
-        "name": "Tikra tola",
+        "name": "Tikratola",
         "uuid": "92dde0ce-5c31-4812-9bc3-477361001359"
       },
       {
-        "name": "Piparha tola",
+        "name": "Piparhatola",
         "uuid": "cb7fe53c-1ef9-419b-ac29-e1a06f3020ad"
       },
       {
-        "name": "Karhai tola",
+        "name": "Karhaitola",
         "uuid": "94c30041-4cc9-46f8-9997-e71f7e4e0c04"
       },
       {
-        "name": "Jarra tola",
+        "name": "Jarratola",
         "uuid": "5af5ed69-44e9-4d65-b73f-7425507b462e"
       },
       {
@@ -125,7 +178,7 @@
         "uuid": "5ef20a99-7cf2-4ca7-b65c-3d92be1a1a30"
       },
       {
-        "name": "Tagri tola",
+        "name": "Tagritola",
         "uuid": "f2f3c0e6-2f71-46c9-bd4d-3364d66d34e4"
       },
       {
@@ -149,7 +202,7 @@
         "uuid": "5bcb0fd9-4d77-4783-97b3-59809ad52ada"
       },
       {
-        "name": "Khalebhanvar",
+        "name": "Khalebhamar",
         "uuid": "dfb30c2b-7875-459d-9ebd-6b8eed70e9fc"
       },
       {
@@ -159,6 +212,58 @@
       {
         "name": "Chatua",
         "uuid": "ab88a8fa-8e83-463e-ac58-602cf9775341"
+      },
+      {
+        "name": "Chatua 2",
+        "uuid": "1eb48800-2315-45df-97fd-5eb5d44746f7"
+      },
+      {
+        "name": "Ramtola",
+        "uuid": "4a31cd46-3374-433a-97c4-e4ab3f1110cf"
+      },
+      {
+        "name": "Goratola",
+        "uuid": "3d46d442-4568-4127-8c64-59dd2c4bfe99"
+      },
+      {
+        "name": "Peepaltola",
+        "uuid": "e48d6a13-c467-4095-b057-8a14357a6442"
+      },
+      {
+        "name": "Baigantola",
+        "uuid": "3c37178b-bfe5-426d-9a90-9ced65946fec"
+      },
+      {
+        "name": "Panchayat Bhavan",
+        "uuid": "5c63b245-c2e9-4b36-9d7c-04f8843ea75e"
+      },
+      {
+        "name": "Mahuatola",
+        "uuid": "7a6a9650-2291-44be-8326-3449b94349b1"
+      },
+      {
+        "name": "Bhumiyatola",
+        "uuid": "3fa4c8e5-72ab-4395-a564-46bfe0ff134e"
+      },
+      {
+        "name": "Kharsolihantola",
+        "uuid": "f65ff638-9ab6-418b-8615-6b672e64b63c"
+      },
+      {
+        "name": "Majhuatola",
+        "uuid": "26f411f9-5f2c-45d6-9a12-e17855a59270"
+      },
+      {
+        "name": "Pateratola",
+        "uuid": "ff7909f8-733d-4578-acfb-edfa02fb4042"
+      },
+      {
+        "name": "Saraihatola",
+        "uuid": "8ccf6514-6e9f-4ca8-a01b-d3f0fad445da"
+      },
+      {
+        "name": "Batiya",
+        "uuid": "d9cd5cb5-5d14-4d00-90aa-17f31d91c98e"
       }
     ]
   },

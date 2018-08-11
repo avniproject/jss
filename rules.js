@@ -106,7 +106,7 @@ class RegistrationHandlerJSS {
         return FormElementsStatusHelper
             .getFormElementsStatuses(new RegistrationHandlerJSS(), individual, formElementGroup);
     }
-    
+
     otherGramPanchayatPleaseSpecify(individual, formElement) {
         const statusBuilder = this._getStatusBuilder(individual, formElement);
         statusBuilder.show().when.valueInRegistration("Gram panchayat").containsAnswerConceptName("Other");
@@ -136,6 +136,55 @@ class RegistrationHandlerJSS {
     }
 }
 
+const VILLAGE_PHULWARI_MAPPING = new Map([["Payari", ["Payari"]],
+    ["Sarai", ["Ramtola","Goratola"]],
+    ["Tarang", ["Peepaltola"]],
+    ["Katurdona", ["Katurdona"]],
+    ["Khalebhanvar", ["Khalebhanvar"]],
+    ["Khamroud Village", ["Baigantola","Panchayat Bhavan"]],
+    ["Tankitola", ["Samudayik Bhavan"]],
+    ["Chatua", ["Chatua", "Chatua 2"]],
+    ["Piparha", ["Piparhatola"]],
+    ["Tarera", ["Chhatenitola"]],
+    ["Sital pani", ["Khodratola"]],
+    ["Mithu mahua", ["Jarratola"]],
+    ["Dona", ["Karhaitola"]],
+    ["Daldali", ["Schooltola"]],
+    ["Khumni", ["Old panchayat bhavan"]],
+    ["BulhuPani", ["Tagritola"]],
+    ["Dadra Silvari", ["Dadra Silvari"]],
+    ["Neeche Silvari", ["Tikratola"]],
+    ["Kodar Village", ["Tikratola"]],
+    ["Khirni", ["Upartola"]],
+    ["Tithi", ["Talvatola"]],
+    ["Jaithari", ["Dongritola"]],
+    ["Badi Tumi", ["Kharsolihantola"]],
+    ["Kharsol", [""]],
+    ["Chirpani", ["Schooltola"]],
+    ["Dabhaniya", ["Schooltola"]],
+    ["Majhauli", ["Majhuatola"]],
+    ["Kui", [""]],
+    ["Padmania Village", ["Pateratola"]],
+    ["Gijri", ["Saraihatola"]],
+    ["Amoda", ["Schooltola"]],
+    ["Batiya", ["Batiya"]],
+    ["Bijora", [""]],
+    ["Thunguni", ["Mahuatola"]],
+    ["Duradhar", ["Bhumiyatola"]],
+    ["Khosurgod", [""]],
+    ["Chottibairagi", [""]],
+    ["Badibairagi", [""]],
+    ["Alwar Village", [""]],
+    ["Adwar", [""]],
+    ["Lamsarai", [""]],
+    ["Ghata", [""]],
+    ["Hathbandha", [""]],
+    ["Jairhi", [""]],
+    ["Karoundi", [""]],
+    ["Sarfa", ["Old anganwadi kendra"]],
+    ["Ahirgawan", ["Panika"]]
+]);
+
 
 @EnrolmentViewFilter("520bf19c-cce8-4db5-8ab8-1b8ad57d0b75", "JSS Child Enrolment View Filter", 10.0)
 class ChildEnrolmentHandlerJSS {
@@ -155,6 +204,17 @@ class ChildEnrolmentHandlerJSS {
         statusBuilder.show().when.valueInEnrolment("Chronic Illness").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
+
+    enrolTo(programEnrolment, formElement) {
+        const statusBuilder = this._getStatusBuilder(programEnrolment, formElement);
+        var villagePhulwariMappingClone = new Map(VILLAGE_PHULWARI_MAPPING);
+        villagePhulwariMappingClone.delete(programEnrolment.individual.lowestAddressLevel.name);
+        var flatten = _.flatten([...villagePhulwariMappingClone.values()]).filter((p)=>!_.isEmpty(p));
+        statusBuilder.skipAnswers.apply(statusBuilder, flatten);
+        return statusBuilder.build();
+    }
+
+
 
     _getStatusBuilder(programEnrolment, formElement) {
         return new FormElementStatusBuilder({programEnrolment, formElement});

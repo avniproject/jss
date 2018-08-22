@@ -8,6 +8,7 @@ import {
     VisitScheduleBuilder
 } from 'rules-config/rules';
 
+
 const RegistrationViewFilter = RuleFactory("e0b78ca2-1205-4e84-9f9b-d97c9b78a917", "ViewFilter");
 const EnrolmentViewFilter = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "ViewFilter");
 const EnrolmentVisitSchedule = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "VisitSchedule");
@@ -205,11 +206,16 @@ class ChildEnrolmentHandlerJSS {
         return statusBuilder.build();
     }
 
+
     enrolTo(programEnrolment, formElement) {
         const statusBuilder = this._getStatusBuilder(programEnrolment, formElement);
         var villagePhulwariMappingClone = new Map(VILLAGE_PHULWARI_MAPPING);
+        var notToRemove = villagePhulwariMappingClone.get(programEnrolment.individual.lowestAddressLevel.name);
         villagePhulwariMappingClone.delete(programEnrolment.individual.lowestAddressLevel.name);
-        var flatten = _.flatten([...villagePhulwariMappingClone.values()]).filter((p)=>!_.isEmpty(p));
+
+        var oldflatten = _.flatten([...villagePhulwariMappingClone.values()]).filter((p) => !_.isEmpty(p));
+
+        const flatten = oldflatten.filter((val) => val !== notToRemove[0]);
         statusBuilder.skipAnswers.apply(statusBuilder, flatten);
         return statusBuilder.build();
     }

@@ -208,7 +208,7 @@
     "dataType": "Text"
   },
   {
-    "name": "Mitthumahua",
+    "name": "Mithu mahua",
     "uuid": "dc42945d-90f4-4160-9f28-c99399481c84",
     "dataType": "NA"
   },
@@ -228,7 +228,7 @@
     "dataType": "NA"
   },
   {
-    "name": "Kumhani",
+    "name": "Khumni",
     "uuid": "5ab7807d-f295-41e3-8b5a-094006b5b103",
     "dataType": "NA"
   },
@@ -303,7 +303,7 @@
     "dataType": "NA"
   },
   {
-    "name": "Ahlwar",
+    "name": "Alwar",
     "uuid": "026756a0-87b1-4aff-b10d-48ecf5144613",
     "dataType": "NA"
   },
@@ -338,6 +338,22 @@
     "dataType": "NA"
   },
   {
+    "name": "Gijri",
+    "uuid": "d8cf2f07-65c0-45dc-b0c9-6f8fc90851a2",
+    "dataType": "NA"
+  },
+  {
+    "name": "Bijapuri 2",
+    "uuid": "a83983d1-3fe0-4d50-98f3-3d5f767ca9f3",
+    "dataType": "NA"
+  },
+  {
+    "name": "Lamsarai",
+    "uuid": "618212a2-bbc3-484b-8bd9-48f851baa642",
+    "dataType": "NA"
+  },
+
+  {
     "uuid": "d6bb1543-0c1c-4c01-bd47-3883701d945b",
     "name": "Gram panchayat",
     "dataType": "Coded",
@@ -347,7 +363,7 @@
         "uuid": "c6e3c748-a2c2-4663-af41-48bdb9e7fa12"
       },
       {
-        "name": "Ahlwar",
+        "name": "Alwar",
         "uuid": "026756a0-87b1-4aff-b10d-48ecf5144613"
       },
       {
@@ -403,7 +419,7 @@
         "uuid": "eab32ed0-6e08-48fe-b987-106f0d11cdfa"
       },
       {
-        "name": "Kumhani",
+        "name": "Khumni",
         "uuid": "5ab7807d-f295-41e3-8b5a-094006b5b103"
       },
       {
@@ -411,7 +427,7 @@
         "uuid": "efa85385-38a5-4ee8-8d71-7445513abbe3"
       },
       {
-        "name": "Mitthumahua",
+        "name": "Mithu mahua",
         "uuid": "dc42945d-90f4-4160-9f28-c99399481c84"
       },
       {
@@ -445,6 +461,18 @@
       {
         "name": "Ufrikala",
         "uuid": "98a3d527-7d39-45a8-b81d-a080f93e23e9"
+      },
+      {
+        "name": "Gijri",
+        "uuid": "d8cf2f07-65c0-45dc-b0c9-6f8fc90851a2"
+      },
+      {
+        "name": "Bijapuri 2",
+        "uuid": "a83983d1-3fe0-4d50-98f3-3d5f767ca9f3"
+      },
+      {
+        "name": "Lamsarai",
+        "uuid": "618212a2-bbc3-484b-8bd9-48f851baa642"
       },
       {
         "name": "Other",

@@ -44,7 +44,6 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@child/enrolmentConcepts.json)
 
 deploy_catchments:
-	$(call _curl,POST,locations,@locations.json)
 	$(call _curl,POST,catchments,@catchments.json)
 
 deploy_refdata: deploy_concepts deploy_catchments

@@ -60,7 +60,7 @@ class GMVisitScheduleJSS {
             monthForNextVisit = moment(scheduledDateTime).month();
         }
         const earliestDate = moment(scheduledDateTime).month(monthForNextVisit).date(dayOfMonth).toDate();
-        const maxDate = moment(encounterDateTime).month(monthForNextVisit).date(dayOfMonth).add(3, 'days').toDate();
+        const maxDate = moment(scheduledDateTime).month(monthForNextVisit).date(dayOfMonth).add(3, 'days').toDate();
         visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
         scheduleBuilder.add({
                 name: "Growth Monitoring Visit",

@@ -32,6 +32,10 @@ define _curl
 	@echo
 endef
 
+auth:
+	$(if $(poolId),$(eval token:=$(shell node scripts/token.js $(poolId) $(clientId) $(username) $(password))))
+	echo $(token)
+
 # <create_org>
 create_org: ## Create JSS org and user+privileges
 	psql -U$(su) openchs < create_organisation.sql
@@ -59,16 +63,15 @@ deploy_refdata: deploy_concepts deploy_catchments
 
 # <deploy>
 deploy: deploy_refdata deploy_rules##
-# </deploy>
 
-# <deploy>
 deploy_rules: ##
 	node index.js "$(server_url)" "$(token)"
-# </deploy>
 
-# <c_d>
 create_deploy: create_org deploy ##
-# </c_d>
+
+deploy_staging: deps
+	make auth deploy poolId=ap-south-1_tuRfLFpm1 clientId=93kp4dj29cfgnoerdg33iev0v server=https://staging.openchs.org port=443 username=admin password=$(STAGING_ADMIN_USER_PASSWORD)
+# </deploy>
 
 deps:
 	npm i

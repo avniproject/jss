@@ -303,20 +303,28 @@ class ChildEnrolmentHandlerJSS {
 }
 
 
-@AnthropometryViewFilter("ecccd36f-66d8-4e2a-bde1-48be86c3ba20", "Don't capture height for 6 months", 1000.0, {})
+@AnthropometryViewFilter("ecccd36f-66d8-4e2a-bde1-48be86c3ba20", "Reason for not capturing height", 1000.0, {})
 class AnthropometryHandlerJSS {
-    height(programEncounter, formElement) {
-        const lastEncounterWithHeight = programEncounter.programEnrolment.findLatestPreviousEncounterWithObservationForConcept(programEncounter, "Height");
-        const heightNeverCapturedBefore = _.isNil(lastEncounterWithHeight);
-        const ageInMonths = programEncounter.programEnrolment.individual.getAgeInMonths(programEncounter.encounterDateTime, false);
-        const ageInMonthMultipleOf6 = ((ageInMonths % 6) === 0);
-        var heightToBeCapturedThisTime = (heightNeverCapturedBefore || ageInMonthMultipleOf6);
-        return new FormElementStatus(formElement.uuid, heightToBeCapturedThisTime);
+    static exec(programEnrolment, formElementGroup) {
+        return FormElementsStatusHelper
+            .getFormElementsStatuses(new AnthropometryHandlerJSS(), programEnrolment, formElementGroup);
     }
 
-    static exec(programEncounter, formElementGroup) {
-        return FormElementsStatusHelper
-            .getFormElementsStatuses(new AnthropometryHandlerJSS(), programEncounter, formElementGroup);
+    height(programEncounter, formElement) {
+        const statusBuilder = this._getStatusBuilder(programEncounter, formElement);
+        statusBuilder.show().when.valueInEncounter("Skip capturing height").is.notDefined;
+        return statusBuilder.build();
+    }
+
+    reasonForSkippingHeightCapture(programEncounter, formElement) {
+        const statusBuilder = this._getStatusBuilder(programEncounter, formElement);
+        statusBuilder.show().when.valueInEncounter("Skip capturing height").is.yes;
+        return statusBuilder.build();
+    }
+
+
+    _getStatusBuilder(programEncounter, formElement) {
+        return new FormElementStatusBuilder({programEncounter, formElement});
     }
 }
 

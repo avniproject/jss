@@ -14,8 +14,6 @@ const EnrolmentViewFilter = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", 
 const EnrolmentVisitSchedule = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "VisitSchedule");
 const GMVisitSchedule = RuleFactory("d062907a-690c-44ca-b699-f8b2f688b075", "VisitSchedule");
 const GMCancelVisitSchedule = RuleFactory("aac5c57a-aa01-49bb-ad20-70536dd2907f", "VisitSchedule");
-const AnthropometryViewFilter = RuleFactory("d062907a-690c-44ca-b699-f8b2f688b075", "ViewFilter");
-
 
 @EnrolmentVisitSchedule("4603fabd-b1f0-4106-9673-2ce397cbdf2c", "JSS Growth Monitoring First Visit", 100.0)
 class EnrolmentVisitScheduleJSS {
@@ -303,30 +301,5 @@ class ChildEnrolmentHandlerJSS {
 }
 
 
-@AnthropometryViewFilter("ecccd36f-66d8-4e2a-bde1-48be86c3ba20", "Reason for not capturing height", 1000.0, {})
-class AnthropometryHandlerJSS {
-    static exec(programEnrolment, formElementGroup) {
-        return FormElementsStatusHelper
-            .getFormElementsStatuses(new AnthropometryHandlerJSS(), programEnrolment, formElementGroup);
-    }
-
-    height(programEncounter, formElement) {
-        const statusBuilder = this._getStatusBuilder(programEncounter, formElement);
-        statusBuilder.show().when.valueInEncounter("Skip capturing height").is.notDefined;
-        return statusBuilder.build();
-    }
-
-    reasonForSkippingHeightCapture(programEncounter, formElement) {
-        const statusBuilder = this._getStatusBuilder(programEncounter, formElement);
-        statusBuilder.show().when.valueInEncounter("Skip capturing height").is.yes;
-        return statusBuilder.build();
-    }
-
-
-    _getStatusBuilder(programEncounter, formElement) {
-        return new FormElementStatusBuilder({programEncounter, formElement});
-    }
-}
-
 module.exports =
-    {RegistrationHandlerJSS, ChildEnrolmentHandlerJSS, AnthropometryHandlerJSS, EnrolmentVisitScheduleJSS, GMVisitScheduleJSS, GMCancelVisitScheduleJSS};
+    {RegistrationHandlerJSS, ChildEnrolmentHandlerJSS, EnrolmentVisitScheduleJSS, GMVisitScheduleJSS, GMCancelVisitScheduleJSS};

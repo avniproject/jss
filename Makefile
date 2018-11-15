@@ -113,6 +113,8 @@ deploy_test_users_prod: prod by_admin auth deploy_test_users #password=
 
 deploy_test_users_staging: staging by_admin auth deploy_test_users #password=
 
+deploy_test_users_dev: dev by_admin deploy_test_users
+
 deploy_users_dev: dev by_admin deploy_admin_user deploy_test_users
 
 deploy_rules_dev: dev by_org_admin deploy_rules

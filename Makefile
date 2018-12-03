@@ -1,6 +1,6 @@
 
 org_name=JSS
-org_admin_name=jss-admin
+org_admin_name=adminjss
 
 #============commonMakefile=====================================
 
@@ -130,4 +130,11 @@ deploy_staging: staging by_org_admin auth _deploy #password=
 deploy_dev_as_staging: staging deploy_dev #password=
 
 deploy_dev_as_prod: prod deploy_dev #password=
+
+_deploy_concepts:
+	$(call _curl,POST,concepts,concepts.json)
+
+deploy_concepts_dev: dev _deploy_concepts
+
+deploy_concepts_prod: prod by_org_admin auth _deploy_concepts
 

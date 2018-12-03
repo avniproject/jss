@@ -24,11 +24,7 @@ var authenticate = function (poolId, clientId, username, password) {
     })
 };
 
-<<<<<<< HEAD
-if (process.argv[2] === '' || process.argv[2] === undefined) {
-=======
 if (process.argv[2] === '' || process.argv[2] == undefined) {
->>>>>>> 2.5
     console.log("Usage: node token.js <poolId> <clientId> <username> <password>");
 } else {
     authenticate(process.argv[2], process.argv[3], process.argv[4], process.argv[5]);

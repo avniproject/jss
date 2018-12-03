@@ -138,3 +138,12 @@ deploy_concepts_dev: dev _deploy_concepts
 
 deploy_concepts_prod: prod by_org_admin auth _deploy_concepts
 
+_deploy_catchments:
+	@$(foreach item,locations catchments programs encounterTypes,\
+		$(if $(shell ls "$(item).json" 2> /dev/null),$(call _curl,POST,$(item),$(item).json);))
+
+deploy_catchment_dev: dev _deploy_catchments
+
+deploy_catchment_prod: prod by_org_admin auth _deploy_catchments
+
+

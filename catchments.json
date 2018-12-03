@@ -7,28 +7,12 @@
       "type": "Village",
       "locations": [
         {
-          "uuid": "b6eabe76-5587-40d9-a39c-4f2fae1c43b8",
-          "comment": "Payari"
-        },
-        {
-          "uuid": "33490f6b-21b7-462f-a356-daea14f4893e",
-          "comment": "Sarai"
-        },
-        {
-          "uuid": "53afbfae-06f1-445e-9789-2e07f73357b1",
-          "comment": "Tarang"
-        },
-        {
           "uuid": "50426354-f4c4-4b89-86e1-a6bcc69a98e1",
           "comment": "Katurdona"
         },
         {
           "uuid": "e5781368-9ad0-4b6c-8843-6258fc823200",
           "comment": "Khalebhanvar"
-        },
-        {
-          "uuid": "6ecfd742-d4e8-4da1-8366-447d24337bdf",
-          "comment": "Khamroud Village"
         },
         {
           "uuid": "c6a3515b-e8a0-4868-9042-acb347318759",
@@ -214,6 +198,22 @@
         {
           "uuid": "714a19fd-2370-4e2b-82e0-44b847f6cc11",
           "comment": "Karoundi"
+        },
+        {
+          "uuid": "33490f6b-21b7-462f-a356-daea14f4893e",
+          "comment": "Sarai"
+        },
+        {
+          "uuid": "b6eabe76-5587-40d9-a39c-4f2fae1c43b8",
+          "comment": "Payari"
+        },
+        {
+          "uuid": "53afbfae-06f1-445e-9789-2e07f73357b1",
+          "comment": "Tarang"
+        },
+        {
+          "uuid": "6ecfd742-d4e8-4da1-8366-447d24337bdf",
+          "comment": "Khamroud Village"
         }
       ]
     }

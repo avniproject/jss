@@ -1,13 +1,13 @@
 const moment = require("moment");
 const _ = require("lodash");
 import {
-    RuleFactory,
     FormElementsStatusHelper,
-    FormElementStatusBuilder,
     FormElementStatus,
+    FormElementStatusBuilder,
+    RuleFactory,
     VisitScheduleBuilder
 } from 'rules-config/rules';
-
+import {AlbendazoleVisitScheduleJSS, getAlbendazoleVisitSchedule, findSlot} from './AlbendazoleVisitScheduleJSS';
 
 const RegistrationViewFilter = RuleFactory("e0b78ca2-1205-4e84-9f9b-d97c9b78a917", "ViewFilter");
 const EnrolmentViewFilter = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "ViewFilter");
@@ -31,6 +31,7 @@ class EnrolmentVisitScheduleJSS {
                 maxDate: maxDate
             }
         );
+        scheduleBuilder.add(getAlbendazoleVisitSchedule(findSlot(programEnrolment.enrolmentDateTime)));
         return scheduleBuilder.getAllUnique("encounterType");
     }
 }
@@ -301,5 +302,11 @@ class ChildEnrolmentHandlerJSS {
 }
 
 
-module.exports =
-    {RegistrationHandlerJSS, ChildEnrolmentHandlerJSS, EnrolmentVisitScheduleJSS, GMVisitScheduleJSS, GMCancelVisitScheduleJSS};
+export {
+    RegistrationHandlerJSS,
+    ChildEnrolmentHandlerJSS,
+    EnrolmentVisitScheduleJSS,
+    GMVisitScheduleJSS,
+    GMCancelVisitScheduleJSS,
+    AlbendazoleVisitScheduleJSS
+};

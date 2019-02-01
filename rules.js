@@ -13,7 +13,7 @@ const RegistrationViewFilter = RuleFactory("e0b78ca2-1205-4e84-9f9b-d97c9b78a917
 const EnrolmentViewFilter = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "ViewFilter");
 const EnrolmentVisitSchedule = RuleFactory("1608c2c0-0334-41a6-aab0-5c61ea1eb069", "VisitSchedule");
 const GMVisitSchedule = RuleFactory("d062907a-690c-44ca-b699-f8b2f688b075", "VisitSchedule");
-const GMCancelVisitSchedule = RuleFactory("aac5c57a-aa01-49bb-ad20-70536dd2907f", "VisitSchedule");
+const CancelVisitSchedules = RuleFactory("aac5c57a-aa01-49bb-ad20-70536dd2907f", "VisitSchedule");
 
 @EnrolmentVisitSchedule("4603fabd-b1f0-4106-9673-2ce397cbdf2c", "JSS Growth Monitoring First Visit", 100.0)
 class EnrolmentVisitScheduleJSS {
@@ -73,7 +73,6 @@ class GMVisitScheduleJSS {
     }
 }
 
-@GMCancelVisitSchedule("f58963fe-87d5-4344-ad5e-9770f89d60cf", "JSS Growth Monitoring Next Visit", 100.0)
 class GMCancelVisitScheduleJSS {
     static exec(programEncounter, visitSchedule = [], scheduleConfig) {
         if(!programEncounter.programEnrolment.isActive){
@@ -97,6 +96,26 @@ class GMCancelVisitScheduleJSS {
             }
         );
         return scheduleBuilder.getAllUnique("encounterType");
+    }
+}
+
+const postVisitMap = {
+    'Anthropometry Assessment': GMCancelVisitScheduleJSS,
+    'Albendazole': AlbendazoleVisitScheduleJSS
+};
+
+@CancelVisitSchedules("f58963fe-87d5-4344-ad5e-9770f89d60cf", "JSS Growth Monitoring Next Visit", 100.0)
+class CancelVisitSchedulesJSS {
+    static exec(programEncounter, visitSchedule = [], scheduleConfig) {
+        let visitCancelReason = programEncounter.findCancelEncounterObservationReadableValue('Visit cancel reason');
+        if (visitCancelReason === 'Program exit') {
+            return visitSchedule;
+        }
+        let postVisit = postVisitMap[programEncounter.encounterType.name];
+        if (!_.isNil(postVisit)) {
+            return postVisit.exec(programEncounter, visitSchedule);
+        }
+        return visitSchedule;
     }
 }
 
@@ -307,6 +326,6 @@ export {
     ChildEnrolmentHandlerJSS,
     EnrolmentVisitScheduleJSS,
     GMVisitScheduleJSS,
-    GMCancelVisitScheduleJSS,
+    CancelVisitSchedulesJSS,
     AlbendazoleVisitScheduleJSS
 };

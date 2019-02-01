@@ -12,5 +12,12 @@
     "encounterTypeUUID": "117f454b-1526-4b52-a611-c557268aa33e",
     "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
     "comment": "Phulwari program (core child program), Albendazole Tracking visit"
+  },
+  {
+    "uuid": "eb27ac41-ba82-4018-9107-b1daba10b652",
+    "formUUID": "aac5c57a-aa01-49bb-ad20-70536dd2907f",
+    "encounterTypeUUID": "117f454b-1526-4b52-a611-c557268aa33e",
+    "programUUID": "352d906c-b386-496c-ba23-91b1468a5613",
+    "comment": "Phulwari program (core child program), Albendazole Tracking visit, Cancel"
   }
 ]

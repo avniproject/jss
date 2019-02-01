@@ -1,0 +1,25 @@
+{
+  "name": "Albendazole Tracking",
+  "uuid": "dc386316-a5fa-440d-88de-5cd49a1ddc1d",
+  "formType": "ProgramEncounter",
+  "formElementGroups": [
+    {
+      "uuid": "08474ac9-7171-46b1-82e8-745cee992db4",
+      "name": "Details",
+      "display": "Details",
+      "displayOrder": 1,
+      "formElements": [
+        {
+          "name": "Date of Dose given",
+          "uuid": "be8ef64a-f2c1-44b5-90a7-e586fb8c3b30",
+          "keyValues": [],
+          "concept": {
+            "uuid": "f1474aca-539f-4fd7-9826-d1672b33b344"
+          },
+          "displayOrder": 0,
+          "mandatory": true
+        }
+      ]
+    }
+  ]
+}

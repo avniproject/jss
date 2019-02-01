@@ -7,6 +7,13 @@
       "encounterType": {
         "uuid": "02c72b2b-19f0-4f75-b734-dcad5601881b"
       }
+    },
+    {
+      "uuid":"f74e74a9-550f-4328-9721-705a24692ae3",
+      "name":"Albendazole",
+      "encounterType": {
+        "uuid": "117f454b-1526-4b52-a611-c557268aa33e"
+      }
     }
   ]
 }

@@ -123,7 +123,7 @@ deploy_rules_prod: prod by_org_admin auth deploy_rules #password=
 
 deploy_rules_staging: staging by_org_admin auth deploy_rules #password=
 
-deploy_dev: dev by_org_admin _deploy
+deploy_dev: deploy_admin_user_dev dev by_org_admin _deploy
 
 deploy_prod: prod by_org_admin auth _deploy #password=
 
@@ -149,3 +149,4 @@ deploy_catchment_dev: dev _deploy_catchments
 deploy_catchment_prod: prod by_org_admin auth _deploy_catchments
 
 
+create_deploy: create_org deploy_dev deploy_test_users_dev

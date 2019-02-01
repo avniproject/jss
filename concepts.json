@@ -16,5 +16,10 @@
         "comment": "Sick"
       }
     ]
+  },
+  {
+    "name": "Date of Albendazole dosage",
+    "uuid": "f1474aca-539f-4fd7-9826-d1672b33b344",
+    "dataType": "Date"
   }
 ]

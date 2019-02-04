@@ -73,6 +73,9 @@ deploy_non_coded_concepts:
 deploy_concepts: deploy_non_coded_concepts
 	@$(foreach file,$(shell find . -iname '*concepts.json'),$(call _curl,POST,concepts,$(file));)
 
+deploy_locations:
+	@$(foreach file,$(shell find . -iname '*locations.json'),$(call _curl,POST,locations,$(file));)
+
 deploy_refdata: deploy_concepts
 	@$(foreach item,locations catchments programs encounterTypes,\
 		$(if $(shell ls "$(item).json" 2> /dev/null),$(call _curl,POST,$(item),$(item).json);))
@@ -148,5 +151,10 @@ deploy_catchment_dev: dev _deploy_catchments
 
 deploy_catchment_prod: prod by_org_admin auth _deploy_catchments
 
+deploy_locations_dev: dev by_org_admin deploy_locations
+
+deploy_locations_prod: prod by_org_admin auth deploy_locations #password=
+
+deploy_locations_staging: staging by_org_admin auth deploy_locations #password=
 
 create_deploy: create_org deploy_dev deploy_test_users_dev

@@ -8,10 +8,6 @@
     "comment": "Visit cancel reason",
     "answers": [
       {
-        "uuid": "72fd70f8-65ae-4ac4-8339-6faf455e04f5",
-        "comment": "Away from village"
-      },
-      {
         "uuid": "64f8a277-cd87-4e98-8667-c40f54c76cf6",
         "comment": "Sick"
       }

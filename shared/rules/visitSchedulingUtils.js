@@ -27,7 +27,7 @@ class albendazole {
 
     static getVisitSchedule(_earliestDate) {
         let earliestDate = moment(_earliestDate).startOf('day').toDate();
-        let maxDate = startOfNextMonth(earliestDate);
+        let maxDate = moment(earliestDate).endOf('month').toDate();
         if (moment(_earliestDate).month() === FEB) {
             return {
                 name: 'Albendazole FEB',
@@ -42,8 +42,11 @@ class albendazole {
         }
     }
 
-    static findNextSlot(earliestDate) {
-        let guessedDate = startOfNextMonth(earliestDate);
+    //it should simply be
+    //return albendazole.findSlot(moment(currentVisitScheduledDate).add(6, 'months').startOf('month').toDate())
+    //but need to test all scenarios
+    static findNextSlot(currentVisitScheduledDate) {
+        let guessedDate = startOfNextMonth(currentVisitScheduledDate);
         return albendazole.findSlot(guessedDate);
     }
 }

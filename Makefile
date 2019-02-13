@@ -77,7 +77,7 @@ deploy_locations:
 	@$(foreach file,$(shell find . -iname '*locations.json'),$(call _curl,POST,locations,$(file));)
 
 deploy_subjects:
-	$(call _curl,POST,operationalSubjectTypes,@operationalModules/operationalSubjectTypes.json)
+	$(call _curl,POST,operationalSubjectTypes,operationalModules/operationalSubjectTypes.json)
 
 deploy_refdata: deploy_subjects deploy_concepts
 	@$(foreach item,catchments programs encounterTypes,\

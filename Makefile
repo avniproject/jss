@@ -80,7 +80,7 @@ deploy_subjects:
 	$(call _curl,POST,operationalSubjectTypes,@operationalModules/operationalSubjectTypes.json)
 
 deploy_refdata: deploy_subjects deploy_concepts
-	@$(foreach item,locations catchments programs encounterTypes,\
+	@$(foreach item,catchments programs encounterTypes,\
 		$(if $(shell ls "$(item).json" 2> /dev/null),$(call _curl,POST,$(item),$(item).json);))
 
 	@$(foreach file,$(shell find . -iname 'operationalPrograms.json'),$(call _curl,POST,operationalPrograms,$(file));)
@@ -147,17 +147,11 @@ deploy_concepts_dev: dev _deploy_concepts
 deploy_concepts_prod: prod by_org_admin auth _deploy_concepts
 
 _deploy_catchments:
-	@$(foreach item,locations catchments programs encounterTypes,\
+	@$(foreach item,catchments programs encounterTypes,\
 		$(if $(shell ls "$(item).json" 2> /dev/null),$(call _curl,POST,$(item),$(item).json);))
 
 deploy_catchment_dev: dev _deploy_catchments
 
 deploy_catchment_prod: prod by_org_admin auth _deploy_catchments
-
-deploy_locations_dev: dev by_org_admin deploy_locations
-
-deploy_locations_prod: prod by_org_admin auth deploy_locations #password=
-
-deploy_locations_staging: staging by_org_admin auth deploy_locations #password=
 
 create_deploy: create_org deploy_dev deploy_test_users_dev

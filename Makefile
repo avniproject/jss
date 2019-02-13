@@ -76,7 +76,10 @@ deploy_concepts: deploy_non_coded_concepts
 deploy_locations:
 	@$(foreach file,$(shell find . -iname '*locations.json'),$(call _curl,POST,locations,$(file));)
 
-deploy_refdata: deploy_concepts
+deploy_subjects:
+	$(call _curl,POST,operationalSubjectTypes,@operationalModules/operationalSubjectTypes.json)
+
+deploy_refdata: deploy_subjects deploy_concepts
 	@$(foreach item,locations catchments programs encounterTypes,\
 		$(if $(shell ls "$(item).json" 2> /dev/null),$(call _curl,POST,$(item),$(item).json);))
 

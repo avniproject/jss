@@ -74,7 +74,7 @@ deploy_concepts: deploy_non_coded_concepts
 	@$(foreach file,$(shell find . -iname '*concepts.json'),$(call _curl,POST,concepts,$(file));)
 
 deploy_refdata: deploy_concepts
-	@$(foreach item,locations catchments programs encounterTypes,\
+	@$(foreach item,catchments programs encounterTypes,\
 		$(if $(shell ls "$(item).json" 2> /dev/null),$(call _curl,POST,$(item),$(item).json);))
 
 	@$(foreach file,$(shell find . -iname 'operationalPrograms.json'),$(call _curl,POST,operationalPrograms,$(file));)
@@ -141,7 +141,7 @@ deploy_concepts_dev: dev _deploy_concepts
 deploy_concepts_prod: prod by_org_admin auth _deploy_concepts
 
 _deploy_catchments:
-	@$(foreach item,locations catchments programs encounterTypes,\
+	@$(foreach item,catchments programs encounterTypes,\
 		$(if $(shell ls "$(item).json" 2> /dev/null),$(call _curl,POST,$(item),$(item).json);))
 
 deploy_catchment_dev: dev _deploy_catchments

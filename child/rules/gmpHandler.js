@@ -1,4 +1,5 @@
 import {RuleFactory, VisitScheduleBuilder} from "rules-config";
+import moment from 'moment';
 
 const GMVisitSchedule = RuleFactory("d062907a-690c-44ca-b699-f8b2f688b075", "VisitSchedule");
 

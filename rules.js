@@ -6,4 +6,5 @@ module.exports = _.merge({},
     require('./child/rules/enrolmentHandler'),
     require('./child/rules/gmpHandler'),
     require('./child/rules/albendazoleTrackingHandler'),
+    require('./child/rules/showHeightHandler'),
 );

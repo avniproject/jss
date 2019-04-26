@@ -36,6 +36,11 @@ staging:
 	$(eval clientId:=$(OPENCHS_STAGING_APP_CLIENT_ID))
 	$(eval server_url:= https://staging.openchs.org:443)
 
+prerelease:
+	$(eval poolId:=$(OPENCHS_PROD_USER_POOL_ID))
+	$(eval clientId:=$(OPENCHS_PROD_APP_CLIENT_ID))
+	$(eval server_url:= https://prerelease.openchs.org:443)
+
 by_admin:
 	$(eval username:=admin)
 
@@ -131,6 +136,8 @@ deploy_dev: deploy_admin_user_dev dev by_org_admin _deploy
 deploy_prod: prod by_org_admin auth _deploy #password=
 
 deploy_staging: staging by_org_admin auth _deploy #password=
+
+deploy_prerelease: prerelease by_org_admin auth _deploy #password=
 
 deploy_dev_as_staging: staging deploy_dev #password=
 

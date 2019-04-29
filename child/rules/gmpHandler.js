@@ -21,12 +21,10 @@ class GMVisitScheduleJSS {
         const encounterDateTime = programEncounter.encounterDateTime;
         const dayOfMonth = programEncounter.programEnrolment.findObservation("Day of month for growth monitoring visit").getValue();
         var monthForNextVisit = moment(scheduledDateTime).month() + 1;
-        if ((scheduledDate < dayOfMonth) //visit-with-enrolment scenario or 29/30 Feb scenario
-            || moment(encounterDateTime).diff(scheduledDateTime, 'days') < -3)
-        {
-            monthForNextVisit = moment(scheduledDateTime).month();
+        var earliestDate = moment(scheduledDateTime).month(monthForNextVisit).date(dayOfMonth).toDate();
+        if(moment(earliestDate).month() !== monthForNextVisit){
+            earliestDate = moment(scheduledDateTime).add(1, 'M').endOf('month').toDate();
         }
-        const earliestDate = moment(scheduledDateTime).month(monthForNextVisit).date(dayOfMonth).toDate();
         const maxDate = moment(scheduledDateTime).month(monthForNextVisit).date(dayOfMonth).add(3, 'days').toDate();
         visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
         scheduleBuilder.add({
@@ -54,11 +52,10 @@ class GMVisitScheduleCancelled {
         const encounterDateTime = programEncounter.encounterDateTime;
         const dayOfMonth = programEncounter.programEnrolment.findObservation("Day of month for growth monitoring visit").getValue();
         var monthForNextVisit = moment(scheduledDateTime).month() + 1;
-        if ((scheduledDate < dayOfMonth) //visit-with-enrolment scenario or 29/30 Feb scenario
-            || moment(encounterDateTime).diff(scheduledDateTime, 'days') < -3) {
-            monthForNextVisit = moment(scheduledDateTime).month();
+        var earliestDate = moment(scheduledDateTime).month(monthForNextVisit).date(dayOfMonth).toDate();
+        if(moment(earliestDate).month() !== monthForNextVisit){
+            earliestDate = moment(scheduledDateTime).add(1, 'M').endOf('month').toDate();
         }
-        const earliestDate = moment(scheduledDateTime).month(monthForNextVisit).date(dayOfMonth).toDate();
         const maxDate = moment(scheduledDateTime).month(monthForNextVisit).date(dayOfMonth).add(3, 'days').toDate();
         visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
         scheduleBuilder.add({

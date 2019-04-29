@@ -33,11 +33,11 @@ class ShowHeightHandler {
             const ageInMonths = programEncounter.programEnrolment.individual.getAgeInMonths(programEncounter.earliestVisitDateTime, false);
             const ageInMonthMultipleOf6 = ((ageInMonths % 6) === 0);
             const endDate = programEncounter.earliestVisitDateTime;
-            const startDate = moment(programEncounter.earliestVisitDateTime).subtract((ageInMonths % 6), 'months');
+            const startDate = moment(programEncounter.earliestVisitDateTime).subtract((ageInMonths % 6), 'months').startOf('month').toDate();
             const encBetweenDatesWithHeight = _.chain(programEncounter.programEnrolment.encounters)
                 .filter((enc) => (enc.encounterDateTime <= endDate && enc.encounterDateTime >= startDate)
                     && !_.isNil(enc.findObservation("Height")));
-            const heightToBeCapturedThisTime = (heightNeverCapturedBefore || ageInMonthMultipleOf6 || encBetweenDatesWithHeight.value().length === 0);
+            const heightToBeCapturedThisTime = (heightNeverCapturedBefore || (ageInMonthMultipleOf6 && encBetweenDatesWithHeight.value().length === 0) || encBetweenDatesWithHeight.value().length === 0);
             return new FormElementStatus(formElement.uuid, heightToBeCapturedThisTime);
         } else {
             let skipCaptureHeightNotDefinedBuilder = new FormElementStatusBuilder({programEncounter, formElement});

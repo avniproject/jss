@@ -30,7 +30,8 @@ class ShowHeightHandler {
         if (!_.isNil(programEncounter.earliestVisitDateTime)) {
             const lastEncounterWithHeight = programEncounter.programEnrolment.findLatestPreviousEncounterWithObservationForConcept(programEncounter, "Height");
             const heightNeverCapturedBefore = _.isNil(lastEncounterWithHeight);
-            const ageInMonths = programEncounter.programEnrolment.individual.getAgeInMonths(programEncounter.earliestVisitDateTime, false);
+            const ageInMonths = programEncounter.programEnrolment.individual.getAgeInMonths(
+                moment(programEncounter.earliestVisitDateTime).endOf('month').toDate(), false);
             const ageInMonthMultipleOf6 = ((ageInMonths % 6) === 0);
             const endDate = programEncounter.earliestVisitDateTime;
             const startDate = moment(programEncounter.earliestVisitDateTime).subtract((ageInMonths % 6), 'months').startOf('month').toDate();

@@ -25,7 +25,7 @@ class GMVisitScheduleJSS {
         if(moment(earliestDate).month() !== monthForNextVisit){
             earliestDate = moment(scheduledDateTime).add(1, 'M').endOf('month').toDate();
         }
-        const maxDate = moment(scheduledDateTime).month(monthForNextVisit).date(dayOfMonth).add(3, 'days').toDate();
+        const maxDate = moment(earliestDate).add(3, 'days').toDate();
         visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
         scheduleBuilder.add({
                 name: "Growth Monitoring Visit",
@@ -56,7 +56,7 @@ class GMVisitScheduleCancelled {
         if(moment(earliestDate).month() !== monthForNextVisit){
             earliestDate = moment(scheduledDateTime).add(1, 'M').endOf('month').toDate();
         }
-        const maxDate = moment(scheduledDateTime).month(monthForNextVisit).date(dayOfMonth).add(3, 'days').toDate();
+        const maxDate = moment(earliestDate).add(3, 'days').toDate();
         visitSchedule.forEach((vs) => scheduleBuilder.add(vs));
         scheduleBuilder.add({
                 name: "Growth Monitoring Visit",

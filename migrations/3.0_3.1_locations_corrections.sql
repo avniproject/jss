@@ -52,4 +52,7 @@ with locs as (select sickle.id sickle, phulwari.id phulwari, sickle.lineage
                      join organisation phulwari_o
                        on phulwari.organisation_id = phulwari_o.id and phulwari_o.db_user = 'jss')
 update catchment_address_mapping set addresslevel_id = locs.phulwari
-from locs where locs.sickle = addresslevel_id;
+from locs where locs.sickle = addresslevel_id
+and catchment_id in
+  (select id from catchment
+    where organisation_id = (select id from organisation where db_user = 'jss'));

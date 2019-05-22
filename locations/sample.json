@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Anuppur",
+    "uuid": "bb39bf67-22a4-4eab-926a-8a9170680aaa",
+    "type": "District",
+    "level": 4,
+    "parents": []
+  },
+  {
+    "name": "Pushparajgarh",
+    "uuid": "60e21cb1-79ad-4800-8bbe-67fa2f2380d4",
+    "type": "Block",
+    "level": 3,
+    "parents": [
+      {
+        "name": "Anuppur",
+        "uuid": "bb39bf67-22a4-4eab-926a-8a9170680aaa"
+      }
+    ]
+  },
+  {
+    "name": "Katurdona",
+    "uuid": "f7e5ea7c-3368-4a62-bcef-12be25da5520",
+    "type": "Village",
+    "level": 1,
+    "parents": [
+      {
+        "name": "Pushparajgarh",
+        "uuid": "60e21cb1-79ad-4800-8bbe-67fa2f2380d4"
+      }
+    ]
+  },
+  {
+    "name": "Mithu mahua",
+    "uuid": "5d349366-7fb9-41f0-913a-f174f19a372b",
+    "type": "Village",
+    "level": 1,
+    "parents": []
+  }
+]

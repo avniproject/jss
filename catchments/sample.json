@@ -1,0 +1,27 @@
+{
+  "organisation": "JSS",
+  "catchments": [
+    {
+      "name": "Khamroud",
+      "uuid": "5fbb68b6-9f11-4d87-a118-bf591a1a8fa0",
+      "type": "Village",
+      "locations": [
+        {
+          "comment": "Katurdona",
+          "uuid": "f7e5ea7c-3368-4a62-bcef-12be25da5520"
+        }
+      ]
+    },
+    {
+      "name": "Kodar",
+      "uuid": "3e9b12a9-1176-464d-b53c-79c71fd5efcb",
+      "type": "Village",
+      "locations": [
+        {
+          "uuid": "5d349366-7fb9-41f0-913a-f174f19a372b",
+          "comment": "Mithu mahua"
+        }
+      ]
+    }
+  ]
+}

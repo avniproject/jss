@@ -1,0 +1,14 @@
+[
+  {
+    "uuid": "8496bbab-47fd-4110-9098-8e38eaa2d31f",
+    "name": "jss-dev",
+    "password": "password",
+    "email": "openchssupport+jss+dev@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "a18b792b-7256-4529-896c-e5629e247cf9",
+    "catchmentUUID": "5fbb68b6-9f11-4d87-a118-bf591a1a8fa0",
+    "operatingIndividualScope": "ByCatchment",
+    "admin": false,
+    "orgAdmin": false
+  }
+]

@@ -11,7 +11,7 @@ module.exports = IDI.configure({
     "files": {
         "adminUsers": {
             // "prod": [],
-            "dev": ["./users/admin-user.json"],
+            "dev": ["./users/dev-admin-user.json"],
         },
         "forms": [
             "./child/albendazoleTrackingForm.json",
@@ -40,7 +40,7 @@ module.exports = IDI.configure({
         "operationalPrograms": ["./operationalModules/operationalPrograms.json"],
         "operationalSubjectTypes": ["./operationalModules/operationalSubjectTypes.json"],
         "users": {
-            "dev": ["./users/test-users.json"]
+            "dev": ["./users/dev-users.json"]
         },
         "rules": [
             "./rules.js",

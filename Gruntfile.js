@@ -24,16 +24,20 @@ module.exports = IDI.configure({
         "formAdditions": [
             "./child/enrolmentAdditions.json",
         ],
-        "catchments": ["./catchments/sample.json"],
+        "catchments": {
+            "dev": ["./catchments/sample.json"],
+            "staging": ["./catchments/sample.json"],
+        },
         "checklistDetails": [],
         "concepts": [
             "./concepts.json",
             "./registrationConcepts.json",
             "./child/enrolmentConcepts.json",
         ],
-        "locations": [
-            "./locations/sample.json",
-        ],
+        "locations": {
+            "dev": ["./locations/sample.json"],
+            "staging": ["./locations/sample.json"],
+        },
         "programs": [],
         "encounterTypes": ["./encounterTypes.json"],
         "operationalEncounterTypes": ["./operationalModules/operationalEncounterTypes.json"],

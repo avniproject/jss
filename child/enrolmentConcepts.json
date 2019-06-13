@@ -127,7 +127,31 @@
     "name": "Batiya",
     "uuid": "d9cd5cb5-5d14-4d00-90aa-17f31d91c98e"
   },
-
+  {
+    "name": "Aamatola",
+    "uuid": "d67d31a8-d76b-4d28-a623-9c23a0052e66",
+    "dataType": "NA"
+  },
+  {
+    "name": "Manjhetola",
+    "uuid": "a6df964e-e24f-46f9-b9ca-00a090aa55f4",
+    "dataType": "NA"
+  },
+  {
+    "name": "Talwa tola",
+    "uuid": "2c6b97b9-d1a5-4a8d-a9aa-52f199b8a445",
+    "dataType": "NA"
+  },
+  {
+    "name": "Hathbandha",
+    "uuid": "4aec9c83-849c-4b26-97d1-ffed9ac04d9b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Karoundi",
+    "uuid": "e4986ae7-e114-4e74-bd54-095146dc7798",
+    "dataType": "NA"
+  },
   {
     "name": "Phulwari",
     "uuid": "6129d59e-17ee-4e0d-a48d-df00b0df326b",
@@ -264,6 +288,26 @@
       {
         "name": "Batiya",
         "uuid": "d9cd5cb5-5d14-4d00-90aa-17f31d91c98e"
+      },
+      {
+        "name": "Aamatola",
+        "uuid": "d67d31a8-d76b-4d28-a623-9c23a0052e66"
+      },
+      {
+        "name": "Manjhetola",
+        "uuid": "a6df964e-e24f-46f9-b9ca-00a090aa55f4"
+      },
+      {
+        "name": "Talwa tola",
+        "uuid": "2c6b97b9-d1a5-4a8d-a9aa-52f199b8a445"
+      },
+      {
+        "name": "Hathbandha",
+        "uuid": "4aec9c83-849c-4b26-97d1-ffed9ac04d9b"
+      },
+      {
+        "name": "Karoundi",
+        "uuid": "e4986ae7-e114-4e74-bd54-095146dc7798"
       }
     ]
   },
@@ -336,5 +380,4 @@
     "lowAbsolute": 15,
     "highAbsolute": 30
   }
-
 ]

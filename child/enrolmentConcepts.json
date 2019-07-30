@@ -153,6 +153,26 @@
     "dataType": "NA"
   },
   {
+    "name": "Bhadratola",
+    "uuid": "cc596d52-e0af-4475-a8a2-bf278891615b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Rajhantola",
+    "uuid": "dbdc65c6-b954-461a-a5e8-27aa0ecc8753",
+    "dataType": "NA"
+  },
+  {
+    "name": "Prem Nagar",
+    "uuid": "27c4b773-a0eb-4bfe-a5c9-bcfaca5a09cd",
+    "dataType": "NA"
+  },
+  {
+    "name": "Upar tola",
+    "uuid": "b4058ed8-cecd-4b1b-8310-1cdd85b4c70e",
+    "dataType": "NA"
+  },
+  {
     "name": "Phulwari",
     "uuid": "6129d59e-17ee-4e0d-a48d-df00b0df326b",
     "dataType": "Coded",
@@ -308,6 +328,22 @@
       {
         "name": "Karoundi",
         "uuid": "e4986ae7-e114-4e74-bd54-095146dc7798"
+      },
+      {
+        "name": "Bhadratola",
+        "uuid": "cc596d52-e0af-4475-a8a2-bf278891615b"
+      },
+      {
+        "name": "Rajhantola",
+        "uuid": "dbdc65c6-b954-461a-a5e8-27aa0ecc8753"
+      },
+      {
+        "name": "Prem Nagar",
+        "uuid": "27c4b773-a0eb-4bfe-a5c9-bcfaca5a09cd"
+      },
+      {
+        "name": "Upar tola",
+        "uuid": "b4058ed8-cecd-4b1b-8310-1cdd85b4c70e"
       }
     ]
   },

@@ -17,7 +17,7 @@ const VILLAGE_PHULWARI_MAPPING = new Map([["Payari", ["Payari"]],
     ["BulhuPani", ["Tagritola"]],
     ["Dadra Silvari", ["Dadra Silvari"]],
     ["Neeche Silvari", ["Tikratola"]],
-    ["Kodar Village", ["Tikratola"]],
+    ["Kodar Village", ["Tikratola", "Schooltola"]],
     ["Khirni", ["Upartola"]],
     ["Tithi", ["Talvatola"]],
     ["Jaithari", ["Dongritola"]],
@@ -49,6 +49,7 @@ const VILLAGE_PHULWARI_MAPPING = new Map([["Payari", ["Payari"]],
     ["Ahirgawan", ["Panika"]],
     ["Salar Gondi", ["Prem Nagar"]],
     ["Sarai Paterra", ["Upar tola"]],
+    ["Udal", ["Tikratola"]],
 ]);
 
 export default VILLAGE_PHULWARI_MAPPING;

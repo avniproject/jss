@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Salar Gondi",
+    "uuid": "d3fe5338-9acb-42f4-b14d-5e42194010ae",
+    "type": "Village",
+    "level": 1,
+    "parents": []
+  },
+  {
+      "name": "Sarai Paterra",
+      "uuid": "c6bc5c99-2c8f-479a-b99d-e5f2938e0ca0",
+      "type": "Village",
+      "level": 1
+  }
+]

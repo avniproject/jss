@@ -37,6 +37,7 @@ module.exports = IDI.configure({
         "locations": {
             "dev": ["./locations/sample.json"],
             "staging": ["./locations/sample.json"],
+            // "prod": ["./locations/tmp.json"],
         },
         "programs": [],
         "encounterTypes": ["./encounterTypes.json"],

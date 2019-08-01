@@ -352,7 +352,11 @@
     "uuid": "618212a2-bbc3-484b-8bd9-48f851baa642",
     "dataType": "NA"
   },
-
+  {
+    "name": "Salar Gondi",
+    "uuid": "5d3f7b1c-c769-4c39-87e9-2cbd645ce3b0",
+    "dataType": "NA"
+  },
   {
     "uuid": "d6bb1543-0c1c-4c01-bd47-3883701d945b",
     "name": "Gram panchayat",
@@ -473,6 +477,10 @@
       {
         "name": "Lamsarai",
         "uuid": "618212a2-bbc3-484b-8bd9-48f851baa642"
+      },
+      {
+        "name": "Salar Gondi",
+        "uuid": "5d3f7b1c-c769-4c39-87e9-2cbd645ce3b0"
       },
       {
         "name": "Other",

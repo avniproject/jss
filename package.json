@@ -11,6 +11,6 @@
   "dependencies": {
     "webpack": "^4.12.0",
     "rules-config": "github:openchs/rules-config#68b0da32c98fb599d19b7266f78a2ec3eb10e29c",
-    "openchs-idi": "github:openchs/openchs-idi#950376ac50ad66b4d2559226bda1eea3ed8da3ed"
+    "openchs-idi": "github:openchs/openchs-idi#2183a8ae0c0da645455fd9e5c9e430b36197df92"
   }
 }

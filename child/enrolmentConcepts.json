@@ -193,10 +193,19 @@
     "dataType": "NA"
   },
   {
+    "name": "Beechtola",
+    "uuid": "25675274-ac62-4d99-b7c3-b88bc45c9bc8",
+    "dataType": "NA"
+  },
+  {
     "name": "Phulwari",
     "uuid": "6129d59e-17ee-4e0d-a48d-df00b0df326b",
     "dataType": "Coded",
     "answers": [
+      {
+        "name": "Beechtola",
+        "uuid": "25675274-ac62-4d99-b7c3-b88bc45c9bc8"
+      },
       {
         "name": "Dongritola",
         "uuid": "3bb72aab-eca5-494a-b5da-bf04f784adf1"

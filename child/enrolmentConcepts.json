@@ -198,10 +198,19 @@
     "dataType": "NA"
   },
   {
+    "name": "Hathbandha tola",
+    "uuid": "a55d6134-0271-44cb-bb04-fecd6691621c",
+    "dataType": "NA"
+  },
+  {
     "name": "Phulwari",
     "uuid": "6129d59e-17ee-4e0d-a48d-df00b0df326b",
     "dataType": "Coded",
     "answers": [
+      {
+        "name": "Hathbandha tola",
+        "uuid": "a55d6134-0271-44cb-bb04-fecd6691621c"
+      },
       {
         "name": "Beechtola",
         "uuid": "25675274-ac62-4d99-b7c3-b88bc45c9bc8"

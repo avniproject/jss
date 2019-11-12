@@ -64,7 +64,18 @@ const VILLAGE_GRAMPANCHAYAT_MAPPING = new Map([["Payari", "Tarang"],
     ["temp11", "Nogawan"],
     ["temp12", "Padri"],
     ["temp13", "Padri"],
-    ["temp14", "Ufrikala"]
+    ["temp14", "Ufrikala"],
+    ["Bhuratola", "Ufrikala"],
+    ["Bartola", "Ufrikala"],
+    ["Uprikhurd", "Medakhar"],
+    ["Bicharpur", "Nagula"],
+    ["Manjhetola", "Nagula"],
+    ["Ledhra", "Ledhra"],
+    ["Picharwahi", "Chandania"],
+    ["Jarwahi", "Dudhmania"],
+    ["Dudhmania", "Dudhmania"],
+    ["Padri (near Chaura Dadar)", "Padri"],
+    ["Bakantola", "Padri"]
 
 ]);
 

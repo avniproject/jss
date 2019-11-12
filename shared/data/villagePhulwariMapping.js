@@ -63,7 +63,10 @@ const VILLAGE_PHULWARI_MAPPING = new Map([["Payari", ["Payari"]],
     ["Jarwahi", ["Jarwahi"]],
     ["Dudhmania", ["Semartola"]],
     ["Padri (near Chaura Dadar)", ["Schooltola"]],
-    ["Bakantola", ["Upartola"]]
+    ["Bakantola", ["Upartola"]],
+    ["Salargondi", "Diwantola"],
+    ["Ghurritola", "Ghurritola"],
+    ["Jarhi (near Godhantola)", "Schooltola"],
 ]);
 
 export default VILLAGE_PHULWARI_MAPPING;

@@ -75,7 +75,10 @@ const VILLAGE_GRAMPANCHAYAT_MAPPING = new Map([["Payari", "Tarang"],
     ["Jarwahi", "Dudhmania"],
     ["Dudhmania", "Dudhmania"],
     ["Padri (near Chaura Dadar)", "Padri"],
-    ["Bakantola", "Padri"]
+    ["Bakantola", "Padri"],
+    ["Salargondi", "Salargondi"],
+    ["Ghurritola", "Lamsarai"],
+    ["Jarhi (near Godhantola)", "Bijapuri No.2"],
 
 ]);
 

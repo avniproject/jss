@@ -79,6 +79,13 @@ const VILLAGE_GRAMPANCHAYAT_MAPPING = new Map([["Payari", "Tarang"],
     ["Salargondi", "Salargondi"],
     ["Ghurritola", "Lamsarai"],
     ["Jarhi (near Godhantola)", "Bijapuri No.2"],
+    ["Harradadar", "Salargondi"],
+    ["Konhatola", "Karpa"],
+    ["Doomartola", "Karoundapani"],
+    ["Navatola", "Karoundapani"],
+    ["Pakripani", "Gondi"],
+    ["Pakhatola", "Gondi"],
+    ["Belapani", "Chiliamar"]
 
 ]);
 

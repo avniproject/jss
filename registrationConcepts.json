@@ -358,6 +358,10 @@
     "dataType": "NA"
   },
   {
+    "uuid": "dbdf5abf-fda2-4d59-9d21-42a2c6efeb9b",
+    "name": "Gondi"
+  },
+  {
     "uuid": "d6bb1543-0c1c-4c01-bd47-3883701d945b",
     "name": "Gram panchayat",
     "dataType": "Coded",
@@ -481,6 +485,10 @@
       {
         "name": "Salar Gondi",
         "uuid": "5d3f7b1c-c769-4c39-87e9-2cbd645ce3b0"
+      },
+      {
+        "uuid": "dbdf5abf-fda2-4d59-9d21-42a2c6efeb9b",
+        "name": "Gondi"
       },
       {
         "name": "Other",

@@ -203,6 +203,41 @@
     "dataType": "NA"
   },
   {
+    "name": "Harradadar",
+    "uuid": "347ca768-9a87-4481-a19c-164040e74ab8",
+    "dataType": "NA"
+  },
+  {
+    "name": "Konhatola",
+    "uuid": "77c0f817-f1d2-4335-a075-abcddbd9208f",
+    "dataType": "NA"
+  },
+  {
+    "name": "Doomartola",
+    "uuid": "de208ce6-9e7f-464f-b79f-5e896e935976",
+    "dataType": "NA"
+  },
+  {
+    "name": "Navatola",
+    "uuid": "d5a2bc00-c31c-431a-8a10-78c07c2ff9f3",
+    "dataType": "NA"
+  },
+  {
+    "name": "Pakripani",
+    "uuid": "2f7676f2-eecf-4e2f-9cdd-4bf6a5f52d82",
+    "dataType": "NA"
+  },
+  {
+    "name": "Pakhatola",
+    "uuid": "c145312b-72c3-418a-8056-db2c530f62c5",
+    "dataType": "NA"
+  },
+  {
+    "name": "Belapani",
+    "uuid": "8da98038-89f9-40e9-a2a4-8b7bdc47bddf",
+    "dataType": "NA"
+  },
+  {
     "name": "Phulwari",
     "uuid": "6129d59e-17ee-4e0d-a48d-df00b0df326b",
     "dataType": "Coded",
@@ -398,6 +433,34 @@
       {
         "name": "Maharantola",
         "uuid": "7105f451-f5c5-41fa-9124-cf71a3a1f313"
+      },
+      {
+        "name": "Harradadar",
+        "uuid": "347ca768-9a87-4481-a19c-164040e74ab8"
+      },
+      {
+        "name": "Konhatola",
+        "uuid": "77c0f817-f1d2-4335-a075-abcddbd9208f"
+      },
+      {
+        "name": "Doomartola",
+        "uuid": "de208ce6-9e7f-464f-b79f-5e896e935976"
+      },
+      {
+        "name": "Navatola",
+        "uuid": "d5a2bc00-c31c-431a-8a10-78c07c2ff9f3"
+      },
+      {
+        "name": "Pakripani",
+        "uuid": "2f7676f2-eecf-4e2f-9cdd-4bf6a5f52d82"
+      },
+      {
+        "name": "Pakhatola",
+        "uuid": "c145312b-72c3-418a-8056-db2c530f62c5"
+      },
+      {
+        "name": "Belapani",
+        "uuid": "8da98038-89f9-40e9-a2a4-8b7bdc47bddf"
       }
     ]
   },

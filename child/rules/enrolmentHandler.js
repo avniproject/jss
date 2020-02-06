@@ -33,7 +33,7 @@ class ChildEnrolmentHandlerJSS {
 
         var oldflatten = _.flatten([...villagePhulwariMappingClone.values()]).filter((p) => !_.isEmpty(p));
 
-        const flatten = _.difference(oldflatten, notToRemove);
+        const flatten = _.difference(oldflatten, [notToRemove]);
         statusBuilder.skipAnswers.apply(statusBuilder, flatten);
         return statusBuilder.build();
     }

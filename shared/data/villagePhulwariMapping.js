@@ -73,7 +73,8 @@ const VILLAGE_PHULWARI_MAPPING = new Map([["Payari", ["Payari"]],
     ['Navatola', ['Navatola']],
     ['Pakripani', ['Pakripani']],
     ['Pakhatola', ['Pakhatola']],
-    ['Belapani', ['Belapani']]
+    ['Belapani', ['Belapani']],
+    ['Ufrikala', ['Bhayantola']]
 ]);
 
 export default VILLAGE_PHULWARI_MAPPING;

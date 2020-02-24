@@ -85,7 +85,8 @@ const VILLAGE_GRAMPANCHAYAT_MAPPING = new Map([["Payari", "Tarang"],
     ["Navatola", "Karoundapani"],
     ["Pakripani", "Gondi"],
     ["Pakhatola", "Gondi"],
-    ["Belapani", "Chiliamar"]
+    ["Belapani", "Chiliamar"],
+    ["Ufrikala", "Ufrikala"]
 
 ]);
 

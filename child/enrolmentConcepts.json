@@ -542,5 +542,1893 @@
     "dataType": "Numeric",
     "lowAbsolute": 15,
     "highAbsolute": 30
+  },
+  {
+    "name": "2 Wheeler",
+    "uuid": "3769e0c6-ea4f-4836-b6c4-6603b27b5f91",
+    "dataType": "NA"
+  },
+  {
+    "name": "4 Wheeler",
+    "uuid": "58cc3e54-5a82-48e1-91bf-c1c0dd26a2e0",
+    "dataType": "NA"
+  },
+  {
+    "name": "Aadha kacha pakka",
+    "uuid": "8e7eee58-19a7-4189-a29b-a90c801765ba",
+    "dataType": "NA"
+  },
+  {
+    "name": "Aamatola",
+    "uuid": "d67d31a8-d76b-4d28-a623-9c23a0052e66",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Adwar"
+      }
+    ]
+  },
+  {
+    "name": "Ahirgawan",
+    "uuid": "c6e3c748-a2c2-4663-af41-48bdb9e7fa12",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Ahirgawan,Tarera,Sital pani,Daldali"
+      }
+    ]
+  },
+  {
+    "name": "Ahirwar",
+    "uuid": "2e889b9c-c0ff-4076-a74a-4d84fa20fbdb",
+    "dataType": "NA"
+  },
+  {
+    "name": "Alwar",
+    "uuid": "026756a0-87b1-4aff-b10d-48ecf5144613",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Ghata,Chottibairagi,Badibairagi,Alwar Village"
+      }
+    ]
+  },
+  {
+    "name": "Ataria",
+    "uuid": "d88638b9-2048-4b68-8998-17a5330a1457",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "temp1"
+      }
+    ]
+  },
+  {
+    "name": "Badi Tumi",
+    "uuid": "d487c162-d25e-4c8b-a047-eab51629d06c",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Dabhaniya,Badi Tumi,Chirpani"
+      }
+    ]
+  },
+  {
+    "name": "Baiga",
+    "uuid": "2265b559-682f-427b-9b32-7039995f3b4e",
+    "dataType": "NA"
+  },
+  {
+    "name": "Baigantola",
+    "uuid": "3c37178b-bfe5-426d-9a90-9ced65946fec",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Khamroud Village"
+      }
+    ]
+  },
+  {
+    "name": "Batiya",
+    "uuid": "d9cd5cb5-5d14-4d00-90aa-17f31d91c98e",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Batiya"
+      }
+    ]
+  },
+  {
+    "name": "Beechtola",
+    "uuid": "25675274-ac62-4d99-b7c3-b88bc45c9bc8",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Ahirgawan"
+      }
+    ]
+  },
+  {
+    "name": "Belapani",
+    "uuid": "8da98038-89f9-40e9-a2a4-8b7bdc47bddf",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Belapani"
+      }
+    ]
+  },
+  {
+    "name": "Belhaitola",
+    "uuid": "e7d09f77-b2b4-4c3e-950c-940844de3bb7",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Dona"
+      }
+    ]
+  },
+  {
+    "name": "Bhadratola",
+    "uuid": "cc596d52-e0af-4475-a8a2-bf278891615b",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Alwar Village"
+      }
+    ]
+  },
+  {
+    "name": "Bharratola",
+    "uuid": "31cdf3f0-7bf3-48a2-aa33-b313b5f5e4bf",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Bicharpur"
+      }
+    ]
+  },
+  {
+    "name": "Bhayantola",
+    "uuid": "19b78ed5-384a-4c83-b840-4f6f43e25057",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Ufrikala"
+      }
+    ]
+  },
+  {
+    "name": "Bhumiyatola",
+    "uuid": "3fa4c8e5-72ab-4395-a564-46bfe0ff134e",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Duradhar"
+      }
+    ]
+  },
+  {
+    "name": "Bhuratola",
+    "uuid": "1f525932-240a-468b-a21b-74056e86570a",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Bhuratola"
+      }
+    ]
+  },
+  {
+    "name": "Bicep circumference",
+    "uuid": "241843cc-7753-4f8b-81a2-8f8911d38b2e",
+    "dataType": "Numeric",
+    "unit": "cms"
+  },
+  {
+    "name": "Bijapuri 2",
+    "uuid": "a83983d1-3fe0-4d50-98f3-3d5f767ca9f3",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Adwar,Hathbandha,Jairhi"
+      }
+    ]
+  },
+  {
+    "name": "Bijapuri No.2",
+    "uuid": "f1405014-08cf-4a1f-a8e1-e586a213b0b3",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Bijapuri No.2,Jarhi (near Godhantola)"
+      }
+    ]
+  },
+  {
+    "name": "Bijouri",
+    "uuid": "0237e91a-d8ee-4ed4-9459-f29aa5b197df",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "temp2"
+      }
+    ]
+  },
+  {
+    "name": "Birth Order",
+    "uuid": "c218b516-a47f-411a-ad82-c3f1f446d9b0",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Chandania",
+    "uuid": "72754013-a45d-496c-bd55-07d8f110b779",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "temp3,Picharwahi"
+      }
+    ]
+  },
+  {
+    "name": "Chatua",
+    "uuid": "ab88a8fa-8e83-463e-ac58-602cf9775341",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Chatua (Anuppur)"
+      }
+    ]
+  },
+  {
+    "name": "Chatua 2",
+    "uuid": "1eb48800-2315-45df-97fd-5eb5d44746f7",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Chatua (Anuppur)"
+      }
+    ]
+  },
+  {
+    "name": "Chhatenitola",
+    "uuid": "1f51ed3b-cd8c-4054-aa0d-7a12499707ed",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Tarera"
+      }
+    ]
+  },
+  {
+    "name": "Child Disabilities",
+    "uuid": "100cf9ac-313d-4d20-9968-6113deecbb26",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Hands",
+        "uuid": "f54ad2a1-3e1d-452f-8a97-54c9d806ab0c",
+        "order": 1.0
+      },
+      {
+        "name": "Feet",
+        "uuid": "63f3b16d-0ddd-49dc-86a2-3ac855b11ea2",
+        "order": 2.0
+      },
+      {
+        "name": "Mental",
+        "uuid": "121e3bd4-70b4-4c80-b188-3a3018556934",
+        "order": 3.0
+      },
+      {
+        "name": "Other",
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "order": 4.0
+      }
+    ]
+  },
+  {
+    "name": "Chiliamar",
+    "uuid": "50b881db-ba95-463d-b80f-0556387fa227",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "temp4,Belapani"
+      }
+    ]
+  },
+  {
+    "name": "Chronic Illness",
+    "uuid": "ab9df5ba-7ffc-45eb-8200-0e11ed291260",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "abnormal": true,
+        "order": 1.0
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "order": 2.0
+      }
+    ]
+  },
+  {
+    "name": "Cycle",
+    "uuid": "2ecc9fee-493c-4ce5-bd5d-c3139a2fa48f",
+    "dataType": "NA"
+  },
+  {
+    "name": "Dadra Silvari",
+    "uuid": "e1947382-e6a2-4e30-8eee-a1f176cb49ef",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Dadra Silvari"
+      }
+    ]
+  },
+  {
+    "name": "Date of Albendazole dosage",
+    "uuid": "f1474aca-539f-4fd7-9826-d1672b33b344",
+    "dataType": "Date"
+  },
+  {
+    "name": "Day of month for growth monitoring visit",
+    "uuid": "8c607c63-25fb-4af1-984e-37dd1bae653d",
+    "dataType": "Numeric",
+    "lowAbsolute": 15.0,
+    "highAbsolute": 30.0
+  },
+  {
+    "name": "Dhanpuri",
+    "uuid": "43e95843-d1b7-42cf-bc04-be0f68cd2d01",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "temp5"
+      }
+    ]
+  },
+  {
+    "name": "Diwantola",
+    "uuid": "c8949750-744a-49d9-8d43-aab3e1fcad72",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Salargondi"
+      }
+    ]
+  },
+  {
+    "name": "Dongritola",
+    "uuid": "3bb72aab-eca5-494a-b5da-bf04f784adf1",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Jaithari"
+      }
+    ]
+  },
+  {
+    "name": "Doomartola",
+    "uuid": "de208ce6-9e7f-464f-b79f-5e896e935976",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Doomartola"
+      }
+    ]
+  },
+  {
+    "name": "Dudhmania",
+    "uuid": "b2a0f857-82f0-4e1f-b0f0-08917107aca8",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "temp6,Dudhmania,Jarwahi"
+      }
+    ]
+  },
+  {
+    "name": "Duradhar",
+    "uuid": "01c7a2b5-2325-476b-a161-11c9832b48a6",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Batiya,Duradhar,Thunguni"
+      }
+    ]
+  },
+  {
+    "name": "Feet",
+    "uuid": "63f3b16d-0ddd-49dc-86a2-3ac855b11ea2",
+    "dataType": "NA"
+  },
+  {
+    "name": "Fridge",
+    "uuid": "705f8530-6d93-4460-ac6b-36e5647efc31",
+    "dataType": "NA"
+  },
+  {
+    "name": "Generator",
+    "uuid": "c89c34a0-41f4-4dfc-9d5f-872a1812aa31",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ghurritola",
+    "uuid": "e711b578-1868-4044-8919-7be99b33dcc9",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Ghurritola"
+      }
+    ]
+  },
+  {
+    "name": "Gijri",
+    "uuid": "d8cf2f07-65c0-45dc-b0c9-6f8fc90851a2",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Gijri,Amoda,Bijora"
+      }
+    ]
+  },
+  {
+    "name": "Gonda",
+    "uuid": "7c6c2d06-e426-403d-a590-7988f59cc997",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "temp7"
+      }
+    ]
+  },
+  {
+    "name": "Gondi",
+    "uuid": "dbdf5abf-fda2-4d59-9d21-42a2c6efeb9b",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Pakripani,Pakhatola"
+      }
+    ]
+  },
+  {
+    "name": "Goratola",
+    "uuid": "3d46d442-4568-4127-8c64-59dd2c4bfe99",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Sarai (Near Tarang)"
+      }
+    ]
+  },
+  {
+    "name": "Gram panchayat",
+    "uuid": "d6bb1543-0c1c-4c01-bd47-3883701d945b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Ahirgawan",
+        "uuid": "c6e3c748-a2c2-4663-af41-48bdb9e7fa12",
+        "order": 1.0
+      },
+      {
+        "name": "Alwar",
+        "uuid": "026756a0-87b1-4aff-b10d-48ecf5144613",
+        "order": 2.0
+      },
+      {
+        "name": "Ataria",
+        "uuid": "d88638b9-2048-4b68-8998-17a5330a1457",
+        "order": 3.0
+      },
+      {
+        "name": "Badi Tumi",
+        "uuid": "d487c162-d25e-4c8b-a047-eab51629d06c",
+        "order": 4.0
+      },
+      {
+        "name": "Bijouri",
+        "uuid": "0237e91a-d8ee-4ed4-9459-f29aa5b197df",
+        "order": 5.0
+      },
+      {
+        "name": "Chandania",
+        "uuid": "72754013-a45d-496c-bd55-07d8f110b779",
+        "order": 6.0
+      },
+      {
+        "name": "Chiliamar",
+        "uuid": "50b881db-ba95-463d-b80f-0556387fa227",
+        "order": 7.0
+      },
+      {
+        "name": "Duradhar",
+        "uuid": "01c7a2b5-2325-476b-a161-11c9832b48a6",
+        "order": 8.0
+      },
+      {
+        "name": "Dhanpuri",
+        "uuid": "43e95843-d1b7-42cf-bc04-be0f68cd2d01",
+        "order": 9.0
+      },
+      {
+        "name": "Dudhmania",
+        "uuid": "b2a0f857-82f0-4e1f-b0f0-08917107aca8",
+        "order": 10.0
+      },
+      {
+        "name": "Gonda",
+        "uuid": "7c6c2d06-e426-403d-a590-7988f59cc997",
+        "order": 11.0
+      },
+      {
+        "name": "Karpa",
+        "uuid": "073ff2ed-1474-462d-a9c3-0d2a6581f441",
+        "order": 12.0
+      },
+      {
+        "name": "Kharsol",
+        "uuid": "1d94d868-4093-489f-889b-a9b6c8f51cd4",
+        "order": 13.0
+      },
+      {
+        "name": "Khamroud",
+        "uuid": "593dd7ac-c9ca-493d-a4fe-5fdc84c84dfb",
+        "order": 14.0
+      },
+      {
+        "name": "Kodar",
+        "uuid": "eab32ed0-6e08-48fe-b987-106f0d11cdfa",
+        "order": 15.0
+      },
+      {
+        "name": "Khumni",
+        "uuid": "5ab7807d-f295-41e3-8b5a-094006b5b103",
+        "order": 16.0
+      },
+      {
+        "name": "Ledra",
+        "uuid": "efa85385-38a5-4ee8-8d71-7445513abbe3",
+        "order": 17.0
+      },
+      {
+        "name": "Mithu mahua",
+        "uuid": "dc42945d-90f4-4160-9f28-c99399481c84",
+        "order": 18.0
+      },
+      {
+        "name": "Nagula",
+        "uuid": "63879021-7aad-45b7-83fe-7c4b89acb617",
+        "order": 19.0
+      },
+      {
+        "name": "Nogawan",
+        "uuid": "47016656-fde5-4910-b9e5-0f51d82d69c3",
+        "order": 20.0
+      },
+      {
+        "name": "Padmania",
+        "uuid": "624666b1-9b1d-4512-9930-e5cbc9f38ded",
+        "order": 21.0
+      },
+      {
+        "name": "Padri",
+        "uuid": "55d10b93-0d65-4fc9-b127-a82223fb20e1",
+        "order": 22.0
+      },
+      {
+        "name": "Sarai",
+        "uuid": "da30db67-8777-4e8b-9009-190d947db4f0",
+        "order": 23.0
+      },
+      {
+        "name": "Sarfa",
+        "uuid": "fa729199-f789-4939-826d-36c7a5aa7124",
+        "order": 24.0
+      },
+      {
+        "name": "Tarang",
+        "uuid": "86652a24-9064-40ae-9a3b-890ad8af13bd",
+        "order": 25.0
+      },
+      {
+        "name": "Ufrikala",
+        "uuid": "98a3d527-7d39-45a8-b81d-a080f93e23e9",
+        "order": 26.0
+      },
+      {
+        "name": "Gijri",
+        "uuid": "d8cf2f07-65c0-45dc-b0c9-6f8fc90851a2",
+        "order": 27.0
+      },
+      {
+        "name": "Bijapuri 2",
+        "uuid": "a83983d1-3fe0-4d50-98f3-3d5f767ca9f3",
+        "order": 28.0
+      },
+      {
+        "name": "Lamsarai",
+        "uuid": "618212a2-bbc3-484b-8bd9-48f851baa642",
+        "order": 29.0
+      },
+      {
+        "name": "Salar Gondi",
+        "uuid": "5d3f7b1c-c769-4c39-87e9-2cbd645ce3b0",
+        "order": 30.0
+      },
+      {
+        "name": "Gondi",
+        "uuid": "dbdf5abf-fda2-4d59-9d21-42a2c6efeb9b",
+        "order": 31.0
+      },
+      {
+        "name": "Other",
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "order": 32.0
+      }
+    ]
+  },
+  {
+    "name": "Hands",
+    "uuid": "f54ad2a1-3e1d-452f-8a97-54c9d806ab0c",
+    "dataType": "NA"
+  },
+  {
+    "name": "Harradadar",
+    "uuid": "347ca768-9a87-4481-a19c-164040e74ab8",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Harradadar"
+      }
+    ]
+  },
+  {
+    "name": "Hathbandha",
+    "uuid": "4aec9c83-849c-4b26-97d1-ffed9ac04d9b",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Hathbandha"
+      }
+    ]
+  },
+  {
+    "name": "Hathbandha tola",
+    "uuid": "a55d6134-0271-44cb-bb04-fecd6691621c",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Hathbandha"
+      }
+    ]
+  },
+  {
+    "name": "In village but not coming to phulwari",
+    "uuid": "3a9184e7-bc15-4646-8048-9503b3d5a10d",
+    "dataType": "NA"
+  },
+  {
+    "name": "Jarratola",
+    "uuid": "5af5ed69-44e9-4d65-b73f-7425507b462e",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Mithu mahua"
+      }
+    ]
+  },
+  {
+    "name": "Jarwahi",
+    "uuid": "8dfd8e77-3a0b-4409-aad4-2e12e865f2cd",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Jarwahi"
+      }
+    ]
+  },
+  {
+    "name": "Kaccha",
+    "uuid": "a7466416-d7e5-491a-b980-2526e09dac17",
+    "dataType": "NA"
+  },
+  {
+    "name": "Kairhai tola",
+    "uuid": "d7b9b3db-f4d1-42e0-a4d7-2e87b35c3a27",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Kharsol"
+      }
+    ]
+  },
+  {
+    "name": "Karhaitola",
+    "uuid": "94c30041-4cc9-46f8-9997-e71f7e4e0c04",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Dona"
+      }
+    ]
+  },
+  {
+    "name": "Karoundapani",
+    "uuid": "079eb40b-8c22-4ee4-99c3-6dcd0336fd25",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Debridadar,Doomartola,Navatola"
+      }
+    ]
+  },
+  {
+    "name": "Karoundi",
+    "uuid": "e4986ae7-e114-4e74-bd54-095146dc7798",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Karoundi"
+      }
+    ]
+  },
+  {
+    "name": "Karpa",
+    "uuid": "073ff2ed-1474-462d-a9c3-0d2a6581f441",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "temp8,Konhatola"
+      }
+    ]
+  },
+  {
+    "name": "Katurdona",
+    "uuid": "5bcb0fd9-4d77-4783-97b3-59809ad52ada",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Katurdona"
+      }
+    ]
+  },
+  {
+    "name": "Khalebhanvar",
+    "uuid": "dfb30c2b-7875-459d-9ebd-6b8eed70e9fc",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Khalebhanvar"
+      }
+    ]
+  },
+  {
+    "name": "Khamroud",
+    "uuid": "593dd7ac-c9ca-493d-a4fe-5fdc84c84dfb",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Piparaha (Near Chaura Dadar),Chatua (Anuppur),Tankitola,Katurdona,Khalebhanvar,Khamroud Village"
+      }
+    ]
+  },
+  {
+    "name": "Kharsol",
+    "uuid": "1d94d868-4093-489f-889b-a9b6c8f51cd4",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Kharsol,Majhauli"
+      }
+    ]
+  },
+  {
+    "name": "Kharsolihantola",
+    "uuid": "f65ff638-9ab6-418b-8615-6b672e64b63c",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Badi Tumi"
+      }
+    ]
+  },
+  {
+    "name": "Khodratola",
+    "uuid": "3f6763eb-0082-44bd-8ceb-2ad991dff4a3",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Sital pani"
+      }
+    ]
+  },
+  {
+    "name": "Khumni",
+    "uuid": "5ab7807d-f295-41e3-8b5a-094006b5b103",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Khumni,BulhuPani"
+      }
+    ]
+  },
+  {
+    "name": "Kodar",
+    "uuid": "eab32ed0-6e08-48fe-b987-106f0d11cdfa",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Udal,Kodar Village,Dadra Silvari,Neeche Silvari"
+      }
+    ]
+  },
+  {
+    "name": "Konhatola",
+    "uuid": "77c0f817-f1d2-4335-a075-abcddbd9208f",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Konhatola"
+      }
+    ]
+  },
+  {
+    "name": "Lamsarai",
+    "uuid": "618212a2-bbc3-484b-8bd9-48f851baa642",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Ghurritola,Karoundi,Lamsarai (Near Ahirwar),Lamsarai (Near Keshwani)"
+      }
+    ]
+  },
+  {
+    "name": "Land Area",
+    "uuid": "6a6b6d30-45f3-4076-a108-0514aabe3886",
+    "dataType": "Numeric",
+    "unit": "Acre(s)"
+  },
+  {
+    "name": "Land possession",
+    "uuid": "6a0d80bf-e271-4012-a8e1-9d9c91b18a14",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70",
+        "order": 1.0
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc",
+        "order": 2.0
+      }
+    ]
+  },
+  {
+    "name": "Ledhra",
+    "uuid": "f6079f20-d647-4e5f-a7bf-829ed80eacd4",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Ledhra"
+      }
+    ]
+  },
+  {
+    "name": "Ledra",
+    "uuid": "efa85385-38a5-4ee8-8d71-7445513abbe3",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "temp9"
+      }
+    ]
+  },
+  {
+    "name": "Lukantola",
+    "uuid": "66ba19bf-c2b3-495c-964d-8a0d7cfa686d",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Debridadar"
+      }
+    ]
+  },
+  {
+    "name": "Maharantola",
+    "uuid": "7105f451-f5c5-41fa-9124-cf71a3a1f313",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Lamsarai (Near Keshwani),Lamsarai (Near Ahirwar)"
+      }
+    ]
+  },
+  {
+    "name": "Mahuatola",
+    "uuid": "7a6a9650-2291-44be-8326-3449b94349b1",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Thunguni"
+      }
+    ]
+  },
+  {
+    "name": "Majhuatola",
+    "uuid": "26f411f9-5f2c-45d6-9a12-e17855a59270",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Majhauli"
+      }
+    ]
+  },
+  {
+    "name": "Mandlantola",
+    "uuid": "43b961f0-56f2-452f-a8b1-c87db28f3be8",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Ledhra"
+      }
+    ]
+  },
+  {
+    "name": "Manjhetola",
+    "uuid": "a6df964e-e24f-46f9-b9ca-00a090aa55f4",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Lamsarai (Near Keshwani),Lamsarai (Near Ahirwar),Uprikhurd,Manjhetola"
+      }
+    ]
+  },
+  {
+    "name": "Medakhar",
+    "uuid": "842951a2-95df-4edc-a850-ba0480721322",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Uprikhurd"
+      }
+    ]
+  },
+  {
+    "name": "Mental",
+    "uuid": "121e3bd4-70b4-4c80-b188-3a3018556934",
+    "dataType": "NA"
+  },
+  {
+    "name": "Mithu mahua",
+    "uuid": "dc42945d-90f4-4160-9f28-c99399481c84",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Dona,Jaithari,Mithu mahua,Tithi"
+      }
+    ]
+  },
+  {
+    "name": "Mohalla",
+    "uuid": "3d95a3b6-b6a2-4335-a680-e14095cd9dfb",
+    "dataType": "Text"
+  },
+  {
+    "name": "Moto tola",
+    "uuid": "153ed936-dc9d-41c2-b0f0-7980151e42ba",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Gijri"
+      }
+    ]
+  },
+  {
+    "name": "Nagula",
+    "uuid": "63879021-7aad-45b7-83fe-7c4b89acb617",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "temp10,Bicharpur,Manjhetola"
+      }
+    ]
+  },
+  {
+    "name": "Navatola",
+    "uuid": "d5a2bc00-c31c-431a-8a10-78c07c2ff9f3",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Navatola"
+      }
+    ]
+  },
+  {
+    "name": "Nayak",
+    "uuid": "9dd331a7-568f-43f4-9884-0258ed94c346",
+    "dataType": "NA"
+  },
+  {
+    "name": "Nogawan",
+    "uuid": "47016656-fde5-4910-b9e5-0f51d82d69c3",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "temp11"
+      }
+    ]
+  },
+  {
+    "name": "Old anganwadi kendra",
+    "uuid": "842c435e-d3e1-4ab2-b7e4-aa286f7ae76c",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Sarfa"
+      }
+    ]
+  },
+  {
+    "name": "Old panchayat bhavan",
+    "uuid": "5ef20a99-7cf2-4ca7-b65c-3d92be1a1a30",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Khumni"
+      }
+    ]
+  },
+  {
+    "name": "Other Chronic Illness",
+    "uuid": "989a09cf-a570-4ea9-ac67-422da92afce1",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other Gram panchayat",
+    "uuid": "d7e88b8c-77c0-4643-a852-4398d681d37f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other property",
+    "uuid": "84d72d0d-20d6-471b-9d76-c139f9eccc55",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other sub caste",
+    "uuid": "1f605949-1359-49aa-8d04-ac5f653864c7",
+    "dataType": "Text"
+  },
+  {
+    "name": "Padmania",
+    "uuid": "624666b1-9b1d-4512-9930-e5cbc9f38ded",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Kui,Padmania Village"
+      }
+    ]
+  },
+  {
+    "name": "Padri",
+    "uuid": "55d10b93-0d65-4fc9-b127-a82223fb20e1",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "temp12,temp13,Padri (near Chaura Dadar),Bakantola"
+      }
+    ]
+  },
+  {
+    "name": "Pakhatola",
+    "uuid": "c145312b-72c3-418a-8056-db2c530f62c5",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Pakhatola"
+      }
+    ]
+  },
+  {
+    "name": "Pakka",
+    "uuid": "b808c44a-a417-4816-ad0b-cde680f2124a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Pakripani",
+    "uuid": "2f7676f2-eecf-4e2f-9cdd-4bf6a5f52d82",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Pakripani"
+      }
+    ]
+  },
+  {
+    "name": "Panchayat Bhavan",
+    "uuid": "5c63b245-c2e9-4b36-9d7c-04f8843ea75e",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Khamroud Village"
+      }
+    ]
+  },
+  {
+    "name": "Panika",
+    "uuid": "301e4561-261a-4b55-bc2e-3a969bf5d0a5",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Ahirgawan"
+      }
+    ]
+  },
+  {
+    "name": "Pateratola",
+    "uuid": "ff7909f8-733d-4578-acfb-edfa02fb4042",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Padmania Village"
+      }
+    ]
+  },
+  {
+    "name": "Payari",
+    "uuid": "e94e33c6-776a-484c-9a99-78eba5b15b52",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Payari"
+      }
+    ]
+  },
+  {
+    "name": "Peepaltola",
+    "uuid": "e48d6a13-c467-4095-b057-8a14357a6442",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Tarang,BulhuPani"
+      }
+    ]
+  },
+  {
+    "name": "Phulwari",
+    "uuid": "6129d59e-17ee-4e0d-a48d-df00b0df326b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Hathbandha tola",
+        "uuid": "a55d6134-0271-44cb-bb04-fecd6691621c",
+        "order": 1.0
+      },
+      {
+        "name": "Beechtola",
+        "uuid": "25675274-ac62-4d99-b7c3-b88bc45c9bc8",
+        "order": 2.0
+      },
+      {
+        "name": "Dongritola",
+        "uuid": "3bb72aab-eca5-494a-b5da-bf04f784adf1",
+        "order": 3.0
+      },
+      {
+        "name": "Talvatola",
+        "uuid": "4e0055f8-f4c9-44b2-95c3-6d0293db52c2",
+        "order": 4.0
+      },
+      {
+        "name": "Chhatenitola",
+        "uuid": "1f51ed3b-cd8c-4054-aa0d-7a12499707ed",
+        "order": 5.0
+      },
+      {
+        "name": "Khodratola",
+        "uuid": "3f6763eb-0082-44bd-8ceb-2ad991dff4a3",
+        "order": 6.0
+      },
+      {
+        "name": "Old anganwadi kendra",
+        "uuid": "842c435e-d3e1-4ab2-b7e4-aa286f7ae76c",
+        "order": 7.0
+      },
+      {
+        "name": "Dadra Silvari",
+        "uuid": "e1947382-e6a2-4e30-8eee-a1f176cb49ef",
+        "order": 8.0
+      },
+      {
+        "name": "Tikratola",
+        "uuid": "92dde0ce-5c31-4812-9bc3-477361001359",
+        "order": 9.0
+      },
+      {
+        "name": "Piparhatola",
+        "uuid": "cb7fe53c-1ef9-419b-ac29-e1a06f3020ad",
+        "order": 10.0
+      },
+      {
+        "name": "Karhaitola",
+        "uuid": "94c30041-4cc9-46f8-9997-e71f7e4e0c04",
+        "order": 11.0
+      },
+      {
+        "name": "Jarratola",
+        "uuid": "5af5ed69-44e9-4d65-b73f-7425507b462e",
+        "order": 12.0
+      },
+      {
+        "name": "Old panchayat bhavan",
+        "uuid": "5ef20a99-7cf2-4ca7-b65c-3d92be1a1a30",
+        "order": 13.0
+      },
+      {
+        "name": "Tagritola",
+        "uuid": "f2f3c0e6-2f71-46c9-bd4d-3364d66d34e4",
+        "order": 14.0
+      },
+      {
+        "name": "Panika",
+        "uuid": "301e4561-261a-4b55-bc2e-3a969bf5d0a5",
+        "order": 15.0
+      },
+      {
+        "name": "Schooltola",
+        "uuid": "6088b28d-1218-4e52-8243-e9e28b1be59c",
+        "order": 16.0
+      },
+      {
+        "name": "Upartola",
+        "uuid": "7a72371a-7a29-4c2e-a909-53abc8552ba7",
+        "order": 17.0
+      },
+      {
+        "name": "Payari",
+        "uuid": "e94e33c6-776a-484c-9a99-78eba5b15b52",
+        "order": 18.0
+      },
+      {
+        "name": "Katurdona",
+        "uuid": "5bcb0fd9-4d77-4783-97b3-59809ad52ada",
+        "order": 19.0
+      },
+      {
+        "name": "Khalebhanvar",
+        "uuid": "dfb30c2b-7875-459d-9ebd-6b8eed70e9fc",
+        "order": 20.0
+      },
+      {
+        "name": "Samudayik Bhavan",
+        "uuid": "d0da4dc0-b5fc-4c09-bcf0-ea9619af51a1",
+        "order": 21.0
+      },
+      {
+        "name": "Chatua",
+        "uuid": "ab88a8fa-8e83-463e-ac58-602cf9775341",
+        "order": 22.0
+      },
+      {
+        "name": "Chatua 2",
+        "uuid": "1eb48800-2315-45df-97fd-5eb5d44746f7",
+        "order": 23.0
+      },
+      {
+        "name": "Ramtola",
+        "uuid": "4a31cd46-3374-433a-97c4-e4ab3f1110cf",
+        "order": 24.0
+      },
+      {
+        "name": "Goratola",
+        "uuid": "3d46d442-4568-4127-8c64-59dd2c4bfe99",
+        "order": 25.0
+      },
+      {
+        "name": "Peepaltola",
+        "uuid": "e48d6a13-c467-4095-b057-8a14357a6442",
+        "order": 26.0
+      },
+      {
+        "name": "Baigantola",
+        "uuid": "3c37178b-bfe5-426d-9a90-9ced65946fec",
+        "order": 27.0
+      },
+      {
+        "name": "Panchayat Bhavan",
+        "uuid": "5c63b245-c2e9-4b36-9d7c-04f8843ea75e",
+        "order": 28.0
+      },
+      {
+        "name": "Mahuatola",
+        "uuid": "7a6a9650-2291-44be-8326-3449b94349b1",
+        "order": 29.0
+      },
+      {
+        "name": "Bhumiyatola",
+        "uuid": "3fa4c8e5-72ab-4395-a564-46bfe0ff134e",
+        "order": 30.0
+      },
+      {
+        "name": "Kharsolihantola",
+        "uuid": "f65ff638-9ab6-418b-8615-6b672e64b63c",
+        "order": 31.0
+      },
+      {
+        "name": "Majhuatola",
+        "uuid": "26f411f9-5f2c-45d6-9a12-e17855a59270",
+        "order": 32.0
+      },
+      {
+        "name": "Pateratola",
+        "uuid": "ff7909f8-733d-4578-acfb-edfa02fb4042",
+        "order": 33.0
+      },
+      {
+        "name": "Saraihatola",
+        "uuid": "8ccf6514-6e9f-4ca8-a01b-d3f0fad445da",
+        "order": 34.0
+      },
+      {
+        "name": "Batiya",
+        "uuid": "d9cd5cb5-5d14-4d00-90aa-17f31d91c98e",
+        "order": 35.0
+      },
+      {
+        "name": "Aamatola",
+        "uuid": "d67d31a8-d76b-4d28-a623-9c23a0052e66",
+        "order": 36.0
+      },
+      {
+        "name": "Manjhetola",
+        "uuid": "a6df964e-e24f-46f9-b9ca-00a090aa55f4",
+        "order": 37.0
+      },
+      {
+        "name": "Talwa tola",
+        "uuid": "2c6b97b9-d1a5-4a8d-a9aa-52f199b8a445",
+        "order": 38.0
+      },
+      {
+        "name": "Hathbandha",
+        "uuid": "4aec9c83-849c-4b26-97d1-ffed9ac04d9b",
+        "order": 39.0
+      },
+      {
+        "name": "Karoundi",
+        "uuid": "e4986ae7-e114-4e74-bd54-095146dc7798",
+        "order": 40.0
+      },
+      {
+        "name": "Bhadratola",
+        "uuid": "cc596d52-e0af-4475-a8a2-bf278891615b",
+        "order": 41.0
+      },
+      {
+        "name": "Rajhantola",
+        "uuid": "dbdc65c6-b954-461a-a5e8-27aa0ecc8753",
+        "order": 42.0
+      },
+      {
+        "name": "Prem Nagar",
+        "uuid": "27c4b773-a0eb-4bfe-a5c9-bcfaca5a09cd",
+        "order": 43.0
+      },
+      {
+        "name": "Upar tola",
+        "uuid": "b4058ed8-cecd-4b1b-8310-1cdd85b4c70e",
+        "order": 44.0
+      },
+      {
+        "name": "Belhaitola",
+        "uuid": "e7d09f77-b2b4-4c3e-950c-940844de3bb7",
+        "order": 45.0
+      },
+      {
+        "name": "Kairhai tola",
+        "uuid": "d7b9b3db-f4d1-42e0-a4d7-2e87b35c3a27",
+        "order": 46.0
+      },
+      {
+        "name": "Moto tola",
+        "uuid": "153ed936-dc9d-41c2-b0f0-7980151e42ba",
+        "order": 47.0
+      },
+      {
+        "name": "Maharantola",
+        "uuid": "7105f451-f5c5-41fa-9124-cf71a3a1f313",
+        "order": 48.0
+      },
+      {
+        "name": "Harradadar",
+        "uuid": "347ca768-9a87-4481-a19c-164040e74ab8",
+        "order": 49.0
+      },
+      {
+        "name": "Konhatola",
+        "uuid": "77c0f817-f1d2-4335-a075-abcddbd9208f",
+        "order": 50.0
+      },
+      {
+        "name": "Doomartola",
+        "uuid": "de208ce6-9e7f-464f-b79f-5e896e935976",
+        "order": 51.0
+      },
+      {
+        "name": "Navatola",
+        "uuid": "d5a2bc00-c31c-431a-8a10-78c07c2ff9f3",
+        "order": 52.0
+      },
+      {
+        "name": "Pakripani",
+        "uuid": "2f7676f2-eecf-4e2f-9cdd-4bf6a5f52d82",
+        "order": 53.0
+      },
+      {
+        "name": "Pakhatola",
+        "uuid": "c145312b-72c3-418a-8056-db2c530f62c5",
+        "order": 54.0
+      },
+      {
+        "name": "Belapani",
+        "uuid": "8da98038-89f9-40e9-a2a4-8b7bdc47bddf",
+        "order": 55.0
+      },
+      {
+        "name": "Bhayantola",
+        "uuid": "19b78ed5-384a-4c83-b840-4f6f43e25057",
+        "order": 56.0
+      }
+    ]
+  },
+  {
+    "name": "Piparhatola",
+    "uuid": "cb7fe53c-1ef9-419b-ac29-e1a06f3020ad",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Piparaha (Near Chaura Dadar)"
+      }
+    ]
+  },
+  {
+    "name": "Prem Nagar",
+    "uuid": "27c4b773-a0eb-4bfe-a5c9-bcfaca5a09cd",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Salar Gondi"
+      }
+    ]
+  },
+  {
+    "name": "Property",
+    "uuid": "beef9533-cfa1-4efa-bed3-d14169468c1c",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Tractor",
+        "uuid": "f9648a00-6ba1-4b87-b08f-f527ddd8d1cb",
+        "order": 1.0
+      },
+      {
+        "name": "4 Wheeler",
+        "uuid": "58cc3e54-5a82-48e1-91bf-c1c0dd26a2e0",
+        "order": 2.0
+      },
+      {
+        "name": "2 Wheeler",
+        "uuid": "3769e0c6-ea4f-4836-b6c4-6603b27b5f91",
+        "order": 3.0
+      },
+      {
+        "name": "Fridge",
+        "uuid": "705f8530-6d93-4460-ac6b-36e5647efc31",
+        "order": 4.0
+      },
+      {
+        "name": "Cycle",
+        "uuid": "2ecc9fee-493c-4ce5-bd5d-c3139a2fa48f",
+        "order": 5.0
+      },
+      {
+        "name": "Generator",
+        "uuid": "c89c34a0-41f4-4dfc-9d5f-872a1812aa31",
+        "order": 6.0
+      },
+      {
+        "name": "Other",
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "order": 7.0
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "unique": true,
+        "order": 8.0
+      }
+    ]
+  },
+  {
+    "name": "Rajhantola",
+    "uuid": "dbdc65c6-b954-461a-a5e8-27aa0ecc8753",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Alwar Village"
+      }
+    ]
+  },
+  {
+    "name": "Ramtola",
+    "uuid": "4a31cd46-3374-433a-97c4-e4ab3f1110cf",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Sarai (Near Tarang)"
+      }
+    ]
+  },
+  {
+    "name": "Salar Gondi",
+    "uuid": "5d3f7b1c-c769-4c39-87e9-2cbd645ce3b0",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Salar Gondi,Sarai Paterra"
+      }
+    ]
+  },
+  {
+    "name": "Salargondi",
+    "uuid": "1ce44b9d-bd19-4039-b645-ab24130a7b9e",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Salargondi,Harradadar"
+      }
+    ]
+  },
+  {
+    "name": "Samudayik Bhavan",
+    "uuid": "d0da4dc0-b5fc-4c09-bcf0-ea9619af51a1",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Tankitola"
+      }
+    ]
+  },
+  {
+    "name": "Sarai",
+    "uuid": "da30db67-8777-4e8b-9009-190d947db4f0",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Sarai (Near Tarang),Khosurgod"
+      }
+    ]
+  },
+  {
+    "name": "Saraihatola",
+    "uuid": "8ccf6514-6e9f-4ca8-a01b-d3f0fad445da",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Gijri"
+      }
+    ]
+  },
+  {
+    "name": "Sarfa",
+    "uuid": "fa729199-f789-4939-826d-36c7a5aa7124",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Sarfa,Khirni"
+      }
+    ]
+  },
+  {
+    "name": "School tola",
+    "uuid": "9a9506bc-5650-49dd-bb59-ef8f92c4651c",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Bartola"
+      }
+    ]
+  },
+  {
+    "name": "Schooltola",
+    "uuid": "6088b28d-1218-4e52-8243-e9e28b1be59c",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Bijora,Jarhi (near Godhantola),Padri (near Chaura Dadar),Bijapuri No.2,Karaunda Pani,Daldali,Kodar Village,Chirpani,Dabhaniya,Amoda"
+      }
+    ]
+  },
+  {
+    "name": "Semartola",
+    "uuid": "396299ba-bdee-4b76-8801-3cf8f8e23675",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Bijapuri No.2,Dudhmania"
+      }
+    ]
+  },
+  {
+    "name": "Sub Caste",
+    "uuid": "00c7aa50-aabb-465f-be09-408c94734004",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Gond",
+        "uuid": "9fad61f4-56b4-4ae8-8500-1012fe26eefd",
+        "order": 1.0
+      },
+      {
+        "name": "Baiga",
+        "uuid": "2265b559-682f-427b-9b32-7039995f3b4e",
+        "order": 2.0
+      },
+      {
+        "name": "Panika",
+        "uuid": "301e4561-261a-4b55-bc2e-3a969bf5d0a5",
+        "order": 3.0
+      },
+      {
+        "name": "Yadav",
+        "uuid": "7d571208-03b8-4eac-9ff8-cd9b3db2070a",
+        "order": 4.0
+      },
+      {
+        "name": "Nayak",
+        "uuid": "9dd331a7-568f-43f4-9884-0258ed94c346",
+        "order": 5.0
+      },
+      {
+        "name": "Vishwakarma",
+        "uuid": "5d3c258a-05a5-4fff-b87a-081591012375",
+        "order": 6.0
+      },
+      {
+        "name": "Ahirwar",
+        "uuid": "2e889b9c-c0ff-4076-a74a-4d84fa20fbdb",
+        "order": 7.0
+      },
+      {
+        "name": "Other",
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "order": 8.0
+      }
+    ]
+  },
+  {
+    "name": "Tagritola",
+    "uuid": "f2f3c0e6-2f71-46c9-bd4d-3364d66d34e4",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "BulhuPani"
+      }
+    ]
+  },
+  {
+    "name": "Talvatola",
+    "uuid": "4e0055f8-f4c9-44b2-95c3-6d0293db52c2",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Tithi"
+      }
+    ]
+  },
+  {
+    "name": "Talwa tola",
+    "uuid": "2c6b97b9-d1a5-4a8d-a9aa-52f199b8a445",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Kui,Ghata"
+      }
+    ]
+  },
+  {
+    "name": "Tarang",
+    "uuid": "86652a24-9064-40ae-9a3b-890ad8af13bd",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Payari,Tarang"
+      }
+    ]
+  },
+  {
+    "name": "Tikratola",
+    "uuid": "92dde0ce-5c31-4812-9bc3-477361001359",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Mithu mahua,Neeche Silvari,Kodar Village,Udal,Picharwahi"
+      }
+    ]
+  },
+  {
+    "name": "Tractor",
+    "uuid": "f9648a00-6ba1-4b87-b08f-f527ddd8d1cb",
+    "dataType": "NA"
+  },
+  {
+    "name": "Type of residence",
+    "uuid": "f1aec43b-c985-442a-97dd-70cbe00e3643",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Kaccha",
+        "uuid": "a7466416-d7e5-491a-b980-2526e09dac17",
+        "order": 1.0
+      },
+      {
+        "name": "Pakka",
+        "uuid": "b808c44a-a417-4816-ad0b-cde680f2124a",
+        "order": 2.0
+      },
+      {
+        "name": "Aadha kacha pakka",
+        "uuid": "8e7eee58-19a7-4189-a29b-a90c801765ba",
+        "order": 3.0
+      }
+    ]
+  },
+  {
+    "name": "Ufrikala",
+    "uuid": "98a3d527-7d39-45a8-b81d-a080f93e23e9",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "temp14,Bhuratola,Bartola,Ufrikala"
+      }
+    ]
+  },
+  {
+    "name": "Upar tola",
+    "uuid": "b4058ed8-cecd-4b1b-8310-1cdd85b4c70e",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Sarai Paterra"
+      }
+    ]
+  },
+  {
+    "name": "Upartola",
+    "uuid": "7a72371a-7a29-4c2e-a909-53abc8552ba7",
+    "dataType": "NA",
+    "keyValues": [
+      {
+        "key": "village",
+        "value": "Khirni,Bakantola"
+      }
+    ]
+  },
+  {
+    "name": "Vishwakarma",
+    "uuid": "5d3c258a-05a5-4fff-b87a-081591012375",
+    "dataType": "NA"
+  },
+  {
+    "name": "Yadav",
+    "uuid": "7d571208-03b8-4eac-9ff8-cd9b3db2070a",
+    "dataType": "NA"
   }
 ]

@@ -27,13 +27,15 @@ class ChildEnrolmentHandlerJSS {
 
     enrolTo(programEnrolment, formElement) {
         const statusBuilder = this._getStatusBuilder(programEnrolment, formElement);
-        var villagePhulwariMappingClone = new Map(VILLAGE_PHULWARI_MAPPING);
-        var notToRemove = villagePhulwariMappingClone.get(programEnrolment.individual.lowestAddressLevel.name);
-        villagePhulwariMappingClone.delete(programEnrolment.individual.lowestAddressLevel.name);
+        var allPhulwari = formElement.concept.getAnswers();
+        const village=programEnrolment.individual.lowestAddressLevel.name;
+        const phulwariesToRemove=[];
+        _.forEach(allPhulwari,phulwari=>{ const phulwariVillage = phulwari.concept.recordValueByKey('village');
+            if (phulwariVillage && !_.includes(phulwariVillage.split(','), village)) {
+                phulwariesToRemove.push(phulwari)
+            }});
 
-        var oldflatten = _.flatten([...villagePhulwariMappingClone.values()]).filter((p) => !_.isEmpty(p));
-        const flatten = _.difference(oldflatten, notToRemove);
-        statusBuilder.skipAnswers.apply(statusBuilder, flatten);
+        statusBuilder.skipAnswers.apply(statusBuilder, phulwariesToRemove);
         return statusBuilder.build();
     }
 

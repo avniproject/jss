@@ -12,13 +12,16 @@ class RegistrationHandlerJSS {
 
     gramPanchayat(individual, formElement) {
         const statusBuilder = this._getStatusBuilder(individual, formElement);
-        var villageGrampanchayatMappingClone = new Map(VILLAGE_GRAMPANCHAYAT_MAPPING);
-        var notToRemove = villageGrampanchayatMappingClone.get(individual.lowestAddressLevel.name);
-        villageGrampanchayatMappingClone.delete(individual.lowestAddressLevel.name);
-        var oldflatten = _.flatten([...villageGrampanchayatMappingClone.values()]).filter((p) => !_.isEmpty(p));
-
-        const flatten = oldflatten.filter((val) => val !== notToRemove);
-        statusBuilder.skipAnswers.apply(statusBuilder, flatten);
+        var allGrampanchayat = formElement.concept.getAnswers();
+        const village = individual.lowestAddressLevel.name;
+        const grampanchayatToRemove = [];
+        _.forEach(allGrampanchayat, grampanchayat => {
+            const grampanchayatVillage = grampanchayat.concept.recordValueByKey('village');
+            if (grampanchayatVillage && !_.includes(grampanchayatVillage.split(','), village)) {
+                grampanchayatToRemove.push(grampanchayat)
+            }
+        });
+      statusBuilder.skipAnswers.apply(statusBuilder, grampanchayatToRemove);
         return statusBuilder.build();
     }
 

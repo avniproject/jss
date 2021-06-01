@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @media screen {
+            .container {
+                display: flex;
+                flex-direction: column;
+                margin-top: 10px;
+                margin-left: 25%;
+                margin-right: 25%;
+            }
+        }
+
+        @media print {
+            .container {
+                display: flex;
+                flex-direction: column;
+                margin-top: 10px;
+            }
+        }
+
+        @media all {
+            .header {
+                display: flex;
+                align-items: center;
+                background-color: darkgray;
+                padding-left: 10px;
+                padding-right: 10px;
+                height: 40px;
+            }
+
+            .section {
+                display: flex;
+                flex-direction: column;
+                margin-left: 10px;
+                margin-right: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .row {
+                display: flex;
+                flex-direction: row;
+                flex-flow: row wrap;
+                -webkit-align-content: space-between;
+                justify-content: space-between;
+                margin-bottom: 5px;
+            }
+
+            .title {
+                font-weight: bold;
+            }
+
+            .data {
+                font-weight: normal;
+            }
+
+            .wfa-title {
+                height: 25px;
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                background-color: #D0D0D0;
+                width: 48%;
+                padding-left: 5px;
+            }
+
+            .wfa-data {
+                height: 25px;
+                display: flex;
+                align-items: center;
+                font-weight: normal;
+                width: 48%;
+                padding-left: 15px;
+            }
+
+            .canvas-row {
+                display: flex;
+                flex-direction: row;
+                flex-flow: row wrap;
+                -webkit-align-content: space-between;
+                justify-content: space-between;
+                margin-bottom: 5px;
+            }
+
+            .canvas-data {
+                width: 320px;
+                height: 150px;
+                border: 1px solid black;
+            }
+
+            .full-width {
+                width: 430px;
+                height: 210px;
+                border: 1px solid black;
+            }
+
+        }
+
+    </style>
+    <title>Monthly Progress Report</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script>
+
+        function openPrint() {
+            // window.onafterprint = window.close;
+            window.print();
+        }
+
+        function getTimeSpend(now, enrolmentDateTime) {
+            const years = now.diff(enrolmentDateTime, 'year');
+            enrolmentDateTime.add(years, 'years');
+            const months = now.diff(enrolmentDateTime, 'months');
+            enrolmentDateTime.add(months, 'months');
+            const days = now.diff(enrolmentDateTime, 'days');
+            return {years, months, days};
+        }
+
+        function getBarConfig(previousMonthEncounter, thisMonthEncounter, property) {
+            const data = {
+                labels: [`${property} last month`, `${property} this month`],
+                datasets: [{
+                    data: [
+                        _.get(previousMonthEncounter, ['observations', property], 0),
+                        _.get(thisMonthEncounter, ['observations', property], 0)
+                    ],
+                    backgroundColor: [
+                        'rgb(0,191,243)',
+                        'rgb(0,108,235)',
+                    ],
+                    borderColor: [
+                        'rgb(0,191,243)',
+                        'rgb(0,108,235)',
+                    ],
+                    borderWidth: 1
+                }]
+            };
+            return {
+                type: 'bar',
+                data: data,
+                options: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: `${property} graph`
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        datalabels: {
+                            display: false
+                        }
+                    }
+                },
+            };
+        }
+
+        function getAttendanceData() {
+            const data = {
+                labels: [
+                    'Present',
+                    'Absent'
+                ],
+                datasets: [{
+                    data: [20, 9],
+                    backgroundColor: [
+                        'rgb(56,167,132)',
+                        'rgb(255,99,132)'
+                    ],
+                    hoverOffset: 4
+                }]
+            };
+            return {
+                type: 'pie',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    title: {
+                        display: true,
+                        text: `Attendance in this month`
+                    },
+                    plugins: {
+                        datalabels: {
+                            formatter: (value, ctx) => {
+                                let datasets = ctx.chart.data.datasets;
+                                if (datasets.indexOf(ctx.dataset) === datasets.length - 1) {
+                                    let sum = datasets[0].data.reduce((a, b) => a + b, 0);
+                                    return `${Math.round((value / sum) * 100)}%`;
+                                } else {
+                                    return value;
+                                }
+                            },
+                            color: '#fff',
+                            display: 'auto'
+                        },
+                    }
+                },
+            };
+        }
+
+        function getTrendData(encounters, property) {
+            const labels = [];
+            const dataSetData = [];
+            _.forEach(encounters, enc => {
+                const value = _.get(enc, ['observations', property]);
+                if (value) {
+                    labels.push(moment(enc["Encounter date time"]).format('MMM YYYY'));
+                    dataSetData.push(value)
+                }
+            });
+            const data = {
+                labels: labels,
+                datasets: [{
+                    data: dataSetData,
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            };
+
+            return {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: `${property} growth with the time`
+                    },
+                    legend: {
+                        display: false
+                    },
+                    plugins: {
+                        datalabels: {
+                            display: false
+                        },
+                    }
+                },
+            };
+        }
+
+        async function fetchSubjectInfo() {
+            const url = new URL(window.location.href);
+            const options = {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    // 'user-name': url.searchParams.get("user-name"),
+                    'user-name': 'azadsingh@jss',
+                    // 'AUTH-TOKEN': url.searchParams.get("AUTH-TOKEN"),
+                }
+            };
+            const subjectAPI = `/api/subject/${url.searchParams.get("subjectUUID")}`;
+            const enrolmentAPI = `/api/programEnrolments?program=Child&subject=${url.searchParams.get("subjectUUID")}`;
+
+            const subject = await fetch(subjectAPI, options).then(res => res.json());
+            const enrolment = await fetch(enrolmentAPI, options).then(res => res.json()).then(data => data.content);
+            const latestEnrolment = _.find(enrolment, enl => _.isNil(enl["Exit datetime"]) && !enl["Voided"]);
+            const programEnrolmentId = _.get(latestEnrolment, 'ID', null);
+            //TODO: assuming encounters will be less than 200. Handle pagination properly later if count exceeds
+            const programEncounterAPI = `/api/programEncounters?encounterType=Anthropometry Assessment&programEnrolmentId=${programEnrolmentId}&size=200&page=0`;
+            const encounters = await fetch(programEncounterAPI, options).then(res => res.json()).then(data => data.content);
+            const filteredEncounters = _.filter(encounters, enc => !enc['Voided'] && !_.isNil(enc['Encounter date time']));
+
+            const enrolmentDateTime = moment(_.get(latestEnrolment, 'Enrolment datetime', null));
+            const now = moment();
+            const previousMonth = moment().subtract(1, 'months');
+            const {years, months, days} = getTimeSpend(now, enrolmentDateTime);
+
+            const latestEncounter = _.last(filteredEncounters);
+            const thisMonthEncounter = _.find(filteredEncounters, enc => moment(enc['Encounter date time']).isSame(now, 'month'));
+            const previousMonthEncounter = _.find(filteredEncounters, enc => moment(enc['Encounter date time']).isSame(previousMonth, 'month'));
+
+            const heightGraph = new Chart(document.getElementById('heightGraph'), getBarConfig(previousMonthEncounter, thisMonthEncounter, 'Height'));
+            const weightGraph = new Chart(document.getElementById('weightGraph'), getBarConfig(previousMonthEncounter, thisMonthEncounter, 'Weight'));
+            const attendanceGraph = new Chart(document.getElementById('attendanceGraph'), getAttendanceData());
+            const weightTrend = new Chart(document.getElementById('weightTrend'), getTrendData(filteredEncounters, 'Weight'));
+            const heightTrend = new Chart(document.getElementById('heightTrend'), getTrendData(filteredEncounters, 'Height'));
+
+            const view = {
+                name: `${subject.observations["First name"]} ${subject.observations["Last name"]}`,
+                dob: moment(subject.observations["Date of birth"]).format('L'),
+                father: subject.observations["Father's Name"],
+                mother: subject.observations["Mother's Name"],
+                timeInPhulwari: `${years} year(s) ${months} month(s) ${days} day(s)`,
+                wfaStatus: _.head(_.get(latestEncounter, ['observations', 'Weight for age Status'], []))
+            };
+
+            const wfaStyleMap = {
+                'Normal': {backgroundColor: 'green', color: 'white'},
+                'Moderately Underweight': {backgroundColor: 'yellow', color: 'black'},
+                'Severely Underweight': {backgroundColor: 'red', color: 'white'}
+            };
+            const {color, backgroundColor} = _.get(wfaStyleMap, [view.wfaStatus], {});
+            const name = Mustache.render(`{{name}}`, view);
+            const dob = Mustache.render(`{{dob}}`, view);
+            const father = Mustache.render(`{{father}}`, view);
+            const mother = Mustache.render(`{{mother}}`, view);
+            const timeInPhulwari = Mustache.render(`{{timeInPhulwari}}`, view);
+            const wfaStatus = Mustache.render(`{{wfaStatus}}`, view);
+            document.getElementById('name').innerHTML = name;
+            document.getElementById('dob').innerHTML = dob;
+            document.getElementById('fatherName').innerHTML = father;
+            document.getElementById('motherName').innerHTML = mother;
+            document.getElementById('timeInPhulwari').innerHTML = timeInPhulwari;
+            document.getElementById('wfaStatus').innerHTML = wfaStatus;
+            document.getElementById('wfaStatus').style.color = color;
+            document.getElementById('wfaStatus').style.backgroundColor = backgroundColor;
+        }
+
+        window.onload = function renderData() {
+            //graphs take time to render
+            fetchSubjectInfo().then(() => setTimeout(openPrint, 1000));
+        };
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="header" style="justify-content:center">
+        <h3>Monthly Progress Report</h3>
+    </div>
+    <div class="section">
+        <div class="row">
+            <span class="title">Name: <span id="name" class="data"></span></span>
+            <span class="title">Date of birth: <span id="dob" class="data"></span></span>
+        </div>
+        <div class="row">
+            <span class="title">Father's name: <span id="fatherName" class="data"></span></span>
+            <span class="title">Mother's name: <span id="motherName" class="data"></span></span>
+        </div>
+        <div class="row">
+            <span class="title">Time spent in Phulwari: <span id="timeInPhulwari" class="data"></span></span>
+        </div>
+    </div>
+    <div class="header">
+        <h5>Key facts from this months data</h5>
+    </div>
+    <div class="section">
+        <div class="row" style="background-color: #D0D0D0">
+            <div class="wfa-title">Grade of the child:</div>
+            <div id="wfaStatus" class="wfa-data"></div>
+        </div>
+        <div class="canvas-row">
+            <div class="canvas-data">
+                <canvas id="heightGraph"></canvas>
+            </div>
+            <div class="canvas-data">
+                <canvas id="weightGraph"></canvas>
+            </div>
+        </div>
+        <div class="canvas-data" style="margin:0 auto;">
+            <canvas id="attendanceGraph"></canvas>
+        </div>
+    </div>
+    <div class="header">
+        <h5>Overall Growth</h5>
+    </div>
+    <div class="section">
+        <div class="full-width" style="margin-bottom: 5px">
+            <canvas id="weightTrend"></canvas>
+        </div>
+        <div class="full-width">
+            <canvas id="heightTrend"></canvas>
+        </div>
+    </div>
+</div>
+</body>
+</html>

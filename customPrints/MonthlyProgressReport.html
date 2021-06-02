@@ -167,14 +167,14 @@
             };
         }
 
-        function getAttendanceData() {
+        function getAttendanceData({present, absent}) {
             const data = {
                 labels: [
                     'Present',
                     'Absent'
                 ],
                 datasets: [{
-                    data: [20, 9],
+                    data: [present, absent],
                     backgroundColor: [
                         'rgb(56,167,132)',
                         'rgb(255,99,132)'
@@ -252,6 +252,21 @@
             };
         }
 
+        async function fetchGroupEncounter(groupSubjectUUID, options, memberSubjectUUID) {
+            const monthsStartingDate = moment().startOf('month').startOf('day');
+            const encounterAPI = `/api/encounters?encounterType=Daily Attendance Form&subjectId=${groupSubjectUUID}&lastModifiedDateTime=${monthsStartingDate.toISOString()}&size=100&page=0`;
+            const encounters = await fetch(encounterAPI, options).then(res => res.json()).then(data => data.content);
+            const present = [];
+            const absent = [];
+            _.forEach(encounters, enc => {
+                if (!_.isNil(enc['Encounter date time']) && moment(enc.audit['Encounter date time']).isSameOrAfter(monthsStartingDate) ) {
+                    const childrenPresentInPhulwari = _.get(enc, ['observations', 'Children present in phulwari'], []);
+                    _.includes(childrenPresentInPhulwari, memberSubjectUUID) ? present.push(1) : absent.push(1);
+                }
+            });
+            return {present: present.length, absent: absent.length};
+        }
+
         async function fetchSubjectInfo() {
             const url = new URL(window.location.href);
             const options = {
@@ -259,12 +274,15 @@
                 headers: {
                     'Content-Type': 'application/json',
                     // 'user-name': url.searchParams.get("user-name"),
-                    'user-name': 'azadsingh@jss',
+                    // 'user-name': 'azadsingh@jss',
+                    'user-name': 'viveks@jssuat',
                     // 'AUTH-TOKEN': url.searchParams.get("AUTH-TOKEN"),
                 }
             };
-            const subjectAPI = `/api/subject/${url.searchParams.get("subjectUUID")}`;
-            const enrolmentAPI = `/api/programEnrolments?program=Child&subject=${url.searchParams.get("subjectUUID")}`;
+            let subjectUUID = url.searchParams.get("subjectUUID");
+            const subjectAPI = `/api/subject/${subjectUUID}`;
+            const enrolmentAPI = `/api/programEnrolments?program=Child&subject=${subjectUUID}`;
+            const groupSubjectAPI = `/api/groupSubjects?memberSubjectId=${subjectUUID}`;
 
             const subject = await fetch(subjectAPI, options).then(res => res.json());
             const enrolment = await fetch(enrolmentAPI, options).then(res => res.json()).then(data => data.content);
@@ -273,8 +291,11 @@
             //TODO: assuming encounters will be less than 200. Handle pagination properly later if count exceeds
             const programEncounterAPI = `/api/programEncounters?encounterType=Anthropometry Assessment&programEnrolmentId=${programEnrolmentId}&size=200&page=0`;
             const encounters = await fetch(programEncounterAPI, options).then(res => res.json()).then(data => data.content);
-            const filteredEncounters = _.filter(encounters, enc => !enc['Voided'] && !_.isNil(enc['Encounter date time']));
+            const phulwariGroupSubject = await fetch(groupSubjectAPI, options).then(res => res.json())
+                .then(data => _.find(_.get(data, 'content', []), content => content['Group subject']['Subject type'] === 'Phulwari' && content['Role'] === 'Phulwari Child'));
+            const attendanceData =  _.isEmpty(phulwariGroupSubject) ? [] : await fetchGroupEncounter(phulwariGroupSubject['Group subject']['ID'], options, subjectUUID);
 
+            const filteredEncounters = _.filter(encounters, enc => !enc['Voided'] && !_.isNil(enc['Encounter date time']));
             const enrolmentDateTime = moment(_.get(latestEnrolment, 'Enrolment datetime', null));
             const now = moment();
             const previousMonth = moment().subtract(1, 'months');
@@ -286,7 +307,7 @@
 
             const heightGraph = new Chart(document.getElementById('heightGraph'), getBarConfig(previousMonthEncounter, thisMonthEncounter, 'Height'));
             const weightGraph = new Chart(document.getElementById('weightGraph'), getBarConfig(previousMonthEncounter, thisMonthEncounter, 'Weight'));
-            const attendanceGraph = new Chart(document.getElementById('attendanceGraph'), getAttendanceData());
+            const attendanceGraph = new Chart(document.getElementById('attendanceGraph'), getAttendanceData(attendanceData));
             const weightTrend = new Chart(document.getElementById('weightTrend'), getTrendData(filteredEncounters, 'Weight'));
             const heightTrend = new Chart(document.getElementById('heightTrend'), getTrendData(filteredEncounters, 'Height'));
 

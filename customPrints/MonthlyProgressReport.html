@@ -108,7 +108,7 @@
     <script>
 
         function openPrint() {
-            // window.onafterprint = window.close;
+            window.onafterprint = window.close;
             window.print();
         }
 
@@ -152,9 +152,11 @@
                         text: `${property} graph`
                     },
                     scales: {
-                        y: {
-                            beginAtZero: true
-                        }
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
                     },
                     responsive: true,
                     maintainAspectRatio: false,
@@ -259,7 +261,7 @@
             const present = [];
             const absent = [];
             _.forEach(encounters, enc => {
-                if (!_.isNil(enc['Encounter date time']) && moment(enc.audit['Encounter date time']).isSameOrAfter(monthsStartingDate) ) {
+                if (!_.isNil(enc['Encounter date time']) && moment(enc.audit['Encounter date time']).isSameOrAfter(monthsStartingDate)) {
                     const childrenPresentInPhulwari = _.get(enc, ['observations', 'Children present in phulwari'], []);
                     _.includes(childrenPresentInPhulwari, memberSubjectUUID) ? present.push(1) : absent.push(1);
                 }
@@ -273,10 +275,10 @@
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    // 'user-name': url.searchParams.get("user-name"),
+                    'user-name': url.searchParams.get("user-name"),
+                    'AUTH-TOKEN': url.searchParams.get("AUTH-TOKEN"),
                     // 'user-name': 'azadsingh@jss',
-                    'user-name': 'viveks@jssuat',
-                    // 'AUTH-TOKEN': url.searchParams.get("AUTH-TOKEN"),
+                    //'user-name': 'viveks@jssuat',
                 }
             };
             let subjectUUID = url.searchParams.get("subjectUUID");
@@ -290,19 +292,18 @@
             const programEnrolmentId = _.get(latestEnrolment, 'ID', null);
             //TODO: assuming encounters will be less than 200. Handle pagination properly later if count exceeds
             const programEncounterAPI = `/api/programEncounters?encounterType=Anthropometry Assessment&programEnrolmentId=${programEnrolmentId}&size=200&page=0`;
-            const encounters = await fetch(programEncounterAPI, options).then(res => res.json()).then(data => data.content);
+            const encounters = _.isEmpty(programEnrolmentId) ? [] : await fetch(programEncounterAPI, options).then(res => res.json()).then(data => data.content);
             const phulwariGroupSubject = await fetch(groupSubjectAPI, options).then(res => res.json())
                 .then(data => _.find(_.get(data, 'content', []), content => content['Group subject']['Subject type'] === 'Phulwari' && content['Role'] === 'Phulwari Child'));
-            const attendanceData =  _.isEmpty(phulwariGroupSubject) ? [] : await fetchGroupEncounter(phulwariGroupSubject['Group subject']['ID'], options, subjectUUID);
+            const attendanceData = _.isEmpty(phulwariGroupSubject) ? [] : await fetchGroupEncounter(phulwariGroupSubject['Group subject']['ID'], options, subjectUUID);
 
-            const filteredEncounters = _.filter(encounters, enc => !enc['Voided'] && !_.isNil(enc['Encounter date time']));
+            const filteredEncounters = _.sortBy(_.filter(encounters, enc => !enc['Voided'] && !_.isNil(enc['Encounter date time'])), enc => enc['Encounter date time']);
             const enrolmentDateTime = moment(_.get(latestEnrolment, 'Enrolment datetime', null));
-            const now = moment();
             const previousMonth = moment().subtract(1, 'months');
-            const {years, months, days} = getTimeSpend(now, enrolmentDateTime);
+            const {years, months, days} = getTimeSpend(moment(), enrolmentDateTime);
 
             const latestEncounter = _.last(filteredEncounters);
-            const thisMonthEncounter = _.find(filteredEncounters, enc => moment(enc['Encounter date time']).isSame(now, 'month'));
+            const thisMonthEncounter = _.find(filteredEncounters, enc => moment(enc['Encounter date time']).isSame(moment(), 'month'));
             const previousMonthEncounter = _.find(filteredEncounters, enc => moment(enc['Encounter date time']).isSame(previousMonth, 'month'));
 
             const heightGraph = new Chart(document.getElementById('heightGraph'), getBarConfig(previousMonthEncounter, thisMonthEncounter, 'Height'));

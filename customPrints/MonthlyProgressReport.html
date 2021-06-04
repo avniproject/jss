@@ -125,7 +125,7 @@
             return `${moment(date).format('MMM YYYY')} ${property}`;
         }
 
-        function getBarConfig(previousMonthEncounter, thisMonthEncounter, property) {
+        function getBarConfig(previousMonthEncounter, thisMonthEncounter, property, ylabel) {
             const previousMonthLabel = _.isNil(previousMonthEncounter) ? "" : getLabelForMonth(previousMonthEncounter["Encounter date time"], property);
             const thisMonthLabel = _.isNil(thisMonthEncounter) ? "" : getLabelForMonth(thisMonthEncounter["Encounter date time"], property);
             const data = {
@@ -161,6 +161,10 @@
                         yAxes: [{
                             ticks: {
                                 beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: ylabel
                             }
                         }]
                     },
@@ -231,7 +235,7 @@
             return gender === 'Male' ? wfhMale : wfhFemale;
         }
 
-        function getTrendData(encounters, property, dob, standardData) {
+        function getTrendData(encounters, property, dob, standardData, ylabel) {
             const months = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60];
             const dataSetData = [];
             _.forEach(encounters, enc => {
@@ -269,7 +273,7 @@
                     responsive: true,
                     title: {
                         display: true,
-                        text: `${property} growth with the time`
+                        text: `${property} Growth Over Time`
                     },
                     legend: {
                         display: false
@@ -289,7 +293,7 @@
                         yAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: property
+                                labelString: ylabel
                             }
                         }]
                     }
@@ -349,11 +353,11 @@
             const latestEncounter = _.last(filteredEncounters);
             const thisMonthEncounter = _.find(filteredEncounters, enc => moment(enc['Encounter date time']).isSame(moment(), 'month'));
             const previousMonthEncounter = _.find(filteredEncounters, enc => moment(enc['Encounter date time']).isSame(previousMonth, 'month'));
-            const heightGraph = new Chart(document.getElementById('heightGraph'), getBarConfig(previousMonthEncounter, thisMonthEncounter, 'Height'));
-            const weightGraph = new Chart(document.getElementById('weightGraph'), getBarConfig(previousMonthEncounter, thisMonthEncounter, 'Weight'));
+            const heightGraph = new Chart(document.getElementById('heightGraph'), getBarConfig(previousMonthEncounter, thisMonthEncounter, 'Height', 'Height (cm)'));
+            const weightGraph = new Chart(document.getElementById('weightGraph'), getBarConfig(previousMonthEncounter, thisMonthEncounter, 'Weight', 'Weight (kg)'));
             const attendanceGraph = new Chart(document.getElementById('attendanceGraph'), getAttendanceData(attendanceData));
-            const weightTrend = new Chart(document.getElementById('weightTrend'), getTrendData(filteredEncounters, 'Weight', subjectObservations["Date of birth"], getStandardWeightData(subjectObservations["Gender"])));
-            const heightTrend = new Chart(document.getElementById('heightTrend'), getTrendData(filteredEncounters, 'Height', subjectObservations["Date of birth"], getStandardHeightData(subjectObservations["Gender"])));
+            const weightTrend = new Chart(document.getElementById('weightTrend'), getTrendData(filteredEncounters, 'Weight', subjectObservations["Date of birth"], getStandardWeightData(subjectObservations["Gender"]), 'Weight (kg)'));
+            const heightTrend = new Chart(document.getElementById('heightTrend'), getTrendData(filteredEncounters, 'Height', subjectObservations["Date of birth"], getStandardHeightData(subjectObservations["Gender"]), 'Height (cm)'));
 
             const view = {
                 name: `${subjectObservations["First name"]} ${subjectObservations["Last name"]}`,
@@ -442,7 +446,7 @@
     <div class="header">
         <h5>Overall Growth</h5>
     </div>
-    <div class="section">
+    <div class="section" style="align-items: center">
         <div class="full-width" style="margin-bottom: 5px">
             <canvas id="weightTrend"></canvas>
         </div>

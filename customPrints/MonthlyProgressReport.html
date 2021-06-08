@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
     <style>
         @media screen {
             .container {
@@ -21,6 +22,10 @@
         }
 
         @media all {
+            body {
+                font-family: 'Mukta';
+                font-size: 14px;
+            }
             .header {
                 display: flex;
                 align-items: center;
@@ -92,7 +97,7 @@
 
             .full-width {
                 width: 430px;
-                height: 210px;
+                height: 207px;
                 border: 1px solid black;
             }
 
@@ -121,13 +126,13 @@
             return {years, months, days};
         }
 
-        function getLabelForMonth(date, property) {
-            return `${moment(date).format('MMM YYYY')} ${property}`;
+        function getLabelForMonth(date, property, i18n) {
+            return `${moment(date).format('MMM YYYY')}`;
         }
 
-        function getBarConfig(previousMonthEncounter, thisMonthEncounter, property, ylabel) {
-            const previousMonthLabel = _.isNil(previousMonthEncounter) ? "" : getLabelForMonth(previousMonthEncounter["Encounter date time"], property);
-            const thisMonthLabel = _.isNil(thisMonthEncounter) ? "" : getLabelForMonth(thisMonthEncounter["Encounter date time"], property);
+        function getBarConfig(previousMonthEncounter, thisMonthEncounter, property, ylabel, i18n) {
+            const previousMonthLabel = _.isNil(previousMonthEncounter) ? "" : getLabelForMonth(previousMonthEncounter["Encounter date time"], property, i18n);
+            const thisMonthLabel = _.isNil(thisMonthEncounter) ? "" : getLabelForMonth(thisMonthEncounter["Encounter date time"], property, i18n);
             const data = {
                 labels: [previousMonthLabel, thisMonthLabel],
                 datasets: [{
@@ -155,7 +160,8 @@
                     },
                     title: {
                         display: true,
-                        text: `${property} graph`
+                        text: i18n(`${property} graph`),
+                        fontFamily: 'Mukta'
                     },
                     scales: {
                         yAxes: [{
@@ -179,11 +185,11 @@
             };
         }
 
-        function getAttendanceData({present, absent}) {
+        function getAttendanceData({present, absent}, i18n) {
             const data = {
                 labels: [
-                    'Present',
-                    'Absent'
+                    i18n('Present'),
+                    i18n('Absent')
                 ],
                 datasets: [{
                     data: [present, absent],
@@ -202,7 +208,7 @@
                     maintainAspectRatio: false,
                     title: {
                         display: true,
-                        text: `Attendance in this month`
+                        text: i18n('Attendance in this month')
                     },
                     plugins: {
                         datalabels: {
@@ -235,7 +241,7 @@
             return gender === 'Male' ? wfhMale : wfhFemale;
         }
 
-        function getTrendData(encounters, property, dob, standardData, ylabel) {
+        function getTrendData(encounters, property, dob, standardData, ylabel, i18n) {
             const months = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60];
             const dataSetData = [];
             _.forEach(encounters, enc => {
@@ -273,7 +279,8 @@
                     responsive: true,
                     title: {
                         display: true,
-                        text: `${property} Growth Over Time`
+                        text: i18n(`${property} Growth Over Time`),
+                        fontFamily: 'Mukta'
                     },
                     legend: {
                         display: false
@@ -287,7 +294,8 @@
                         xAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Age in months'
+                                labelString: i18n('Age in months'),
+                                fontFamily: 'Mukta'
                             }
                         }],
                         yAxes: [{
@@ -332,7 +340,10 @@
             const subjectAPI = `/api/subject/${subjectUUID}`;
             const enrolmentAPI = `/api/programEnrolments?program=Child&subject=${subjectUUID}`;
             const groupSubjectAPI = `/api/groupSubjects?memberSubjectId=${subjectUUID}`;
+            const translationAPI = `/web/translations?locale=hi_IN`;
 
+            const translations = await fetch(translationAPI, options).then(res => res.json()).then(d => _.get(d, ['hi_IN', 'translations']));
+            const i18n = (str) => _.get(translations, [str], str);
             const subject = await fetch(subjectAPI, options).then(res => res.json());
             const subjectObservations = subject.observations;
             const enrolment = await fetch(enrolmentAPI, options).then(res => res.json()).then(data => data.content);
@@ -353,45 +364,55 @@
             const latestEncounter = _.last(filteredEncounters);
             const thisMonthEncounter = _.find(filteredEncounters, enc => moment(enc['Encounter date time']).isSame(moment(), 'month'));
             const previousMonthEncounter = _.find(filteredEncounters, enc => moment(enc['Encounter date time']).isSame(previousMonth, 'month'));
-            const heightGraph = new Chart(document.getElementById('heightGraph'), getBarConfig(previousMonthEncounter, thisMonthEncounter, 'Height', 'Height (cm)'));
-            const weightGraph = new Chart(document.getElementById('weightGraph'), getBarConfig(previousMonthEncounter, thisMonthEncounter, 'Weight', 'Weight (kg)'));
-            const attendanceGraph = new Chart(document.getElementById('attendanceGraph'), getAttendanceData(attendanceData));
-            const weightTrend = new Chart(document.getElementById('weightTrend'), getTrendData(filteredEncounters, 'Weight', subjectObservations["Date of birth"], getStandardWeightData(subjectObservations["Gender"]), 'Weight (kg)'));
-            const heightTrend = new Chart(document.getElementById('heightTrend'), getTrendData(filteredEncounters, 'Height', subjectObservations["Date of birth"], getStandardHeightData(subjectObservations["Gender"]), 'Height (cm)'));
+            const heightGraph = new Chart(document.getElementById('heightGraph'), getBarConfig(previousMonthEncounter, thisMonthEncounter, 'Height', `${i18n('Height')} (cm)`, i18n));
+            const weightGraph = new Chart(document.getElementById('weightGraph'), getBarConfig(previousMonthEncounter, thisMonthEncounter, 'Weight', `${i18n('Weight')} (kg)`, i18n));
+            const attendanceGraph = new Chart(document.getElementById('attendanceGraph'), getAttendanceData(attendanceData, i18n));
+            const weightTrend = new Chart(document.getElementById('weightTrend'), getTrendData(filteredEncounters, 'Weight', subjectObservations["Date of birth"], getStandardWeightData(subjectObservations["Gender"]), `${i18n('Weight')} (kg)`, i18n));
+            const heightTrend = new Chart(document.getElementById('heightTrend'), getTrendData(filteredEncounters, 'Height', subjectObservations["Date of birth"], getStandardHeightData(subjectObservations["Gender"]), `${i18n('Height')} (cm)`, i18n));
 
             const view = {
                 name: `${subjectObservations["First name"]} ${subjectObservations["Last name"]}`,
                 dob: moment(subjectObservations["Date of birth"]).format('L'),
                 father: subjectObservations["Father's Name"],
                 mother: subjectObservations["Mother's Name"],
-                timeInPhulwari: `${years} year(s) ${months} month(s) ${days} day(s)`,
-                wfaStatus: _.head(_.get(latestEncounter, ['observations', 'Weight for age Status'], [])),
-                phulwari: _.get(latestEnrolment, ['observations', 'Phulwari'], ''),
-                reportForMonth: moment(_.get(latestEncounter, ["Encounter date time"])).format('MMM YYYY'),
+                timeInPhulwari: `${years} ${i18n('Year')} ${months} ${i18n('Month')} ${days} ${i18n('Day')}`,
+                wfaStatus: i18n(_.head(_.get(latestEncounter, ['observations', 'Weight for age Status'], []))),
+                phulwari: i18n(_.get(latestEnrolment, ['observations', 'Phulwari'], '')),
+                reportForMonth: moment().format('MMM YYYY'),
+                progressReport: i18n('Progress Report'),
+                nameLabel: i18n("Name"),
+                dobLabel: i18n("Date of birth"),
+                fatherLabel: i18n("Father's name"),
+                motherLabel: i18n("Mother's name"),
+                timeLabel: i18n("Time spent in Phulwari"),
+                keyFacts: i18n("Key facts from this months data"),
+                wfaLabel: i18n("Grade of the child"),
+                growth: i18n("Overall Growth")
             };
 
             const wfaStyleMap = {
-                'Normal': {backgroundColor: 'green', color: 'white'},
-                'Moderately Underweight': {backgroundColor: 'yellow', color: 'black'},
-                'Severely Underweight': {backgroundColor: 'red', color: 'white'}
+                [i18n('Normal')]: {backgroundColor: 'green', color: 'white'},
+                [i18n('Moderately Underweight')]: {backgroundColor: 'yellow', color: 'black'},
+                [i18n('Severely Underweight')]: {backgroundColor: 'red', color: 'white'}
             };
             const {color, backgroundColor} = _.get(wfaStyleMap, [view.wfaStatus], {});
-            const phulwari = Mustache.render(`{{phulwari}}`, view);
-            const reportForMonth = Mustache.render(`{{reportForMonth}} Progress Report`, view);
-            const name = Mustache.render(`{{name}}`, view);
-            const dob = Mustache.render(`{{dob}}`, view);
-            const father = Mustache.render(`{{father}}`, view);
-            const mother = Mustache.render(`{{mother}}`, view);
-            const timeInPhulwari = Mustache.render(`{{timeInPhulwari}}`, view);
-            const wfaStatus = Mustache.render(`{{wfaStatus}}`, view);
-            document.getElementById('phulwari').innerHTML = phulwari;
-            document.getElementById('reportForMonth').innerHTML = reportForMonth;
-            document.getElementById('name').innerHTML = name;
-            document.getElementById('dob').innerHTML = dob;
-            document.getElementById('fatherName').innerHTML = father;
-            document.getElementById('motherName').innerHTML = mother;
-            document.getElementById('timeInPhulwari').innerHTML = timeInPhulwari;
-            document.getElementById('wfaStatus').innerHTML = wfaStatus;
+            document.getElementById("name-label").innerHTML = Mustache.render(`{{nameLabel}}: `, view);
+            document.getElementById("dob-label").innerHTML = Mustache.render(`{{dobLabel}}: `, view);
+            document.getElementById("father-label").innerHTML = Mustache.render(`{{fatherLabel}}: `, view);
+            document.getElementById("mother-label").innerHTML = Mustache.render(`{{motherLabel}}: `, view);
+            document.getElementById("time-label").innerHTML = Mustache.render(`{{timeLabel}}: `, view);
+            document.getElementById("key-facts").innerHTML = Mustache.render(`{{keyFacts}}`, view);
+            document.getElementById("wfa-label").innerHTML = Mustache.render(`{{wfaLabel}}: `, view);
+            document.getElementById("growth").innerHTML = Mustache.render(`{{growth}}`, view);
+
+            document.getElementById('phulwari').innerHTML = Mustache.render(`{{phulwari}}`, view);
+            document.getElementById('reportForMonth').innerHTML = Mustache.render(`{{reportForMonth}} {{progressReport}}`, view);
+            document.getElementById('name').innerHTML = Mustache.render(`{{name}}`, view);
+            document.getElementById('dob').innerHTML = Mustache.render(`{{dob}}`, view);
+            document.getElementById('fatherName').innerHTML = Mustache.render(`{{father}}`, view);
+            document.getElementById('motherName').innerHTML = Mustache.render(`{{mother}}`, view);
+            document.getElementById('timeInPhulwari').innerHTML = Mustache.render(`{{timeInPhulwari}}`, view);
+            document.getElementById('wfaStatus').innerHTML = Mustache.render(`{{wfaStatus}}`, view);
             document.getElementById('wfaStatus').style.color = color;
             document.getElementById('wfaStatus').style.backgroundColor = backgroundColor;
         }
@@ -405,6 +426,7 @@
 <body>
 <div class="container">
     <div class="header">
+        <h2></h2>
         <div class="row" style="flex: 1">
             <h3 id="reportForMonth"></h3>
             <h3 id="phulwari"></h3>
@@ -412,23 +434,39 @@
     </div>
     <div class="section">
         <div class="row">
-            <span class="title">Name: <span id="name" class="data"></span></span>
-            <span class="title">Date of birth: <span id="dob" class="data"></span></span>
+            <div>
+                <span class="title" id="name-label"></span>
+                <span id="name" class="data"></span>
+            </div>
+            <div>
+                <span class="title" id="dob-label"></span>
+                <span id="dob" class="data"></span>
+            </div>
         </div>
         <div class="row">
-            <span class="title">Father's name: <span id="fatherName" class="data"></span></span>
-            <span class="title">Mother's name: <span id="motherName" class="data"></span></span>
+            <div>
+                <span class="title" id="father-label"></span>
+                <span id="fatherName" class="data"></span>
+            </div>
+            <div>
+                <span class="title" id="mother-label"></span>
+                <span id="motherName" class="data"></span>
+            </div>
         </div>
         <div class="row">
-            <span class="title">Time spent in Phulwari: <span id="timeInPhulwari" class="data"></span></span>
+            <div>
+                <span class="title" id="time-label"></span>
+                <span id="timeInPhulwari" class="data"></span>
+            </div>
+
         </div>
     </div>
     <div class="header">
-        <h5>Key facts from this months data</h5>
+        <h5 id="key-facts"></h5>
     </div>
     <div class="section">
         <div class="row" style="background-color: #D0D0D0">
-            <div class="wfa-title">Grade of the child:</div>
+            <div class="wfa-title" id="wfa-label"></div>
             <div id="wfaStatus" class="wfa-data"></div>
         </div>
         <div class="canvas-row">
@@ -444,7 +482,7 @@
         </div>
     </div>
     <div class="header">
-        <h5>Overall Growth</h5>
+        <h5 id="growth">Overall Growth</h5>
     </div>
     <div class="section" style="align-items: center">
         <div class="full-width" style="margin-bottom: 5px">

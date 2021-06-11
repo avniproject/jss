@@ -537,6 +537,16 @@
     "dataType": "Text"
   },
   {
+    "uuid": "88a6bcbb-90b8-4ecb-8dfa-62ad871e3621",
+    "name": "Other disability",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "ee71d898-53aa-4acb-943e-ecc1b16e6a6c",
+    "name": "Name of Disease",
+    "dataType": "Text"
+  },
+  {
     "name": "Day of month for growth monitoring visit",
     "uuid": "8c607c63-25fb-4af1-984e-37dd1bae653d",
     "dataType": "Numeric",
@@ -845,7 +855,14 @@
         "name": "Other",
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
         "order": 4.0
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "unique": true,
+        "order": 5.0
       }
+
     ]
   },
   {

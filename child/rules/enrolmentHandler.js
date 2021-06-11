@@ -12,9 +12,15 @@ class ChildEnrolmentHandlerJSS {
             .getFormElementsStatusesWithoutDefaults(new ChildEnrolmentHandlerJSS(), programEnrolment, formElementGroup);
     }
 
-    pleaseSelectTheDisabilities(programEnrolment, formElement) {
+    // pleaseSelectTheDisabilities(programEnrolment, formElement) {
+    //     const statusBuilder = this._getStatusBuilder(programEnrolment, formElement);
+    //     statusBuilder.show().when.valueInEnrolment("Is there any developmental delay or disability seen?").containsAnswerConceptName("Yes");
+    //     return statusBuilder.build();
+    // }
+
+    specifyOtherDisability(programEnrolment, formElement) {
         const statusBuilder = this._getStatusBuilder(programEnrolment, formElement);
-        statusBuilder.show().when.valueInEnrolment("Is there any developmental delay or disability seen?").containsAnswerConceptName("Yes");
+        statusBuilder.show().when.valueInEnrolment("Child Disabilities").containsAnswerConceptName("Other");
         return statusBuilder.build();
     }
 

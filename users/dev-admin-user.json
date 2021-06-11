@@ -5,8 +5,9 @@
     "password": "password",
     "email": "openchssupport+jss+admin@samanvayfoundation.org",
     "phoneNumber": "+919999999999",
+    "catchmentUUID": "5fbb68b6-9f11-4d87-a118-bf591a1a8fa0",
     "organisationUUID": "a18b792b-7256-4529-896c-e5629e247cf9",
-    "operatingIndividualScope": "None",
+    "operatingIndividualScope": "ByCatchment",
     "admin": false,
     "orgAdmin": true
   }

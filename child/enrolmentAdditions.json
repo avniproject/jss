@@ -64,7 +64,8 @@
             "comment": "Any disabilities"
           },
           "displayOrder": 15,
-          "mandatory": true
+          "mandatory": true,
+          "voided": true
         },
         {
           "name": "Please select the disabilities",
@@ -76,6 +77,17 @@
             "comment": "Child Disabilities"
           },
           "displayOrder": 16,
+          "mandatory": true
+        },
+        {
+          "name": "Specify other disability",
+          "uuid": "461d4dac-d879-4c16-9e5b-fba44588e8e2",
+          "keyValues": [],
+          "concept": {
+            "uuid": "88a6bcbb-90b8-4ecb-8dfa-62ad871e3621",
+            "comment": "Other disability"
+          },
+          "displayOrder": 16.2,
           "mandatory": true
         },
         {
@@ -92,13 +104,13 @@
         },
         {
           "name": "Chronic illness",
-          "uuid": "6f8de0cc-2cf5-4873-8f41-96cf6b8f0445",
+          "uuid": "bb0710a7-887c-4eea-a4c8-2c538a40ded3",
           "keyValues": [],
           "concept": {
-            "uuid": "989a09cf-a570-4ea9-ac67-422da92afce1",
-            "comment": "Other Chronic Illness"
+            "uuid": "ee71d898-53aa-4acb-943e-ecc1b16e6a6c",
+            "name": "Name of Disease"
           },
-          "displayOrder": 18,
+          "displayOrder": 18.5,
           "mandatory": true
         },
         {
@@ -110,7 +122,8 @@
             "comment": "Day of month for growth monitoring visit"
           },
           "displayOrder": 19,
-          "mandatory": true
+          "mandatory": true,
+          "voided": true
         }
       ]
     }

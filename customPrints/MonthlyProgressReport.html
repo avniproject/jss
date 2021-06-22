@@ -17,6 +17,14 @@
                 margin-bottom: 10px;
             }
 
+            .jcalendar .jcalendar-content {
+                margin-left: 500px;
+            }
+
+            .jcalendar-controls {
+                display: none !important;
+            }
+
             #data-container {
                 pointer-events: none;
             }
@@ -122,6 +130,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script src="https://jsuites.net/v4/jsuites.js"></script>
+    <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css"/>
     <script>
 
         function openPrint() {
@@ -287,6 +297,16 @@
             return present || absent ? {present: present, absent: absent} : {};
         }
 
+        function getSelectedDate() {
+            const dateValue = document.getElementById('report-date').value;
+            if (_.isEmpty(dateValue)) {
+                return moment()
+            } else {
+                const [month, year] = dateValue.split('-');
+                return moment().set('month', month).set('year', year).endOf('month')
+            }
+        }
+
         async function fetchSubjectInfo() {
             document.getElementById('data-container').style.display = 'none';
             const url = new URL(window.location.href);
@@ -318,7 +338,7 @@
             const encounters = _.isEmpty(programEnrolmentId) ? [] : await fetch(programEncounterAPI, options).then(res => res.json()).then(data => data.content);
             const phulwariGroupSubject = await fetch(groupSubjectAPI, options).then(res => res.json())
                 .then(data => _.find(_.get(data, 'content', []), content => content['Group subject']['Subject type'] === 'Phulwari' && content['Role'] === 'Phulwari Child'));
-            const selectedDate = moment(document.getElementById('report-date').value);
+            const selectedDate = getSelectedDate();
             const attendanceData = _.isEmpty(phulwariGroupSubject) ? {} : await fetchGroupEncounter(phulwariGroupSubject['Group subject']['ID'], options, subjectUUID, selectedDate);
             const filteredEncounters = _.sortBy(_.filter(encounters, enc => !enc['Voided'] && !_.isNil(enc['Encounter date time']) && moment(enc['Encounter date time']).isSameOrBefore(selectedDate)), enc => enc['Encounter date time']);
             const enrolmentDateTime = moment(_.get(latestEnrolment, 'Enrolment datetime', null));
@@ -347,7 +367,7 @@
                 timeInPhulwari: `${years} ${i18n('Year')} ${months} ${i18n('Month')} ${days} ${i18n('Day')}`,
                 wfaStatus: i18n(_.head(_.get(latestEncounter, ['observations', 'Weight for age Status'], []))),
                 phulwari: i18n(_.get(latestEnrolment, ['observations', 'Phulwari'], '')),
-                reportForMonth: `${i18n(moment().format('MMMM'))} ${moment().format('YYYY')}`,
+                reportForMonth: `${i18n(moment(selectedDate).format('MMMM'))} ${moment(selectedDate).format('YYYY')}`,
                 progressReport: i18n('Progress Report'),
                 nameLabel: i18n("Name"),
                 dobLabel: i18n("Date of birth"),
@@ -392,25 +412,29 @@
             document.getElementById('wfaStatus').style.backgroundColor = backgroundColor;
             document.getElementById('height').innerHTML = Mustache.render(`{{height}}`, view);
             document.getElementById('weight').innerHTML = Mustache.render(`{{weight}}`, view);
+            document.getElementById('date-label').innerHTML = Mustache.render(i18n('Select the date for generating report of the previous month'));
+            document.getElementById('submit').innerHTML = Mustache.render(i18n('Generate report'));
             document.getElementById('data-container').style.display = 'block';
             setTimeout(openPrint, 1000)
         }
 
         window.onload = function renderData() {
             fetchSubjectInfo();
-            document.getElementById('report-date').defaultValue = moment().format('YYYY-MM-DD');
-            document.getElementById('report-date').max = moment().format('YYYY-MM-DD');
         };
     </script>
 </head>
 <body>
 <div class="container">
     <div class="date-container">
-        <label id="date-label" for="report-date" class="title">
-            Select the date for generating report of the previous month
-        </label>
-        <input id="report-date" type="date">
-        <button onclick="fetchSubjectInfo()">Generate report</button>
+        <label id="date-label" for="report-date" class="title"></label>
+        <input id="report-date">
+        <script>
+            jSuites.calendar(document.getElementById('report-date'), {
+                type: 'year-month-picker',
+                format: 'MMM-YYYY'
+            });
+        </script>
+        <button onclick="fetchSubjectInfo()"><span id="submit"></span></button>
     </div>
     <div id="data-container">
         <div class="header">

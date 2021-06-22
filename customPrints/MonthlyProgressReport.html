@@ -342,7 +342,7 @@
             const attendanceData = _.isEmpty(phulwariGroupSubject) ? {} : await fetchGroupEncounter(phulwariGroupSubject['Group subject']['ID'], options, subjectUUID, selectedDate);
             const filteredEncounters = _.sortBy(_.filter(encounters, enc => !enc['Voided'] && !_.isNil(enc['Encounter date time']) && moment(enc['Encounter date time']).isSameOrBefore(selectedDate)), enc => enc['Encounter date time']);
             const enrolmentDateTime = moment(_.get(latestEnrolment, 'Enrolment datetime', null));
-            const {years, months, days} = getTimeSpend(moment(), enrolmentDateTime);
+            const {years, months, days} = getTimeSpend(selectedDate, enrolmentDateTime);
 
             const latestEncounter = _.last(filteredEncounters);
             const height = _.get(_.findLast(filteredEncounters, enc => enc['observations']['Height']), ['observations', 'Height']);

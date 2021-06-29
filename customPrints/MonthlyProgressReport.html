@@ -162,6 +162,10 @@
             return {years: properValue(years), months: properValue(months), days: properValue(days)};
         }
 
+        function getScheduledOrEncounterDate(enc) {
+            return enc['Earliest scheduled date'] || enc['Encounter date time']
+        }
+
         function getAttendanceData({present, absent}, i18n) {
             const data = {
                 labels: [
@@ -300,7 +304,8 @@
             var present = 0;
             var absent = 0;
             _.forEach(encounters, enc => {
-                if (moment(enc['Encounter date time']).isSame(monthsStartingDate, 'year') && moment(enc['Encounter date time']).isSame(monthsStartingDate, 'month')) {
+                const scheduledOrEncounterDate = getScheduledOrEncounterDate(enc);
+                if (moment(scheduledOrEncounterDate).isSame(monthsStartingDate, 'year') && moment(scheduledOrEncounterDate).isSame(monthsStartingDate, 'month')) {
                     const childrenPresentInPhulwari = _.get(enc, ['observations', 'Children present in phulwari'], []);
                     _.includes(childrenPresentInPhulwari, memberSubjectUUID) ? present += 1 : absent += 1;
                 }
@@ -351,13 +356,16 @@
                 .then(data => _.find(_.get(data, 'content', []), content => content['Group subject']['Subject type'] === 'Phulwari' && content['Role'] === 'Phulwari Child'));
             const selectedDate = getSelectedDate();
             const attendanceData = _.isEmpty(phulwariGroupSubject) ? {} : await fetchGroupEncounter(phulwariGroupSubject['Group subject']['ID'], options, subjectUUID, selectedDate);
-            const filteredEncounters = _.sortBy(_.filter(encounters, enc => !enc['Voided'] && !_.isNil(enc['Encounter date time']) && moment(enc['Encounter date time']).isSameOrBefore(selectedDate)), enc => enc['Encounter date time']);
+            const filteredEncounters = _.sortBy(_.filter(encounters, enc => !enc['Voided'] && !_.isNil(enc['Encounter date time']) && moment(getScheduledOrEncounterDate(enc)).isSameOrBefore(selectedDate)), enc => getScheduledOrEncounterDate(enc));
             const enrolmentDateTime = moment(_.get(latestEnrolment, 'Enrolment datetime', null));
             const {years, months, days} = getTimeSpend(selectedDate, enrolmentDateTime);
 
-            const latestEncounter = _.last(filteredEncounters);
-            const height = _.get(_.findLast(filteredEncounters, enc => enc['observations']['Height']), ['observations', 'Height']);
-            const weight = _.get(_.findLast(filteredEncounters, enc => enc['observations']['Weight']), ['observations', 'Weight']);
+            const selectedMonthEncounter = _.findLast(filteredEncounters, enc => {
+                const scheduledOrEncounterDate = getScheduledOrEncounterDate(enc);
+                return moment(scheduledOrEncounterDate).isSame(selectedDate, 'year') && moment(scheduledOrEncounterDate).isSame(selectedDate, 'month')
+            });
+            const height = _.get(selectedMonthEncounter, ['observations', 'Height']);
+            const weight = _.get(selectedMonthEncounter, ['observations', 'Weight']);
             if (_.isEmpty(attendanceData)) {
                 document.getElementById('attendance-data').style.display = 'none';
                 document.getElementById('no-attendance-data').style.display = 'block';
@@ -376,7 +384,7 @@
                 father: subjectObservations["Father's Name"],
                 mother: subjectObservations["Mother's Name"],
                 timeInPhulwari: `${years} ${i18n('Year')} ${months} ${i18n('Month')} ${days} ${i18n('Day')}`,
-                wfaStatus: i18n(_.head(_.get(latestEncounter, ['observations', 'Weight for age Status'], ['Grade not available']))),
+                wfaStatus: i18n(_.head(_.get(selectedMonthEncounter, ['observations', 'Weight for age Status'], ['Grade not available']))),
                 phulwari: i18n(_.get(latestEnrolment, ['observations', 'Phulwari'], '')),
                 reportForMonth: `${i18n(moment(selectedDate).format('MMMM'))} ${moment(selectedDate).format('YYYY')}`,
                 progressReport: i18n('Progress Report'),
@@ -390,8 +398,8 @@
                 heightLabel: `${i18n("Last height")}`,
                 weightLabel: `${i18n("Last weight")}`,
                 growth: i18n("Overall Growth"),
-                height: height ? `${height} cm` : i18n('Height never taken'),
-                weight: weight ? `${weight} kg` : i18n('Weight never taken'),
+                height: height ? `${height} cm` : i18n('Height not taken this month'),
+                weight: weight ? `${weight} kg` : i18n('Weight not taken this month'),
             };
 
             const wfaStyleMap = {

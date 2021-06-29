@@ -314,17 +314,20 @@
         }
 
         function getSelectedDate() {
-            const dateValue = document.getElementById('report-date').value;
-            if (_.isEmpty(dateValue)) {
+            // const dateValue = document.getElementById('report-date').value;
+            //Feb month is not shown properly by value attribute so doing it this way
+            const month = document.getElementsByClassName('jcalendar-month')[0].innerHTML;
+            const year = document.getElementsByClassName('jcalendar-year')[0].innerHTML;
+            if (_.isEmpty(month) || _.isEmpty(year)) {
                 return moment()
             } else {
-                const [month, year] = dateValue.split('-');
                 return moment().set('month', month).set('year', year).endOf('month')
             }
         }
 
         async function fetchSubjectInfo() {
             document.getElementById('data-container').style.display = 'none';
+            document.getElementById('exited-container').style.display = 'none';
             const url = new URL(window.location.href);
             const options = {
                 method: 'GET',
@@ -347,14 +350,23 @@
             const subject = await fetch(subjectAPI, options).then(res => res.json());
             const subjectObservations = subject.observations;
             const enrolment = await fetch(enrolmentAPI, options).then(res => res.json()).then(data => data.content);
-            const latestEnrolment = _.find(enrolment, enl => _.isNil(enl["Exit datetime"]) && !enl["Voided"]);
+            const latestEnrolment = _.find(enrolment, enl => !enl["Voided"]);
+            const isExited = !_.isNil(latestEnrolment["Exit datetime"]);
+            const selectedDate = getSelectedDate();
+            document.getElementById('date-label').innerHTML = Mustache.render(i18n('Select month and year'));
+            if (isExited && moment(latestEnrolment["Exit datetime"]).isSameOrBefore(selectedDate, 'month')) {
+                document.getElementById('exited-container').style.display = 'block';
+                document.getElementById('print-container').style.display = 'none';
+                document.getElementById('exit-msg1').innerHTML = Mustache.render(i18n('Report cannot be generated as child has exited the program'));
+                document.getElementById('exit-msg2').innerHTML = Mustache.render(i18n('Please choose previous months to generate older reports'));
+                return ;
+            }
             const programEnrolmentId = _.get(latestEnrolment, 'ID', null);
             //TODO: assuming encounters will be less than 200. Handle pagination properly later if count exceeds
             const programEncounterAPI = `/api/programEncounters?encounterType=Anthropometry Assessment&programEnrolmentId=${programEnrolmentId}&size=200&page=0`;
             const encounters = _.isEmpty(programEnrolmentId) ? [] : await fetch(programEncounterAPI, options).then(res => res.json()).then(data => data.content);
             const phulwariGroupSubject = await fetch(groupSubjectAPI, options).then(res => res.json())
                 .then(data => _.find(_.get(data, 'content', []), content => content['Group subject']['Subject type'] === 'Phulwari' && content['Role'] === 'Phulwari Child'));
-            const selectedDate = getSelectedDate();
             const attendanceData = _.isEmpty(phulwariGroupSubject) ? {} : await fetchGroupEncounter(phulwariGroupSubject['Group subject']['ID'], options, subjectUUID, selectedDate);
             const filteredEncounters = _.sortBy(_.filter(encounters, enc => !enc['Voided'] && !_.isNil(enc['Encounter date time']) && moment(getScheduledOrEncounterDate(enc)).isSameOrBefore(selectedDate)), enc => getScheduledOrEncounterDate(enc));
             const enrolmentDateTime = moment(_.get(latestEnrolment, 'Enrolment datetime', null));
@@ -433,8 +445,8 @@
             document.getElementById('wfaStatus-container').style.backgroundColor = backgroundColor;
             document.getElementById('height').innerHTML = Mustache.render(`{{height}}`, view);
             document.getElementById('weight').innerHTML = Mustache.render(`{{weight}}`, view);
-            document.getElementById('date-label').innerHTML = Mustache.render(i18n('Select month and year'));
             document.getElementById('print').innerHTML = Mustache.render(i18n('Print report'));
+            document.getElementById('print-container').style.display = 'block';
             document.getElementById('data-container').style.display = 'block';
             setTimeout(openPrint, 1000)
         }
@@ -460,9 +472,13 @@
                 });
             </script>
         </div>
-        <div>
+        <div id="print-container">
             <button onclick="window.print()"><span id="print"></span></button>
         </div>
+    </div>
+    <div id="exited-container" style="margin-top: 100px;">
+        <h2 style="text-align: center" id="exit-msg1"></h2>
+        <h2 style="text-align: center" id="exit-msg2"></h2>
     </div>
     <div id="data-container">
         <div class="header">

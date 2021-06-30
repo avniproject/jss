@@ -10,6 +10,26 @@
 
 set role jss;
 
+--TODO: Right now some phulwaris are registered more than once in the same location. User need to void those before running the script
+select first_name "Phulwari name", title "Village name", count(*)
+from individual
+         join address_level al on individual.address_id = al.id
+where subject_type_id = (select id from subject_type where name = 'Phulwari')
+  and individual.is_voided = false
+group by 1, 2
+order by 3 desc;
+
+--Ensure that all the phulwaris are registered. Below script should return empty
+select distinct single_select_coded(enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b') "Phulwari",
+                village.title "Village"
+from program_enrolment enl
+         join individual child on enl.individual_id = child.id
+         join address_level village on village.id = child.address_id
+         left join individual phulwari on phulwari.first_name = single_select_coded(enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b')
+    and phulwari.address_id = child.address_id
+where enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b' notnull
+  and phulwari.id isnull;
+
 --Script to move observation from Phulwaris concept to Phulwari Group concept.
 
 -- Preview the json

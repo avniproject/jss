@@ -16,6 +16,29 @@
             "comment": "Phulwaris"
           },
           "displayOrder": 10,
+          "mandatory": true,
+          "voided": true
+        },
+        {
+          "name": "Phulwari Group",
+          "uuid": "89cc8f7c-7684-4e3b-a43c-bdebfee49110",
+          "keyValues": [
+            {
+              "key": "groupSubjectTypeUUID",
+              "value": "ea7e5c94-5e90-4288-803d-6a1aa9d80acd"
+            },
+            {
+              "key": "groupSubjectRoleUUID",
+              "value": "d90c6d0e-028a-4d1a-a2c8-4aa8545ddc20"
+            }
+          ],
+          "concept": {
+            "name": "Phulwari Group",
+            "uuid": "3fd6a9b4-6698-4206-86e6-1c74d190dda5"
+          },
+          "displayOrder": 10.1,
+          "type": "SingleSelect",
+          "organisationId": 128,
           "mandatory": true
         },
         {

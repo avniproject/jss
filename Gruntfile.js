@@ -29,8 +29,8 @@ module.exports = IDI.configure({
         },
         "checklistDetails": [],
         "concepts": [
-            "./concepts.json",
-            "./registrationConcepts.json",
+            // "./concepts.json",
+            // "./registrationConcepts.json",
             "./child/enrolmentConcepts.json",
         ],
         "locations": {

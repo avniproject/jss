@@ -2447,5 +2447,10 @@
     "name": "Yadav",
     "uuid": "7d571208-03b8-4eac-9ff8-cd9b3db2070a",
     "dataType": "NA"
+  },
+  {
+    "name": "Phulwari Group",
+    "uuid": "3fd6a9b4-6698-4206-86e6-1c74d190dda5",
+    "dataType": "GroupAffiliation"
   }
 ]

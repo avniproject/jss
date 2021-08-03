@@ -19,63 +19,66 @@ where subject_type_id = (select id from subject_type where name = 'Phulwari')
 group by 1, 2
 order by 3 desc;
 
---Ensure that all the phulwaris are registered. Below script should return empty
-select distinct single_select_coded(enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b') "Phulwari",
-                village.title "Village"
+--Register the Phulwaris which they have not registered yet.
+insert into individual (uuid, address_id, observations, version, registration_date, organisation_id, first_name,
+                        audit_id, subject_type_id, date_of_birth_verified, is_voided)
+
+select distinct on (enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b', child.address_id) uuid_generate_v4(),
+                                                                                                   child.address_id,
+                                                                                                   jsonb_build_object(
+                                                                                                           '6129d59e-17ee-4e0d-a48d-df00b0df326b',
+                                                                                                           enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b',
+                                                                                                           '8c607c63-25fb-4af1-984e-37dd1bae653d',
+                                                                                                           (enl.observations ->> '8c607c63-25fb-4af1-984e-37dd1bae653d')::numeric),
+                                                                                                   0,
+                                                                                                   now()::date,
+                                                                                                   11,
+                                                                                                   single_select_coded(
+                                                                                                               enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b'),
+                                                                                                   (create_audit((select id from users where username = 'adminjss'::text))),
+                                                                                                   (select id from subject_type where name = 'Phulwari'),
+                                                                                                   false,
+                                                                                                   false
 from program_enrolment enl
          join individual child on enl.individual_id = child.id
          join address_level village on village.id = child.address_id
-         left join individual phulwari on phulwari.first_name = single_select_coded(enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b')
+         left join individual phulwari on phulwari.first_name = single_select_coded(
+            enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b')
     and phulwari.address_id = child.address_id
 where enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b' notnull
-  and phulwari.id isnull;
+  and phulwari.id isnull
+  and enl.program_exit_date_time isnull
+  and not enl.is_voided
+  and not child.is_voided;
+
+--Ensure that all the phulwaris are registered. Below script should return empty
+select single_select_coded(enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b') "Phulwari",
+       village.title                                                                    "Village"
+from program_enrolment enl
+         join individual child on enl.individual_id = child.id
+         join address_level village on village.id = child.address_id
+         left join individual phulwari on phulwari.first_name = single_select_coded(
+            enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b')
+    and phulwari.address_id = child.address_id
+where enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b' notnull
+  and phulwari.id isnull
+  and enl.program_exit_date_time isnull
+  and not enl.is_voided
+  and not child.is_voided;
 
 --Script to move observation from Phulwaris concept to Phulwari Group concept.
-
--- Preview the json
-select jsonb_build_object('3fd6a9b4-6698-4206-86e6-1c74d190dda5',
-                          (select uuid
-                           from individual phulwari
-                           where phulwari.first_name = single_select_coded(
-                                   enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b')
-                             and phulwari.address_id = child.address_id
-                             and phulwari.subject_type_id =
-                                 (select id from subject_type where name = 'Phulwari'))
-           )
-from individual child
-         join program_enrolment enl on enl.individual_id = child.id
-where child.id = enl.individual_id
-  and enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b' notnull;
-
----MIGRATION SCRIPT-------
---Migrate the obs
-with audits as (
-    update program_enrolment enl
-        set observations = enl.observations ||
-                           jsonb_build_object('3fd6a9b4-6698-4206-86e6-1c74d190dda5',
-                                              (select uuid
-                                               from individual phulwari
-                                               where phulwari.first_name = single_select_coded(
-                                                       enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b')
-                                                 and phulwari.address_id = child.address_id
-                                                 and phulwari.subject_type_id =
-                                                     (select id from subject_type where name = 'Phulwari'))
-                               )
-        from individual child
-        where child.id = enl.individual_id
-            and enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b' notnull
-        returning enl.audit_id
-)
-update audit
-set last_modified_date_time = current_timestamp
-where id in (select audit_id from audits);
+--We don't need this migration as we don't store group concept in obs
 
 --Next we need to add children to their respective phulwari group
 
 -- these many entries(members) will be done in the group subject table
 select count(*)
-from program_enrolment
-where observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b' notnull
+from program_enrolment enl
+         join individual i on enl.individual_id = i.id
+where enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b' notnull
+  and program_exit_date_time isnull
+  and not enl.is_voided
+  and not i.is_voided
   and individual_id not in (select member_subject_id from group_subject where not group_subject.is_voided);
 
 ---MIGRATION SCRIPT-------
@@ -94,16 +97,23 @@ from program_enrolment enl
          join individual child on enl.individual_id = child.id
          join individual phulwari
               on phulwari.first_name = single_select_coded(enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b')
-where program_id = (select id from program where name = 'Child')
+where program_id = (select id from program where name = 'Phulwari')
   and child.subject_type_id = (select id from subject_type where name = 'Individual')
   and phulwari.subject_type_id = (select id from subject_type where name = 'Phulwari')
   and child.id not in (select member_subject_id from group_subject where not group_subject.is_voided)
-  and phulwari.address_id = child.address_id;
+  and phulwari.address_id = child.address_id
+  and program_exit_date_time isnull
+  and not enl.is_voided
+  and not child.is_voided
+  and not phulwari.is_voided;
 
 --Check the count there should be 0 such child now
 select count(*)
-from program_enrolment
-where observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b' notnull
+from program_enrolment enl
+         join individual i on enl.individual_id = i.id
+where enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b' notnull
+  and program_exit_date_time isnull
+  and not enl.is_voided
+  and not i.is_voided
   and individual_id not in (select member_subject_id from group_subject where not group_subject.is_voided);
-
 

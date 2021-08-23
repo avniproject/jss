@@ -1,3 +1,5 @@
+set role jss;
+
 --migrate IDs for older enrolments
 --Concept name "Enrolment ID"
 --Concept UUID bdc60d4a-3c3f-4300-ab52-544252d41c1b
@@ -6,11 +8,16 @@
 set role jss;
 
 with ids as (
-    select 'DI0' || row_number() over (order by enl.id) + 100 as enrolment_number, enl.id as enl_id
+    select upper(LEFT(coalesce(phulwari.first_name, ''), 3)) || upper(LEFT(coalesce(al.title, ''), 3)) || 'PH0' || row_number() over (order by enl.id) + 100 as enrolment_number,
+           enl.id as enl_id
     from program_enrolment enl
              join individual i on enl.individual_id = i.id
+             left join address_level al on i.address_id = al.id
+             left join group_subject group_subject on i.id = group_subject.member_subject_id
+             left join individual phulwari on phulwari.id = group_subject.group_subject_id
     where not i.is_voided
       and not enl.is_voided
+      and enl.program_exit_date_time isnull
 ),
      audits as (
          update program_enrolment enl set observations =

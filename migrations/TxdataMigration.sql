@@ -69,7 +69,7 @@ with ids_to_migrate as (
            program_id                           as old_id,
            (select id
             from program
-            where program.name = 'Phulwari'
+            where program.name = 'Child'
               and program.organisation_id = 11) as new_id
     from program_enrolment enl
              join program p on enl.program_id = p.id

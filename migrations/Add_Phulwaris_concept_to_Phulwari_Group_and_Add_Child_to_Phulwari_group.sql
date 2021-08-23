@@ -85,7 +85,8 @@ where enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b' notnull
 --Add the members to the Phulwari group
 insert into group_subject(uuid, group_subject_id, member_subject_id, group_role_id, membership_start_date,
                           organisation_id, audit_id, version)
-select uuid_generate_v4(),
+select distinct on (child.id)
+       uuid_generate_v4(),
        phulwari.id,
        child.id,
        (select gr.id from group_role gr where gr.role = 'Phulwari Child'),
@@ -97,7 +98,7 @@ from program_enrolment enl
          join individual child on enl.individual_id = child.id
          join individual phulwari
               on phulwari.first_name = single_select_coded(enl.observations ->> '6129d59e-17ee-4e0d-a48d-df00b0df326b')
-where program_id = (select id from program where name = 'Phulwari')
+where program_id = (select id from program where name = 'Child')
   and child.subject_type_id = (select id from subject_type where name = 'Individual')
   and phulwari.subject_type_id = (select id from subject_type where name = 'Phulwari')
   and child.id not in (select member_subject_id from group_subject where not group_subject.is_voided)

@@ -1,0 +1,18 @@
+set role jss;
+update program_encounter
+set
+earliest_visit_date_time = ('2022-01-' || (phulwari.observations -> '8c607c63-25fb-4af1-984e-37dd1bae653d'::text)::numeric)::timestamptz,
+max_visit_date_time = ('2022-01-' || (phulwari.observations -> '8c607c63-25fb-4af1-984e-37dd1bae653d'::text)::numeric +3 )::timestamptz,
+program_encounter.last_modified_by_id = (select id from users where username = 'nupoork@jss'),
+program_encounter.last_modified_date = current_timestamp
+
+from program_encounter
+         left join program_enrolment e on e.id = program_encounter.program_enrolment_id
+         left join individual on individual.id = e.individual_id
+         left join address_level al on individual.address_id = al.id
+
+         join group_subject on group_subject.member_subject_id = individual.id
+         left join individual phulwari on group_subject.group_subject_id = phulwari.id
+
+where  program_encounter.earliest_visit_date_time::date = '2022-01-31' and encounter_date_time is null
+  and program_encounter.name ='Growth Monitoring Visit';

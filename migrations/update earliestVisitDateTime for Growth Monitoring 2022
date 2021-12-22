@@ -14,4 +14,5 @@ from program_encounter
          left join individual phulwari on group_subject.group_subject_id = phulwari.id
 
 where  program_encounter.earliest_visit_date_time::date = '2022-01-31' and encounter_date_time is null
+  and cancel_date_time is null
   and program_encounter.name ='Growth Monitoring Visit';

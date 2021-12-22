@@ -1,8 +1,8 @@
 set role jss;
 update program_encounter
 set
-earliest_visit_date_time = ('2022-01-' || (phulwari.observations -> '8c607c63-25fb-4af1-984e-37dd1bae653d'::text)::numeric)::timestamptz,
-max_visit_date_time = ('2022-01-' || (phulwari.observations -> '8c607c63-25fb-4af1-984e-37dd1bae653d'::text)::numeric +3 )::timestamptz,
+earliest_visit_date_time = ('2022-01-' || (phulwari.observations -> '8c607c63-25fb-4af1-984e-37dd1bae653d'::text)::numeric || ' 10:00:11.000000')::timestamptz,
+max_visit_date_time = ('2022-01-' || (phulwari.observations -> '8c607c63-25fb-4af1-984e-37dd1bae653d'::text)::numeric +3 || ' 10:00:11.000000' )::timestamptz,
 program_encounter.last_modified_by_id = (select id from users where username = 'nupoork@jss'),
 program_encounter.last_modified_date = current_timestamp + ((program_encounter.id / 1000) * interval '1 millisecond')
 

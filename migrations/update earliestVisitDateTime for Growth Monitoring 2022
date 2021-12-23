@@ -1,18 +1,19 @@
 set role jss;
-update program_encounter
-set
-earliest_visit_date_time = ('2022-01-' || (phulwari.observations -> '8c607c63-25fb-4af1-984e-37dd1bae653d'::text)::numeric || ' 10:00:11.000000')::timestamptz,
-max_visit_date_time = ('2022-01-' || (phulwari.observations -> '8c607c63-25fb-4af1-984e-37dd1bae653d'::text)::numeric +3 || ' 10:00:11.000000' )::timestamptz,
-program_encounter.last_modified_by_id = (select id from users where username = 'nupoork@jss'),
-program_encounter.last_modified_date = current_timestamp + ((program_encounter.id / 1000) * interval '1 millisecond')
 
-from program_encounter
-         left join program_enrolment e on e.id = program_encounter.program_enrolment_id
-         left join individual on individual.id = e.individual_id
-       
-         join group_subject on group_subject.member_subject_id = individual.id
+update program_encounter enc
+set
+    earliest_visit_date_time = ('2022-01-' || (phulwari.observations -> '8c607c63-25fb-4af1-984e-37dd1bae653d'::text)::numeric || ' 10:00:11.000000')::timestamptz,
+    max_visit_date_time = ('2022-01-' || (phulwari.observations -> '8c607c63-25fb-4af1-984e-37dd1bae653d'::text)::numeric +3 || ' 10:00:11.000000' )::timestamptz,
+    last_modified_by_id = (select id from users where username = 'nupoork@jss'),
+    last_modified_date_time = current_timestamp + ((enc.id / 1000) * interval '1 millisecond')
+
+from program_enrolment pe
+         left join individual i  on i.id = pe.individual_id
+         join group_subject on group_subject.member_subject_id = i.id
          left join individual phulwari on group_subject.group_subject_id = phulwari.id
 
-where  program_encounter.earliest_visit_date_time::date = '2022-01-31' and encounter_date_time is null
-  and cancel_date_time is null
-  and program_encounter.name ='Growth Monitoring Visit';
+where enc.program_enrolment_id  = pe.id
+  and enc.earliest_visit_date_time::date = '2022-01-31'
+  and enc.encounter_date_time is null
+  and enc.cancel_date_time is null
+  and enc.name ='Growth Monitoring Visit';

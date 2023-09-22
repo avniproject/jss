@@ -8,7 +8,9 @@ select * from encounter_type where id = 42; -- Albendazole
 
 update program_encounter 
 set cancel_date_time = now(),
-cancel_observations = '{"739f9a56-c02c-4f81-927b-69842d78c1e8": "10885638-561a-42b6-8b24-8daa01864c89"}'::jsonb
+cancel_observations = '{"739f9a56-c02c-4f81-927b-69842d78c1e8": "10885638-561a-42b6-8b24-8daa01864c89"}'::jsonb,
+last_modified_date_time = now(),
+last_modified_by_id = 5697
 where organisation_id = 11
 and encounter_type_id = 42
 and earliest_visit_date_time::timestamp <= '2023-03-01 00:00:00.000 +0530'::timestamp

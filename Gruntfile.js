@@ -5,7 +5,7 @@ module.exports = IDI.configure({
     "name": "jss",
     "chs-admin": "admin",
     "org-name": "JSS",
-    "org-admin": "adminjss",
+    "org-admin": "taqim@jss",
     "secrets": '../secrets.json',
     "files": {
         "adminUsers": {

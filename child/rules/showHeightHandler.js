@@ -27,6 +27,7 @@ class ShowHeightHandler {
 
     @WithName("Height")
     one(programEncounter, formElement) {
+        console.log("Entered ShowHeightHandler one ---------->");
         if (!_.isNil(programEncounter.earliestVisitDateTime)) {
             const lastEncounterWithHeight = programEncounter.programEnrolment.findLatestPreviousEncounterWithObservationForConcept(programEncounter, "Height");
             const heightNeverCapturedBefore = _.isNil(lastEncounterWithHeight);

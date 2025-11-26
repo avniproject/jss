@@ -1,11 +1,11 @@
 [
   {
     "uuid": "0c63a812-175a-438c-a941-e39da065e836",
-    "name": "adminjss",
-    "password": "password",
-    "email": "openchssupport+jss+admin@samanvayfoundation.org",
-    "phoneNumber": "+919999999999",
-    "catchmentUUID": "5fbb68b6-9f11-4d87-a118-bf591a1a8fa0",
+    "name": "taqim@jss",
+    "password": "say my name",
+    "email": "mohammedtaqi@samanvayfoundation.org",
+    "phoneNumber": "+916362619672",
+    "catchmentUUID": "54241012-896b-46c0-a384-a7bdd723c5fc",
     "organisationUUID": "a18b792b-7256-4529-896c-e5629e247cf9",
     "operatingIndividualScope": "ByCatchment",
     "admin": false,
